@@ -1,0 +1,63 @@
+---
+const primaryCta = {
+  href: '/rezultati',
+  label: 'Naši rezultati',
+};
+
+const secondaryCta = {
+  href: '/kontakt',
+  label: 'Pridruži se pokretu',
+};
+
+const heroImage = '/images/homepage-hero-reference.png';
+---
+
+<section class="relative isolate overflow-hidden bg-[#061632] text-white" aria-labelledby="homepage-hero-title">
+  <div class="absolute inset-y-0 right-0 -z-20 w-full lg:w-[82%]">
+    <img
+      src={heroImage}
+      alt=""
+      class="h-full w-full object-cover object-[42%_center] opacity-95"
+      loading="eager"
+      decoding="async"
+      aria-hidden="true"
+    />
+  </div>
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#061632_0%,rgba(6,22,50,0.98)_28%,rgba(6,22,50,0.82)_45%,rgba(6,22,50,0.26)_66%,rgba(6,22,50,0.08)_82%,rgba(6,22,50,0.22)_100%)]"></div>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_24%_34%,rgba(214,173,59,0.13),transparent_24%),linear-gradient(180deg,rgba(6,22,50,0)_0%,rgba(4,17,38,0.5)_100%)]"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-t from-[#041126] via-[#041126]/45 to-transparent"></div>
+
+  <div class="mx-auto flex min-h-[680px] max-w-7xl items-center px-4 pb-28 pt-20 sm:min-h-[720px] sm:px-6 lg:min-h-[780px] lg:px-8 lg:pb-32 lg:pt-24">
+    <div class="max-w-2xl">
+      <h1 id="homepage-hero-title" class="max-w-3xl text-5xl font-bold uppercase leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-[4.15rem]">
+        Crna Gora
+        <span class="block text-[#d6ad3b]">na prvom mjestu</span>
+      </h1>
+
+      <p class="mt-6 max-w-lg text-base font-medium leading-8 text-slate-100 sm:text-lg">
+        Evropa sad je pokret koji je pokrenuo najveće ekonomske i društvene promjene u novijoj istoriji Crne Gore.
+      </p>
+
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        <a
+          href={primaryCta.href}
+          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md bg-[#d6ad3b] px-7 text-center text-sm font-extrabold uppercase text-[#061632] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#f0cf72] focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63]"
+        >
+          {primaryCta.label}
+          <span aria-hidden="true" class="text-xl leading-none">→</span>
+        </a>
+        <a
+          href={secondaryCta.href}
+          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md border border-white/45 bg-white/[0.06] px-7 text-center text-sm font-extrabold uppercase text-white shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/12 focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63]"
+        >
+          {secondaryCta.label}
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-none stroke-current stroke-2">
+            <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 20a4.5 4.5 0 0 1 9 0m-1-3.5A4.5 4.5 0 0 1 20.5 20" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="sr-only">Miloš Spajić, predsjednik Pokreta Evropa Sad.</div>
+  </div>
+</section>

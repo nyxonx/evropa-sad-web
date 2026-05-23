@@ -1,0 +1,120 @@
+---
+const navigationLinks = [
+  { href: '/', label: 'Naslovna' },
+  { href: '/rezultati', label: 'Rezultati' },
+  { href: '/program', label: 'Program' },
+  { href: '/organizacija', label: 'Organizacija' },
+  { href: '/vijesti', label: 'Vijesti' },
+  { href: '/dokumenti', label: 'Dokumenti' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const ctaLinks = [
+  { href: '/kontakt', label: 'Pridruži se', variant: 'primary' },
+  { href: '/doprinesi', label: 'Doprinesi', variant: 'secondary' },
+];
+
+const currentPath = Astro.url.pathname;
+const logoSrc = '/images/evropa-sad-logo.png';
+---
+
+<header class="absolute inset-x-0 top-0 z-50 text-white">
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-[#d6ad3b] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950"
+  >
+    Preskoči na sadržaj
+  </a>
+
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex items-center" aria-label="Evropa Sad - naslovna">
+      <img
+        src={logoSrc}
+        alt="Evropa Sad"
+        class="h-11 w-auto max-w-[12rem] object-contain sm:h-12 sm:max-w-[14rem]"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex" aria-label="Glavna navigacija">
+      {
+        navigationLinks.map((link) => {
+          const isActive = link.href === '/' ? currentPath === '/' : currentPath.startsWith(link.href);
+
+          return (
+          <a
+            href={link.href}
+            aria-current={isActive ? 'page' : undefined}
+            class:list={[
+              'relative py-2 text-sm font-bold text-white/85 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-4 focus:ring-offset-[#061632]',
+              isActive
+                ? 'text-[#f0cf72] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#d6ad3b]'
+                : 'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#d6ad3b] after:transition-all hover:after:w-full',
+            ]}
+          >
+            {link.label}
+          </a>
+        )})
+      }
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      {
+        ctaLinks.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'rounded-md px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]',
+              link.variant === 'primary'
+                ? 'bg-[#d6ad3b] text-[#061632] shadow-lg shadow-black/15 hover:-translate-y-0.5 hover:bg-[#f0cf72]'
+                : 'border border-white/40 bg-white/10 text-white hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/15',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <details class="group relative lg:hidden">
+      <summary class="flex cursor-pointer list-none items-center rounded-md border border-white/25 bg-white/10 px-3 py-2 text-sm font-bold text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]">
+        <span class="group-open:hidden">Meni</span>
+        <span class="hidden group-open:inline">Zatvori</span>
+      </summary>
+
+      <div class="absolute right-0 top-12 w-[min(20rem,calc(100vw-2rem))] rounded-md border border-white/15 bg-[#061632]/95 p-3 shadow-xl shadow-black/30 backdrop-blur-md">
+        <nav class="flex flex-col" aria-label="Mobilna navigacija">
+          {
+            navigationLinks.map((link) => (
+              <a
+                href={link.href}
+                class="rounded-md px-3 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]"
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </nav>
+
+        <div class="mt-3 grid gap-2 border-t border-white/10 pt-3">
+          {
+            ctaLinks.map((link) => (
+              <a
+                href={link.href}
+                class:list={[
+                  'rounded-md px-4 py-3 text-center text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]',
+                  link.variant === 'primary'
+                    ? 'bg-[#d6ad3b] text-[#061632] hover:bg-[#f0cf72]'
+                    : 'border border-white/35 bg-white/10 text-white hover:border-[#d6ad3b] hover:bg-white/15',
+                ]}
+              >
+                {link.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </details>
+  </div>
+</header>
