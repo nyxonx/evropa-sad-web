@@ -1,0 +1,50 @@
+---
+import type { Lang } from '../../i18n/config';
+import type { PlaceholderPage as PlaceholderPageContent } from '../../i18n/placeholder-pages';
+import { localizePath } from '../../i18n/routing';
+
+interface Props {
+  lang: Lang;
+  page: PlaceholderPageContent;
+}
+
+const { lang, page } = Astro.props;
+---
+
+<section class="bg-white" aria-labelledby="placeholder-page-heading">
+  <div class="bg-[#061632] text-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#d6ad3b]">{page.eyebrow}</p>
+        <h1 id="placeholder-page-heading" class="mt-5 text-4xl font-bold tracking-normal sm:text-5xl">
+          {page.title}
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-8 text-blue-50/82 sm:text-lg">
+          {page.description}
+        </p>
+
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={localizePath(lang, '/')}
+            class="inline-flex min-h-12 items-center justify-center rounded-md bg-[#d6ad3b] px-6 text-sm font-bold uppercase text-[#061632] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#f0c85a] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+          >
+            {page.primaryCta}
+          </a>
+          <a
+            href="mailto:info@evropasad.com"
+            class="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-6 text-sm font-bold uppercase text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:text-[#d6ad3b] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+          >
+            {page.secondaryCta}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-y border-slate-200 bg-slate-50">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{page.statusLabel}</p>
+      <p class="max-w-3xl text-sm leading-6 text-slate-600">{page.statusText}</p>
+    </div>
+  </div>
+</section>

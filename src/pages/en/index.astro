@@ -1,0 +1,27 @@
+---
+import HeroSection from '../../components/hero/HeroSection.astro';
+import NewsPreview from '../../components/news/NewsPreview.astro';
+import KPISection from '../../components/results/KPISection.astro';
+import ResultsPreview from '../../components/results/ResultsPreview.astro';
+import CTASection from '../../components/sections/CTASection.astro';
+import EuropeVisionSection from '../../components/sections/EuropeVisionSection.astro';
+import type { Lang } from '../../i18n/config';
+import { translations } from '../../i18n/translations';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+const t = translations[lang].site;
+---
+
+<BaseLayout
+  lang={lang}
+  title={t.homeTitle}
+  description={t.homeDescription}
+>
+  <HeroSection lang={lang} />
+  <KPISection lang={lang} />
+  <ResultsPreview lang={lang} />
+  <EuropeVisionSection lang={lang} />
+  <NewsPreview lang={lang} />
+  <CTASection lang={lang} />
+</BaseLayout>

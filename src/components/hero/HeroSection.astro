@@ -1,15 +1,16 @@
 ---
-const primaryCta = {
-  href: '/rezultati',
-  label: 'Naši rezultati',
-};
+import { type Lang } from '../../i18n/config';
+import { localizePath } from '../../i18n/routing';
+import { translations } from '../../i18n/translations';
 
-const secondaryCta = {
-  href: '/kontakt',
-  label: 'Pridruži se pokretu',
-};
+interface Props {
+  lang: Lang;
+}
 
-const heroImage = '/images/homepage-hero-reference.png';
+const { lang } = Astro.props;
+const t = translations[lang].hero;
+const heroImage = '/images/homepage-hero-clean.png';
+const signatureImage = '/images/milojko-spajic-signature.png';
 ---
 
 <section class="relative isolate overflow-hidden bg-[#061632] text-white" aria-labelledby="homepage-hero-title">
@@ -17,40 +18,54 @@ const heroImage = '/images/homepage-hero-reference.png';
     <img
       src={heroImage}
       alt=""
-      class="h-full w-full object-cover object-[42%_center] opacity-95"
+      class="h-full w-full object-cover object-[58%_center] opacity-95 sm:object-[62%_center] md:object-[54%_center] lg:object-[42%_center]"
       loading="eager"
       decoding="async"
       aria-hidden="true"
     />
   </div>
-  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#061632_0%,rgba(6,22,50,0.98)_28%,rgba(6,22,50,0.82)_45%,rgba(6,22,50,0.26)_66%,rgba(6,22,50,0.08)_82%,rgba(6,22,50,0.22)_100%)]"></div>
-  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_24%_34%,rgba(214,173,59,0.13),transparent_24%),linear-gradient(180deg,rgba(6,22,50,0)_0%,rgba(4,17,38,0.5)_100%)]"></div>
+  <div class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,#061632_0%,rgba(6,22,50,0.97)_44%,rgba(6,22,50,0.62)_66%,rgba(6,22,50,0.24)_86%,rgba(6,22,50,0.34)_100%)] sm:bg-[linear-gradient(90deg,#061632_0%,rgba(6,22,50,0.98)_28%,rgba(6,22,50,0.82)_45%,rgba(6,22,50,0.26)_66%,rgba(6,22,50,0.08)_82%,rgba(6,22,50,0.22)_100%)]"></div>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_22%_36%,rgba(214,173,59,0.14),transparent_24%),linear-gradient(180deg,rgba(6,22,50,0)_0%,rgba(4,17,38,0.18)_38%,rgba(4,17,38,0.78)_100%)] sm:bg-[radial-gradient(circle_at_24%_34%,rgba(214,173,59,0.13),transparent_24%),linear-gradient(180deg,rgba(6,22,50,0)_0%,rgba(4,17,38,0.5)_100%)]"></div>
   <div class="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-t from-[#041126] via-[#041126]/45 to-transparent"></div>
 
-  <div class="mx-auto flex min-h-[680px] max-w-7xl items-center px-4 pb-28 pt-20 sm:min-h-[720px] sm:px-6 lg:min-h-[780px] lg:px-8 lg:pb-32 lg:pt-24">
-    <div class="max-w-2xl">
-      <h1 id="homepage-hero-title" class="max-w-3xl text-5xl font-bold uppercase leading-[1.02] tracking-normal text-white sm:text-6xl lg:text-[4.15rem]">
-        Crna Gora
-        <span class="block text-[#d6ad3b]">na prvom mjestu</span>
+  <div class="pointer-events-none absolute bottom-[3.2rem] right-[5%] z-0 hidden w-[9.5rem] text-center min-[380px]:block sm:bottom-[7.5rem] sm:right-[6%] sm:w-[14rem] md:bottom-[7.8rem] md:right-[6.5%] md:w-[15.5rem] lg:bottom-[9rem] lg:right-[6.5%] lg:w-[17rem] xl:bottom-[9.5rem] xl:right-[7%] xl:w-[18.5rem]" aria-hidden="true">
+    <img
+      src={signatureImage}
+      alt=""
+      class="mx-auto w-full opacity-[0.9] mix-blend-screen"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="mt-2 text-[0.48rem] font-bold uppercase tracking-[0.16em] text-white sm:mt-6 sm:text-[0.68rem] sm:tracking-[0.18em] md:mt-7 lg:mt-8 lg:text-xs">
+      <span class="block">{t.signatureRole}</span>
+      <span class="mt-0.5 block text-[#d6ad3b]">{t.signatureMovement}</span>
+    </div>
+  </div>
+
+  <div class="mx-auto flex min-h-[680px] max-w-7xl items-end px-4 pb-36 pt-20 sm:min-h-[720px] sm:items-center sm:px-6 sm:pb-28 lg:min-h-[780px] lg:px-8 lg:pb-32 lg:pt-24">
+    <div class="max-w-[19rem] min-[390px]:max-w-[20rem] sm:max-w-2xl">
+      <h1 id="homepage-hero-title" class="max-w-3xl text-[2.18rem] font-bold uppercase leading-[1.03] tracking-normal text-white min-[390px]:text-[2.42rem] sm:text-6xl lg:text-[4.15rem]">
+        {t.titleLine1}
+        <span class="block text-[#d6ad3b]">{t.titleLine2}</span>
       </h1>
 
-      <p class="mt-6 max-w-lg text-base font-medium leading-8 text-slate-100 sm:text-lg">
-        Evropa sad je pokret koji je pokrenuo najveće ekonomske i društvene promjene u novijoj istoriji Crne Gore.
+      <p class="mt-4 max-w-[17.75rem] text-[0.82rem] font-medium leading-6 text-slate-100 min-[390px]:max-w-[19rem] min-[390px]:text-[0.92rem] sm:mt-6 sm:max-w-lg sm:text-base sm:leading-8 lg:text-lg">
+        {t.text}
       </p>
 
-      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+      <div class="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row">
         <a
-          href={primaryCta.href}
-          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md bg-[#d6ad3b] px-7 text-center text-sm font-extrabold uppercase text-[#061632] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#f0cf72] focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63]"
+          href={localizePath(lang, t.primaryCta.href)}
+          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md bg-[#d6ad3b] px-7 text-center text-sm font-extrabold uppercase text-[#061632] shadow-lg shadow-black/20 transition duration-300 hover:-translate-y-0.5 hover:bg-[#f0cf72] focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63] sm:w-auto"
         >
-          {primaryCta.label}
+          {t.primaryCta.label}
           <span aria-hidden="true" class="text-xl leading-none">→</span>
         </a>
         <a
-          href={secondaryCta.href}
-          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md border border-white/45 bg-white/[0.06] px-7 text-center text-sm font-extrabold uppercase text-white shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/12 focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63]"
+          href={localizePath(lang, t.secondaryCta.href)}
+          class="inline-flex min-h-14 items-center justify-center gap-5 rounded-md border border-white/45 bg-white/[0.06] px-7 text-center text-sm font-extrabold uppercase text-white shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/12 focus:outline-none focus:ring-2 focus:ring-[#f0cf72] focus:ring-offset-2 focus:ring-offset-[#082b63] sm:w-auto"
         >
-          {secondaryCta.label}
+          {t.secondaryCta.label}
           <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-none stroke-current stroke-2">
             <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 20a4.5 4.5 0 0 1 9 0m-1-3.5A4.5 4.5 0 0 1 20.5 20" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
@@ -58,6 +73,6 @@ const heroImage = '/images/homepage-hero-reference.png';
       </div>
     </div>
 
-    <div class="sr-only">Miloš Spajić, predsjednik Pokreta Evropa Sad.</div>
+    <div class="sr-only">{t.imageContext}</div>
   </div>
 </section>

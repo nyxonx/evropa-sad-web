@@ -1,6 +1,9 @@
 ---
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/footer/Footer.astro';
+import { defaultLang, languages, type Lang } from '../i18n/config';
+import { localizePath, removeLangPrefix } from '../i18n/routing';
+import { translations } from '../i18n/translations';
 import '../styles/global.css';
 
 interface Props {
@@ -9,22 +12,31 @@ interface Props {
   canonical?: string;
   image?: string;
   noindex?: boolean;
+  lang?: Lang;
 }
 
 const {
-  title = 'Evropa Sad',
-  description = 'Zvanični javni portal Pokreta Evropa Sad.',
+  lang = defaultLang,
+  title = translations[lang].site.defaultTitle,
+  description = translations[lang].site.defaultDescription,
   canonical,
   image = '/favicon.svg',
   noindex = false,
 } = Astro.props;
 
-const pageTitle = title === 'Evropa Sad' ? title : `${title} | Evropa Sad`;
+const siteTitle = translations[lang].site.defaultTitle;
+const pageTitle = title === siteTitle ? title : `${title} | ${siteTitle}`;
 const canonicalUrl = canonical ?? Astro.url.href;
+const pathWithoutLocale = removeLangPrefix(Astro.url.pathname);
+const alternateUrls = Object.entries(languages).map(([locale, language]) => ({
+  locale,
+  htmlLang: language.htmlLang,
+  href: new URL(localizePath(locale as Lang, pathWithoutLocale), Astro.url.origin).href,
+}));
 ---
 
 <!doctype html>
-<html lang="sr-Latn-ME" class="scroll-smooth">
+<html lang={languages[lang].htmlLang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -32,6 +44,12 @@ const canonicalUrl = canonical ?? Astro.url.href;
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
+    {
+      alternateUrls.map((alternate) => (
+        <link rel="alternate" hreflang={alternate.htmlLang} href={alternate.href} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL(localizePath(defaultLang, pathWithoutLocale), Astro.url.origin).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
 
@@ -48,10 +66,10 @@ const canonicalUrl = canonical ?? Astro.url.href;
     <title>{pageTitle}</title>
   </head>
   <body class="min-h-screen bg-slate-50 text-slate-950 antialiased">
-    <Header />
+    <Header lang={lang} />
     <main id="main-content" class="min-h-[60vh]">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>

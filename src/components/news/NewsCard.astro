@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string;
+  excerpt: string;
+  href: string;
+  day: string;
+  month: string;
+  tone: 'eu' | 'team' | 'coast';
+  imageSrc?: string;
+  readMore: string;
+  visualLabel: string;
+}
+
+const { title, excerpt, href, day, month, tone, imageSrc, readMore, visualLabel } = Astro.props;
+
+const visualClasses = {
+  eu: 'bg-[radial-gradient(circle_at_68%_34%,rgba(214,173,59,0.72),transparent_15%),linear-gradient(135deg,#082b63_0%,#0b3f91_48%,#061632_100%)]',
+  team: 'bg-[radial-gradient(circle_at_28%_28%,rgba(255,255,255,0.42),transparent_16%),linear-gradient(135deg,#9ca3af_0%,#334155_48%,#0f172a_100%)]',
+  coast: 'bg-[radial-gradient(circle_at_78%_22%,rgba(255,255,255,0.66),transparent_14%),linear-gradient(135deg,#38bdf8_0%,#0b4ea5_42%,#075985_100%)]',
+};
+
+---
+
+<article class="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg shadow-slate-200/70 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-300/70">
+  <a href={href} class="block focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2" aria-label={title}>
+    <div class:list={['relative min-h-40 overflow-hidden', imageSrc ? 'bg-slate-200' : visualClasses[tone]]}>
+      {
+        imageSrc && (
+          <img
+            src={imageSrc}
+            alt=""
+            class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+        )
+      }
+      <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(6,22,50,0)_0%,rgba(6,22,50,0.34)_100%)]"></div>
+      {!imageSrc && <div class="absolute -right-8 top-5 h-28 w-28 rounded-full border border-white/20 bg-white/10"></div>}
+      {!imageSrc && <div class="absolute right-10 top-10 h-16 w-16 rounded-full border border-[#d6ad3b]/35 bg-[#d6ad3b]/10"></div>}
+      <div class="absolute bottom-4 left-4 rounded border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-white/90">
+        {visualLabel}
+      </div>
+
+      <time datetime={`2026-05-${day}`} class="absolute left-4 top-4 flex h-14 w-14 flex-col items-center justify-center rounded-md border border-[#d6ad3b]/70 bg-[#082b63] text-white shadow-lg shadow-black/20">
+        <span class="text-xl font-bold leading-none">{day}</span>
+        <span class="mt-1 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-[#d6ad3b]">{month}</span>
+      </time>
+    </div>
+
+    <div class="p-5">
+      <h3 class="text-base font-bold leading-snug text-[#082b63] transition duration-300 group-hover:text-[#0c3c86]">
+        {title}
+      </h3>
+      <p class="mt-3 text-sm leading-6 text-slate-600">{excerpt}</p>
+      <span class="mt-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-normal text-[#082b63]">
+        {readMore}
+        <span aria-hidden="true" class="text-lg leading-none transition duration-300 group-hover:translate-x-1">→</span>
+      </span>
+    </div>
+  </a>
+</article>

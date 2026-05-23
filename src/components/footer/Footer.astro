@@ -1,136 +1,146 @@
 ---
-const footerColumns = [
-  {
-    title: 'Program',
-    links: [
-      { href: '/program', label: 'Prioriteti' },
-      { href: '/rezultati', label: 'Rezultati' },
-      { href: '/dokumenti', label: 'Dokumenti' },
-    ],
-  },
-  {
-    title: 'Organizacija',
-    links: [
-      { href: '/organizacija', label: 'Predsjedništvo' },
-      { href: '/organizacija#odbori', label: 'Odbori' },
-      { href: '/kontakt', label: 'Lokalni odbori' },
-    ],
-  },
-  {
-    title: 'Aktuelnosti',
-    links: [
-      { href: '/vijesti', label: 'Vijesti' },
-      { href: '/saopstenja', label: 'Saopštenja' },
-      { href: '/dogadjaji', label: 'Događaji' },
-    ],
-  },
-  {
-    title: 'Dokumenta',
-    links: [
-      { href: '/dokumenti', label: 'Sva dokumenta' },
-      { href: '/dokumenti#statut', label: 'Statut' },
-      { href: '/dokumenti#program', label: 'Program rada' },
-    ],
-  },
-];
+import { type Lang } from '../../i18n/config';
+import { localizePath } from '../../i18n/routing';
+import { translations } from '../../i18n/translations';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = translations[lang].footer;
+const logoSrc = '/images/evropa-sad-logo.png';
 
 const socialLinks = [
-  { href: 'https://www.facebook.com/', label: 'Facebook' },
-  { href: 'https://www.instagram.com/', label: 'Instagram' },
-  { href: 'https://www.youtube.com/', label: 'YouTube' },
-  { href: 'https://www.linkedin.com/', label: 'LinkedIn' },
+  {
+    href: 'https://www.facebook.com/',
+    label: 'Facebook',
+    icon: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4h-4V7a1 1 0 0 1 1-1h3V2Z',
+  },
+  {
+    href: 'https://www.instagram.com/',
+    label: 'Instagram',
+    icon: 'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5.2A4.8 4.8 0 1 0 12 16.8 4.8 4.8 0 0 0 12 7.2Zm6.2-.2h.01',
+  },
+  {
+    href: 'https://www.youtube.com/',
+    label: 'YouTube',
+    icon: 'M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.8 12 4.8 12 4.8s-5.8 0-7.6.4a2.8 2.8 0 0 0-2 2A29.4 29.4 0 0 0 2 12a29.4 29.4 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.4 7.6.4 7.6.4s5.8 0 7.6-.4a2.8 2.8 0 0 0 2-2A29.4 29.4 0 0 0 22 12a29.4 29.4 0 0 0-.4-4.8ZM10 15V9l5.2 3L10 15Z',
+  },
+  {
+    href: 'https://www.tiktok.com/',
+    label: 'TikTok',
+    icon: 'M15 3c.4 2.6 1.9 4.1 4 4.4V11a7.4 7.4 0 0 1-4-1.2v5.4a5.8 5.8 0 1 1-5.8-5.8c.4 0 .8 0 1.2.1v3.8a2.2 2.2 0 1 0 1.6 2.1V3h3Z',
+  },
 ];
 
-const legalLinks = [
-  { href: '/privatnost', label: 'Politika privatnosti' },
-  { href: '/uslovi-koriscenja', label: 'Uslovi korišćenja' },
-  { href: '/kolacici', label: 'Kolačići' },
-];
+const contactIcons = [
+  'M12 21s7-4.7 7-11a7 7 0 1 0-14 0c0 6.3 7 11 7 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+  'M4 6h16v12H4zM4 7l8 6 8-6',
+  'M6.5 4h3l1.5 4-2 1.2a12 12 0 0 0 5.8 5.8L16 13l4 1.5v3a2 2 0 0 1-2.2 2 16 16 0 0 1-13.3-13.3A2 2 0 0 1 6.5 4Z',
+] as const;
 
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-[#061b3d] text-white">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-    <div class="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
-      <div>
-        <a href="/" class="inline-flex items-center gap-3" aria-label="Evropa Sad - naslovna">
-          <span class="flex h-11 w-11 items-center justify-center rounded-sm bg-white text-sm font-bold text-[#082b63]">
-            ES
-          </span>
-          <span class="flex flex-col leading-tight">
-            <span class="text-base font-bold uppercase tracking-wide text-white">Evropa Sad</span>
-            <span class="text-xs font-medium uppercase text-[#d6ad3b]">Zvanični portal</span>
-          </span>
-        </a>
+<footer class="bg-[#061632] text-white">
+  <div class="relative isolate overflow-hidden">
+    <div class="absolute inset-0 -z-20 bg-[linear-gradient(105deg,#061632_0%,#082b63_58%,#061632_100%)]"></div>
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_8%_22%,rgba(214,173,59,0.12),transparent_16rem),radial-gradient(circle_at_90%_18%,rgba(44,114,207,0.2),transparent_20rem)]"></div>
 
-        <p class="mt-5 max-w-sm text-sm leading-6 text-slate-300">
-          Institucionalna platforma za program, rezultate, organizaciju i javne aktivnosti Pokreta Evropa Sad.
-        </p>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[1.35fr_2.45fr_1.35fr]">
+        <div>
+          <a href={localizePath(lang, '/')} class="inline-flex" aria-label={t.homeAria}>
+            <img src={logoSrc} alt={t.logoAlt} class="h-12 w-auto object-contain sm:h-14" loading="lazy" />
+          </a>
 
-        <address class="mt-6 not-italic text-sm leading-6 text-slate-300">
-          <span class="block font-semibold text-white">Kontakt</span>
-          <a href="mailto:info@evropasad.me" class="transition hover:text-[#d6ad3b]">info@evropasad.me</a>
-          <span class="block">Podgorica, Crna Gora</span>
-        </address>
-      </div>
+          <p class="mt-5 max-w-xs text-sm leading-6 text-blue-50/85">{t.slogan}</p>
 
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          footerColumns.map((column) => (
-            <section aria-labelledby={`footer-${column.title.toLowerCase()}`}>
-              <h2 id={`footer-${column.title.toLowerCase()}`} class="text-sm font-bold uppercase tracking-wide text-[#d6ad3b]">
-                {column.title}
-              </h2>
-              <ul class="mt-4 space-y-3">
-                {
-                  column.links.map((link) => (
-                    <li>
-                      <a href={link.href} class="text-sm text-slate-300 transition hover:text-white">
-                        {link.label}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </section>
-          ))
-        }
-      </div>
-    </div>
+          <nav class="mt-6" aria-label={t.socialNav}>
+            <ul class="flex gap-3">
+              {
+                socialLinks.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="flex h-8 w-8 items-center justify-center rounded border border-white/25 bg-white/[0.04] text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:text-[#d6ad3b] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+                      aria-label={link.label}
+                    >
+                      <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 fill-none stroke-current stroke-[1.8]">
+                        <path d={link.icon} stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
 
-    <div class="mt-10 border-t border-white/10 pt-6">
-      <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <nav aria-label="Društvene mreže">
-          <ul class="flex flex-wrap gap-x-5 gap-y-2">
+        <div class="grid gap-8 sm:grid-cols-3">
+          {
+            t.columns.map((column) => (
+              <section aria-labelledby={`footer-${column.title.toLowerCase().replaceAll(' ', '-')}`}>
+                <h2
+                  id={`footer-${column.title.toLowerCase().replaceAll(' ', '-')}`}
+                  class="text-sm font-bold uppercase tracking-wide text-white"
+                >
+                  {column.title}
+                </h2>
+                <ul class="mt-4 space-y-2.5">
+                  {
+                    column.links.map((link) => (
+                      <li>
+                        <a href={localizePath(lang, link.href)} class="text-sm text-blue-50/78 transition hover:text-[#d6ad3b]">
+                          {link.label}
+                        </a>
+                      </li>
+                    ))
+                  }
+                </ul>
+              </section>
+            ))
+          }
+        </div>
+
+        <section aria-labelledby="footer-contact">
+          <h2 id="footer-contact" class="text-sm font-bold uppercase tracking-wide text-white">{t.contactTitle}</h2>
+          <address class="mt-4 space-y-3 not-italic">
             {
-              socialLinks.map((link) => (
-                <li>
-                  <a href={link.href} class="text-sm font-semibold text-slate-300 transition hover:text-[#d6ad3b]">
-                    {link.label}
-                  </a>
-                </li>
+              t.contactItems.map((item, index) => (
+                <a href={item.href} class="flex gap-3 text-sm leading-6 text-blue-50/78 transition hover:text-[#d6ad3b]">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" class="mt-1 h-4 w-4 shrink-0 fill-none stroke-[#d6ad3b] stroke-[1.8]">
+                    <path d={contactIcons[index]} stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <span>{item.label}</span>
+                </a>
               ))
             }
-          </ul>
-        </nav>
-
-        <nav aria-label="Pravni linkovi">
-          <ul class="flex flex-wrap gap-x-5 gap-y-2">
-            {
-              legalLinks.map((link) => (
-                <li>
-                  <a href={link.href} class="text-sm text-slate-300 transition hover:text-white">
-                    {link.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+          </address>
+        </section>
       </div>
 
-      <p class="mt-6 text-sm text-slate-400">© {currentYear} Evropa Sad. Sva prava zadržana.</p>
+      <div class="mt-10 border-t border-white/14 pt-6">
+        <div class="flex flex-col gap-5 text-sm text-blue-50/68 md:flex-row md:items-center md:justify-between">
+          <p>© {currentYear} {t.copyright}</p>
+
+          <nav aria-label={t.legalNav}>
+            <ul class="flex flex-wrap gap-x-5 gap-y-2">
+              {
+                t.legalLinks.map((link, index) => (
+                  <li class="flex items-center gap-5">
+                    {index > 0 && <span aria-hidden="true" class="hidden h-4 w-px bg-white/24 sm:block"></span>}
+                    <a href={localizePath(lang, link.href)} class="transition hover:text-white">
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

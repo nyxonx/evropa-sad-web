@@ -1,0 +1,18 @@
+---
+import PlaceholderPage from '../components/sections/PlaceholderPage.astro';
+import { defaultLang } from '../i18n/config';
+import { getNotFoundPage } from '../i18n/placeholder-pages';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+const page = getNotFoundPage(lang);
+---
+
+<BaseLayout
+  lang={lang}
+  title={page.metaTitle}
+  description={page.metaDescription}
+  noindex
+>
+  <PlaceholderPage lang={lang} page={page} />
+</BaseLayout>

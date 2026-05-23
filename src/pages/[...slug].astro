@@ -1,0 +1,30 @@
+---
+import PlaceholderPage from '../components/sections/PlaceholderPage.astro';
+import { defaultLang, type Lang } from '../i18n/config';
+import { getPlaceholderPage, getPlaceholderRoutes } from '../i18n/placeholder-pages';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  path: string;
+}
+
+export function getStaticPaths() {
+  return getPlaceholderRoutes(defaultLang).map((route) => ({
+    params: { slug: route.path.slice(1) },
+    props: { path: route.path },
+  }));
+}
+
+const lang: Lang = defaultLang;
+const { path } = Astro.props;
+const page = getPlaceholderPage(lang, path);
+---
+
+<BaseLayout
+  lang={lang}
+  title={page.metaTitle}
+  description={page.metaDescription}
+  noindex
+>
+  <PlaceholderPage lang={lang} page={page} />
+</BaseLayout>

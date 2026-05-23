@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageLabel: string;
+  imageSrc?: string;
+  tone?: 'people' | 'road' | 'flag' | 'education';
+}
+
+const { title, description, imageLabel, imageSrc, tone = 'people' } = Astro.props;
+
+const toneClasses = {
+  people: 'from-[#09265a] via-[#2f6ba7] to-[#d6ad3b]',
+  road: 'from-[#082b63] via-[#6ea3c6] to-[#eef6ff]',
+  flag: 'from-[#b91c1c] via-[#d6ad3b] to-[#082b63]',
+  education: 'from-[#f8fafc] via-[#d7e4f5] to-[#082b63]',
+};
+---
+
+<article class="group overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-300/60">
+  <div class:list={[
+    'relative aspect-[4/3] overflow-hidden',
+    imageSrc ? 'bg-slate-200' : `bg-gradient-to-br ${toneClasses[tone]}`,
+  ]}>
+    {
+      imageSrc && (
+        <img
+          src={imageSrc}
+          alt=""
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+      )
+    }
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.24),transparent_22%),linear-gradient(180deg,transparent_0%,rgba(6,22,50,0.32)_100%)]"></div>
+    <div class="absolute bottom-3 left-3 rounded-sm bg-white/90 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#082b63] shadow-sm">
+      {imageLabel}
+    </div>
+  </div>
+
+  <div class="p-5">
+    <h3 class="text-base font-bold text-[#082b63]">{title}</h3>
+    <p class="mt-2 text-sm leading-6 text-slate-600">{description}</p>
+  </div>
+</article>

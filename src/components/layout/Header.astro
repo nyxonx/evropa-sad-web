@@ -1,21 +1,18 @@
 ---
-const navigationLinks = [
-  { href: '/', label: 'Naslovna' },
-  { href: '/rezultati', label: 'Rezultati' },
-  { href: '/program', label: 'Program' },
-  { href: '/organizacija', label: 'Organizacija' },
-  { href: '/vijesti', label: 'Vijesti' },
-  { href: '/dokumenti', label: 'Dokumenti' },
-  { href: '/kontakt', label: 'Kontakt' },
-];
+import { languages, type Lang } from '../../i18n/config';
+import { localizePath, removeLangPrefix, switchLangPath } from '../../i18n/routing';
+import { translations } from '../../i18n/translations';
 
-const ctaLinks = [
-  { href: '/kontakt', label: 'Pridruži se', variant: 'primary' },
-  { href: '/doprinesi', label: 'Doprinesi', variant: 'secondary' },
-];
+interface Props {
+  lang: Lang;
+}
 
+const { lang } = Astro.props;
+const t = translations[lang].header;
 const currentPath = Astro.url.pathname;
+const currentPathWithoutLocale = removeLangPrefix(currentPath);
 const logoSrc = '/images/evropa-sad-logo.png';
+const languageEntries = Object.entries(languages) as [Lang, (typeof languages)[Lang]][];
 ---
 
 <header class="absolute inset-x-0 top-0 z-50 text-white">
@@ -23,47 +20,65 @@ const logoSrc = '/images/evropa-sad-logo.png';
     href="#main-content"
     class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-[#d6ad3b] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950"
   >
-    Preskoči na sadržaj
+    {t.skip}
   </a>
 
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center" aria-label="Evropa Sad - naslovna">
+    <a href={localizePath(lang, '/')} class="flex items-center" aria-label={t.homeAria}>
       <img
         src={logoSrc}
-        alt="Evropa Sad"
+        alt={t.logoAlt}
         class="h-11 w-auto max-w-[12rem] object-contain sm:h-12 sm:max-w-[14rem]"
         loading="eager"
         decoding="async"
       />
     </a>
 
-    <nav class="hidden items-center gap-6 lg:flex" aria-label="Glavna navigacija">
+    <nav class="hidden items-center gap-6 lg:flex" aria-label={t.mainNav}>
       {
-        navigationLinks.map((link) => {
-          const isActive = link.href === '/' ? currentPath === '/' : currentPath.startsWith(link.href);
+        t.nav.map((link) => {
+          const isActive = link.href === '/' ? currentPathWithoutLocale === '/' : currentPathWithoutLocale.startsWith(link.href);
 
           return (
-          <a
-            href={link.href}
-            aria-current={isActive ? 'page' : undefined}
-            class:list={[
-              'relative py-2 text-sm font-bold text-white/85 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-4 focus:ring-offset-[#061632]',
-              isActive
-                ? 'text-[#f0cf72] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#d6ad3b]'
-                : 'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#d6ad3b] after:transition-all hover:after:w-full',
-            ]}
-          >
-            {link.label}
-          </a>
-        )})
+            <a
+              href={localizePath(lang, link.href)}
+              aria-current={isActive ? 'page' : undefined}
+              class:list={[
+                'relative py-2 text-sm font-bold text-white/85 transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-4 focus:ring-offset-[#061632]',
+                isActive
+                  ? 'text-[#f0cf72] after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-[#d6ad3b]'
+                  : 'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-[#d6ad3b] after:transition-all hover:after:w-full',
+              ]}
+            >
+              {link.label}
+            </a>
+          );
+        })
       }
     </nav>
 
     <div class="hidden items-center gap-3 lg:flex">
+      <nav class="flex items-center rounded-md border border-white/25 bg-white/10 p-1" aria-label={t.languageNav}>
+        {
+          languageEntries.map(([locale, language]) => (
+            <a
+              href={switchLangPath(locale, currentPath)}
+              aria-current={locale === lang ? 'true' : undefined}
+              class:list={[
+                'rounded px-2.5 py-1.5 text-xs font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]',
+                locale === lang ? 'bg-[#d6ad3b] text-[#061632]' : 'text-white/80 hover:text-white',
+              ]}
+            >
+              {language.label}
+            </a>
+          ))
+        }
+      </nav>
+
       {
-        ctaLinks.map((link) => (
+        t.ctas.map((link) => (
           <a
-            href={link.href}
+            href={localizePath(lang, link.href)}
             class:list={[
               'rounded-md px-4 py-2.5 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]',
               link.variant === 'primary'
@@ -79,16 +94,16 @@ const logoSrc = '/images/evropa-sad-logo.png';
 
     <details class="group relative lg:hidden">
       <summary class="flex cursor-pointer list-none items-center rounded-md border border-white/25 bg-white/10 px-3 py-2 text-sm font-bold text-white transition hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]">
-        <span class="group-open:hidden">Meni</span>
-        <span class="hidden group-open:inline">Zatvori</span>
+        <span class="group-open:hidden">{t.menuOpen}</span>
+        <span class="hidden group-open:inline">{t.menuClose}</span>
       </summary>
 
       <div class="absolute right-0 top-12 w-[min(20rem,calc(100vw-2rem))] rounded-md border border-white/15 bg-[#061632]/95 p-3 shadow-xl shadow-black/30 backdrop-blur-md">
-        <nav class="flex flex-col" aria-label="Mobilna navigacija">
+        <nav class="flex flex-col" aria-label={t.mobileNav}>
           {
-            navigationLinks.map((link) => (
+            t.nav.map((link) => (
               <a
-                href={link.href}
+                href={localizePath(lang, link.href)}
                 class="rounded-md px-3 py-3 text-sm font-semibold text-white/85 transition hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]"
               >
                 {link.label}
@@ -97,11 +112,27 @@ const logoSrc = '/images/evropa-sad-logo.png';
           }
         </nav>
 
+        <nav class="mt-3 flex gap-2 border-t border-white/10 pt-3" aria-label={t.languageNav}>
+          {
+            languageEntries.map(([locale, language]) => (
+              <a
+                href={switchLangPath(locale, currentPath)}
+                class:list={[
+                  'flex-1 rounded-md px-3 py-2 text-center text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]',
+                  locale === lang ? 'bg-[#d6ad3b] text-[#061632]' : 'border border-white/25 bg-white/10 text-white',
+                ]}
+              >
+                {language.label}
+              </a>
+            ))
+          }
+        </nav>
+
         <div class="mt-3 grid gap-2 border-t border-white/10 pt-3">
           {
-            ctaLinks.map((link) => (
+            t.ctas.map((link) => (
               <a
-                href={link.href}
+                href={localizePath(lang, link.href)}
                 class:list={[
                   'rounded-md px-4 py-3 text-center text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]',
                   link.variant === 'primary'
