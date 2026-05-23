@@ -1,0 +1,16 @@
+---
+import OrganizationPage from '../../components/organization/OrganizationPage.astro';
+import type { Lang } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Organization"
+  description="Visual organization map of the Europe Now Movement: national bodies, local network and expert bodies."
+  image="/images/homepage-hero-clean.png"
+>
+  <OrganizationPage lang={lang} />
+</BaseLayout>

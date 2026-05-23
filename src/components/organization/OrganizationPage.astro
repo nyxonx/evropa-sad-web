@@ -1,0 +1,1366 @@
+---
+import type { Lang } from '../../i18n/config';
+import { getOrganization } from '../../data';
+import CTASection from '../sections/CTASection.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const organization = getOrganization(lang);
+
+const copy = {
+  sr: {
+    heroKicker: 'ORGANIZACIJA POKRETA',
+    heroTitle: 'Organizacija koja povezuje ljude, odluke i odgovornost',
+    heroLead:
+      'Pokret Evropa sad djeluje kroz državne organe, lokalnu mrežu i stručna tijela - sa jasnom podjelom odgovornosti između političkog odlučivanja, operativnog rada i nadzora.',
+    navLabel: 'Navigacija organizacije',
+    nav: [
+      { href: '#sistem', label: 'Sistem' },
+      { href: '#drzavni-nivo', label: 'Državni nivo' },
+      { href: '#lokalna-mreza', label: 'Lokalna mreža' },
+      { href: '#strucna-tijela', label: 'Stručna tijela' },
+      { href: '#odluka-do-terena', label: 'Od odluke do terena' },
+    ],
+    systemKicker: 'KAKO FUNKCIONIŠE SISTEM',
+    systemTitle: 'Od najviših odluka do rada na terenu',
+    systemText:
+      'Organizaciona mapa pokazuje ko odlučuje, ko upravlja, ko sprovodi i ko povezuje centralnu politiku sa građanima.',
+    stateKicker: 'DRŽAVNI NIVO',
+    stateTitle: 'Organi koji nose politički, operativni i kontrolni sistem',
+    stateText:
+      'Državni nivo okuplja organe koji donose strateške odluke, vode politiku, sprovode aktivnosti i čuvaju pravila unutrašnjeg sistema.',
+    localKicker: 'LOKALNA MREŽA',
+    localTitle: 'Centralne odluke povezane sa potrebama građana',
+    localText:
+      'Opštinski odbori i lokalni nivoi organizovanja povezuju centralnu politiku sa konkretnim potrebama građana.',
+    localBoardsTitle: 'Lokalni odbori',
+    localBoardsText: 'Mreža odbora povezuje centralne politike sa konkretnim potrebama građana.',
+    localStatusLabel: 'Status',
+    localPresidentLabel: 'Predsjednik',
+    localContactLabel: 'Kontakt',
+    localPreparingValue: 'U pripremi',
+    localShowAllCta: 'Prikaži sve odbore',
+    localHideAllCta: 'Sakrij',
+    localMembersEmpty: 'Članovi ovog odbora biće objavljeni nakon verifikacije.',
+    expertKicker: 'STRUČNA I TEMATSKA TIJELA',
+    expertTitle: 'Prostor za programski rad i javne politike',
+    expertText:
+      'Forumi, savjeti, sekretarijati i stručni timovi okupljaju članove po oblastima i pomažu da ideje postanu programi, inicijative i javne politike.',
+    processKicker: 'OD ODLUKE DO TERENA',
+    processTitle: 'Kako ideja postaje konkretan rad',
+    processText:
+      'Sistem povezuje politički pravac, odluke organa, operativno sprovođenje, lokalnu koordinaciju i direktnu komunikaciju sa građanima.',
+    ctaTitle: 'Želiš da se uključiš?',
+    ctaText: 'Pridruži se mreži ljudi koji program, rezultate i odgovornost povezuju sa svakodnevnim potrebama građana.',
+    localCta: 'Kontaktiraj lokalni odbor',
+    detailsCta: 'Detalji',
+    membersCta: 'Članovi',
+    closePanel: 'Zatvori',
+    panelLabel: 'Detalji organa',
+    roleLabel: 'Uloga',
+    dutiesLabel: 'Ključne nadležnosti',
+    compositionLabel: 'Sastav organa',
+    membersLabel: 'Članovi organa',
+    membersText: 'Članovi organa i zaduženja',
+    membersEmpty: 'Članovi ovog organa biće objavljeni nakon verifikacije.',
+    biographyCta: 'Biografija',
+    mandateLabel: 'Mandat / način rada',
+    connectionLabel: 'Povezanost sa drugim organima',
+  },
+  en: {
+    heroKicker: 'MOVEMENT ORGANIZATION',
+    heroTitle: 'An organization connecting people, decisions and accountability',
+    heroLead:
+      'The Europe Now Movement works through national bodies, a local network and expert bodies, with a clear division of responsibility between political decision-making, operational work and oversight.',
+    navLabel: 'Organization navigation',
+    nav: [
+      { href: '#sistem', label: 'System' },
+      { href: '#drzavni-nivo', label: 'National level' },
+      { href: '#lokalna-mreza', label: 'Local network' },
+      { href: '#strucna-tijela', label: 'Expert bodies' },
+      { href: '#odluka-do-terena', label: 'Decision to field' },
+    ],
+    systemKicker: 'HOW THE SYSTEM WORKS',
+    systemTitle: 'From highest decisions to field work',
+    systemText:
+      'The organization map shows who decides, who governs, who implements and who connects central policy with citizens.',
+    stateKicker: 'NATIONAL LEVEL',
+    stateTitle: 'Bodies carrying the political, operational and control system',
+    stateText:
+      'The national level brings together bodies that make strategic decisions, lead policy, implement activities and protect internal rules.',
+    localKicker: 'LOCAL NETWORK',
+    localTitle: 'Central decisions connected with citizen needs',
+    localText:
+      'Municipal boards and local organization levels connect central policy with concrete citizen needs.',
+    localBoardsTitle: 'Local boards',
+    localBoardsText: 'The board network connects central policies with concrete citizen needs.',
+    localStatusLabel: 'Status',
+    localPresidentLabel: 'President',
+    localContactLabel: 'Contact',
+    localPreparingValue: 'In preparation',
+    localShowAllCta: 'Show all boards',
+    localHideAllCta: 'Hide',
+    localMembersEmpty: 'Members of this board will be published after verification.',
+    expertKicker: 'EXPERT AND THEMATIC BODIES',
+    expertTitle: 'A space for program work and public policies',
+    expertText:
+      'Forums, councils, secretariats and expert teams bring members together by field and help ideas become programs, initiatives and public policies.',
+    processKicker: 'FROM DECISION TO FIELD',
+    processTitle: 'How an idea becomes concrete work',
+    processText:
+      'The system connects political direction, body decisions, operational implementation, local coordination and direct communication with citizens.',
+    ctaTitle: 'Want to get involved?',
+    ctaText: 'Join a network of people connecting program, results and accountability with everyday citizen needs.',
+    localCta: 'Contact a local board',
+    detailsCta: 'Details',
+    membersCta: 'Members',
+    closePanel: 'Close',
+    panelLabel: 'Body details',
+    roleLabel: 'Role',
+    dutiesLabel: 'Key responsibilities',
+    compositionLabel: 'Body composition',
+    membersLabel: 'Body members',
+    membersText: 'Body members and responsibilities',
+    membersEmpty: 'Members of this body will be published after verification.',
+    biographyCta: 'Biography',
+    mandateLabel: 'Mandate / work mode',
+    connectionLabel: 'Connection with other bodies',
+  },
+} as const;
+
+const t = copy[lang];
+
+const systemFlow = [
+  {
+    title: lang === 'sr' ? 'Skupština' : 'Assembly',
+    tag: lang === 'sr' ? 'odlučuje' : 'decides',
+    short: lang === 'sr' ? 'najviše izborno tijelo' : 'highest electoral body',
+    icon: 'M4 7h16M7 7v10m5-10v10m5-10v10M5 17h14',
+  },
+  {
+    title: lang === 'sr' ? 'Glavni odbor' : 'Main board',
+    tag: lang === 'sr' ? 'upravlja' : 'governs',
+    short: lang === 'sr' ? 'organ upravljanja između dvije Skupštine' : 'governing body between Assembly sessions',
+    icon: 'M8 4h8M6 9h12M4 14h16M7 19h10',
+  },
+  {
+    title: lang === 'sr' ? 'Predsjedništvo' : 'Presidency',
+    tag: lang === 'sr' ? 'vodi' : 'leads',
+    short: lang === 'sr' ? 'politički centar' : 'political center',
+    icon: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 14 0',
+  },
+  {
+    title: lang === 'sr' ? 'Izvršni odbor' : 'Executive board',
+    tag: lang === 'sr' ? 'sprovodi' : 'implements',
+    short: lang === 'sr' ? 'operativno sprovođenje' : 'operational implementation',
+    icon: 'M5 7h14v12H5zM8 7V5h8v2M8 12h8M8 16h5',
+  },
+  {
+    title: lang === 'sr' ? 'Lokalni odbori' : 'Local boards',
+    tag: lang === 'sr' ? 'povezuju' : 'connect',
+    short: lang === 'sr' ? 'rad na terenu' : 'field work',
+    icon: 'M12 21s7-4.7 7-11a7 7 0 1 0-14 0c0 6.3 7 11 7 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z',
+  },
+];
+
+const stateBodies = [
+  {
+    id: 'skupstina',
+    title: lang === 'sr' ? 'Skupština' : 'Assembly',
+    label: lang === 'sr' ? 'najviše izborno tijelo' : 'highest electoral body',
+    description:
+      lang === 'sr'
+        ? 'Najviše izborno tijelo Pokreta. Postavlja strateški pravac, bira ključne organe i razmatra rezultate rada.'
+        : 'The highest electoral body of the Movement. It sets strategic direction, elects key bodies and reviews work results.',
+    role:
+      lang === 'sr'
+        ? 'Mjesto najšireg političkog legitimiteta u unutrašnjem sistemu Pokreta.'
+        : 'The place of the broadest political legitimacy in the internal system of the Movement.',
+    bullets:
+      lang === 'sr'
+        ? ['bira rukovodstvo', 'donosi strateške odluke', 'razmatra izvještaje']
+        : ['elects leadership', 'makes strategic decisions', 'reviews reports'],
+    responsibilities:
+      lang === 'sr'
+        ? ['usvaja programsku i stratešku orijentaciju', 'bira i razrješava rukovodstvo i organe koje bira Skupština', 'razmatra izvještaje o radu i rezultatima']
+        : ['adopts program and strategic orientation', 'elects and dismisses leadership and bodies elected by the Assembly', 'reviews work and result reports'],
+    composition:
+      lang === 'sr'
+        ? ['delegati iz organizacione mreže Pokreta', 'rukovodstvo i predstavnici organa predviđeni unutrašnjim aktima', 'predstavnici lokalnih organizacija i članstva']
+        : ['delegates from the Movement organization network', 'leadership and representatives of bodies defined by internal acts', 'representatives of local organizations and membership'],
+    mandate:
+      lang === 'sr'
+        ? 'Redovni ciklus rada prati četvorogodišnji mandat organa koji se biraju na državnom nivou.'
+        : 'The regular work cycle follows the four-year mandate of bodies elected at national level.',
+    connection:
+      lang === 'sr'
+        ? 'Daje politički okvir Glavnom odboru, Predsjedništvu i nadzornim organima.'
+        : 'Sets the political framework for the Main board, Presidency and oversight bodies.',
+    icon: 'M4 7h16M7 7v10m5-10v10m5-10v10M5 17h14',
+  },
+  {
+    id: 'glavni-odbor',
+    title: lang === 'sr' ? 'Glavni odbor' : 'Main board',
+    label: lang === 'sr' ? 'organ upravljanja' : 'governing body',
+    description:
+      lang === 'sr'
+        ? 'Najviši organ upravljanja između dvije Skupštine. Usmjerava politiku, potvrđuje važne odluke i povezuje državni nivo sa lokalnom mrežom.'
+        : 'The highest governing body between Assembly sessions. It guides policy, confirms important decisions and connects national level with the local network.',
+    role:
+      lang === 'sr'
+        ? 'Povezuje strateške odluke Skupštine sa svakodnevnim političkim upravljanjem.'
+        : 'Connects the strategic decisions of the Assembly with day-to-day political governance.',
+    bullets:
+      lang === 'sr'
+        ? ['usmjerava politiku', 'upravlja između Skupština', 'potvrđuje važne odluke']
+        : ['guides policy', 'governs between Assembly sessions', 'confirms key decisions'],
+    responsibilities:
+      lang === 'sr'
+        ? ['utvrđuje političke stavove i prioritete', 'potvrđuje ključne odluke i izborne nastupe', 'prati rad organa i lokalne mreže']
+        : ['defines political positions and priorities', 'confirms key decisions and election participation', 'monitors the work of bodies and the local network'],
+    composition:
+      lang === 'sr'
+        ? ['izabrani članovi Glavnog odbora', 'rukovodstvo Pokreta', 'predstavnici lokalne mreže i izabranih funkcija']
+        : ['elected Main board members', 'Movement leadership', 'representatives of the local network and elected functions'],
+    mandate: lang === 'sr' ? 'Izabrani članovi rade u četvorogodišnjem ciklusu.' : 'Elected members work in a four-year cycle.',
+    connection:
+      lang === 'sr'
+        ? 'Usmjerava Predsjedništvo i prati operativno sprovođenje odluka.'
+        : 'Guides the Presidency and follows operational implementation of decisions.',
+    icon: 'M8 4h8M6 9h12M4 14h16M7 19h10',
+  },
+  {
+    id: 'predsjednistvo',
+    title: lang === 'sr' ? 'Predsjedništvo' : 'Presidency',
+    label: lang === 'sr' ? 'politički centar' : 'political center',
+    description:
+      lang === 'sr'
+        ? 'Politički centar Pokreta. Razmatra ključna pitanja, priprema akte i koordinira centralnu politiku.'
+        : 'The political center of the Movement. It reviews key issues, prepares acts and coordinates central policy.',
+    role:
+      lang === 'sr'
+        ? 'Vodi centralnu politiku i priprema odluke koje povezuju rukovodstvo, Glavni odbor i operativni rad.'
+        : 'Leads central policy and prepares decisions connecting leadership, the Main board and operational work.',
+    bullets:
+      lang === 'sr'
+        ? ['razmatra ključna pitanja', 'priprema akte', 'koordinira centralnu politiku']
+        : ['reviews key issues', 'prepares acts', 'coordinates central policy'],
+    responsibilities:
+      lang === 'sr'
+        ? ['definiše centralne političke prioritete', 'priprema akte i predloge odluka', 'koordinira političke poruke i organizacioni rad']
+        : ['defines central political priorities', 'prepares acts and decision proposals', 'coordinates political messaging and organization work'],
+    composition:
+      lang === 'sr'
+        ? ['predsjednik Pokreta', 'zamjenik predsjednika Pokreta', 'potpredsjednici Pokreta', 'generalni sekretar Pokreta', 'predsjednik Izvršnog odbora']
+        : ['Movement president', 'deputy president of the Movement', 'vice presidents of the Movement', 'general secretary of the Movement', 'president of the Executive board'],
+    mandate:
+      lang === 'sr'
+        ? 'Radi kontinuirano, kroz sjednice i koordinaciju centralne politike.'
+        : 'Works continuously through sessions and central policy coordination.',
+    connection:
+      lang === 'sr'
+        ? 'Priprema odluke, usmjerava Izvršni odbor i povezuje rukovodstvo sa Glavnim odborom.'
+        : 'Prepares decisions, guides the Executive board and connects leadership with the Main board.',
+    icon: 'M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 0 1 14 0',
+  },
+  {
+    id: 'izvrsni-odbor',
+    title: lang === 'sr' ? 'Izvršni odbor' : 'Executive board',
+    label: lang === 'sr' ? 'operativno sprovođenje' : 'operational implementation',
+    description:
+      lang === 'sr'
+        ? 'Operativni motor organizacije. Sprovodi odluke, jača infrastrukturu i koordinira aktivnosti na terenu.'
+        : 'The operational engine of the organization. It implements decisions, strengthens infrastructure and coordinates field activity.',
+    role:
+      lang === 'sr'
+        ? 'Pretvara političke smjernice u konkretne aktivnosti, zaduženja i organizacioni rad.'
+        : 'Turns political direction into concrete activities, assignments and organizational work.',
+    bullets:
+      lang === 'sr'
+        ? ['sprovodi odluke', 'jača infrastrukturu', 'koordinira aktivnosti']
+        : ['implements decisions', 'strengthens infrastructure', 'coordinates activities'],
+    responsibilities:
+      lang === 'sr'
+        ? ['sprovodi odluke nadležnih organa', 'koordinira kampanje, logistiku i teren', 'jača organizacionu mrežu i operativne kapacitete']
+        : ['implements decisions of competent bodies', 'coordinates campaigns, logistics and field work', 'strengthens the organization network and operational capacity'],
+    composition:
+      lang === 'sr'
+        ? ['predsjednik Izvršnog odbora', 'članovi zaduženi za operativne oblasti', 'operativni timovi koji podržavaju rad na terenu']
+        : ['president of the Executive board', 'members responsible for operational areas', 'operational teams supporting field work'],
+    mandate:
+      lang === 'sr'
+        ? 'Radi kroz operativne planove, zadatke i dinamiku koju određuju nadležni organi.'
+        : 'Works through operational plans, assignments and pace defined by competent bodies.',
+    connection:
+      lang === 'sr'
+        ? 'Preuzima političke smjernice Predsjedništva i Glavnog odbora i pretvara ih u aktivnosti.'
+        : 'Takes political guidance from the Presidency and Main board and turns it into activities.',
+    icon: 'M5 7h14v12H5zM8 7V5h8v2M8 12h8M8 16h5',
+  },
+  {
+    id: 'statutarna-komisija',
+    title: lang === 'sr' ? 'Statutarna komisija' : 'Statutory commission',
+    label: lang === 'sr' ? 'tumačenje akata' : 'interpretation of acts',
+    description:
+      lang === 'sr'
+        ? 'Čuva pravila unutrašnjeg sistema. Tumači Statut, prati usklađenost akata i rješava pitanja nadležnosti.'
+        : 'Protects the rules of the internal system. It interprets the Statute, monitors act alignment and resolves competence questions.',
+    role:
+      lang === 'sr'
+        ? 'Obezbjeđuje da unutrašnja pravila budu jasna, dosljedna i primjenjiva u radu organa.'
+        : 'Ensures internal rules remain clear, consistent and applicable in the work of bodies.',
+    bullets:
+      lang === 'sr'
+        ? ['čuva pravila sistema', 'tumači akte', 'prati usklađenost']
+        : ['protects internal rules', 'interprets acts', 'monitors alignment'],
+    responsibilities:
+      lang === 'sr'
+        ? ['tumači Statut i unutrašnja pravila', 'prati usklađenost opštih akata', 'rješava pitanja nadležnosti u sistemu']
+        : ['interprets the Statute and internal rules', 'monitors alignment of general acts', 'resolves competence questions in the system'],
+    composition:
+      lang === 'sr'
+        ? ['članovi sa iskustvom u pravilima, procedurama i unutrašnjim aktima', 'tijelo koje samostalno razmatra statutarna pitanja', 'stručna podrška organima kada je potrebno tumačenje']
+        : ['members experienced in rules, procedures and internal acts', 'a body that independently reviews statutory questions', 'expert support to bodies when interpretation is needed'],
+    mandate:
+      lang === 'sr'
+        ? 'Postupa kada je potrebno tumačenje pravila, usklađivanje akata ili rješavanje pitanja nadležnosti.'
+        : 'Acts when rule interpretation, act alignment or competence resolution is needed.',
+    connection:
+      lang === 'sr'
+        ? 'Pomaže organima da odluke ostanu usklađene sa unutrašnjim pravilima.'
+        : 'Helps bodies keep decisions aligned with internal rules.',
+    icon: 'M8 3h6l4 4v14H8zM14 3v5h5M9 13h6M9 17h6',
+  },
+  {
+    id: 'nadzorni-odbor',
+    title: lang === 'sr' ? 'Nadzorni odbor' : 'Supervisory board',
+    label: lang === 'sr' ? 'finansijski nadzor' : 'financial oversight',
+    description:
+      lang === 'sr'
+        ? 'Kontrolni mehanizam Pokreta. Prati finansijsko poslovanje i upravljanje imovinom.'
+        : 'The control mechanism of the Movement. It monitors financial operations and asset management.',
+    role:
+      lang === 'sr'
+        ? 'Čuva odgovornost u finansijama, imovini i izvještavanju prema organima Pokreta.'
+        : 'Protects accountability in finances, assets and reporting to Movement bodies.',
+    bullets:
+      lang === 'sr'
+        ? ['prati finansije', 'kontroliše imovinu', 'izvještava organe']
+        : ['monitors finances', 'controls assets', 'reports to bodies'],
+    responsibilities:
+      lang === 'sr'
+        ? ['prati finansijsko poslovanje', 'kontroliše upravljanje imovinom', 'priprema nalaze i izvještaje za nadležne organe']
+        : ['monitors financial operations', 'controls asset management', 'prepares findings and reports for competent bodies'],
+    composition:
+      lang === 'sr'
+        ? ['članovi Nadzornog odbora', 'tim zadužen za pregled finansija i imovine', 'komunikacija sa organima koji razmatraju izvještaje']
+        : ['Supervisory board members', 'a team responsible for reviewing finances and assets', 'communication with bodies that review reports'],
+    mandate:
+      lang === 'sr'
+        ? 'Radi kroz redovne kontrole i izvještavanje o finansijskom poslovanju i imovini.'
+        : 'Works through regular controls and reporting on financial operations and assets.',
+    connection:
+      lang === 'sr'
+        ? 'Izvještava nadležne organe i čuva povjerenje u odgovorno upravljanje resursima.'
+        : 'Reports to competent bodies and protects trust in responsible resource management.',
+    icon: 'M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6l-7-3Z',
+  },
+];
+
+const hiddenLocalBoardIds = new Set(['odbor-gusinje', 'odbor-petnjica', 'odbor-tuzi', 'odbor-ulcinj']);
+const visibleLocalBoards = organization.localBoards.filter((board) => !hiddenLocalBoardIds.has(board.id));
+const featuredLocalBoards = visibleLocalBoards.filter((board) => board.featured);
+const otherLocalBoards = visibleLocalBoards.filter((board) => !board.featured);
+
+const localBoardBodies = organization.localBoards.map((board) => ({
+  id: board.id,
+  title: board.title,
+  label: lang === 'sr' ? 'lokalni odbor' : 'local board',
+  isLocalBoard: true,
+  emptyText: t.localMembersEmpty,
+}));
+
+const expertBodies = [
+  {
+    title: lang === 'sr' ? 'Forumi' : 'Forums',
+    text:
+      lang === 'sr'
+        ? 'Okupljaju članove i simpatizere oko posebnih društvenih i programskih tema.'
+        : 'Bring members and supporters together around specific social and program topics.',
+    icon: 'M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM3 21a5 5 0 0 1 10 0m-2 0a5 5 0 0 1 10 0',
+  },
+  {
+    title: lang === 'sr' ? 'Savjeti' : 'Councils',
+    text:
+      lang === 'sr'
+        ? 'Razrađuju javne politike, inicijative i stručne preporuke po oblastima.'
+        : 'Develop public policies, initiatives and expert recommendations by field.',
+    icon: 'M12 3l2.3 5 5.4.7-4 3.8 1 5.4L12 14.6 7.3 17l1-5.4-4-3.8 5.4-.7z',
+  },
+  {
+    title: lang === 'sr' ? 'Sekretarijati i stručni timovi' : 'Secretariats and expert teams',
+    text:
+      lang === 'sr'
+        ? 'Pomažu da ideje postanu programi, operativni planovi i konkretan rad.'
+        : 'Help ideas become programs, operational plans and concrete work.',
+    icon: 'M4 7h16M7 7v10m5-10v10m5-10v10M5 17h14',
+  },
+];
+
+const processSteps = [
+  {
+    title: lang === 'sr' ? 'Politički pravac' : 'Political direction',
+    text: lang === 'sr' ? 'definišu ga organi koji vode politiku' : 'defined by the bodies leading policy',
+  },
+  {
+    title: lang === 'sr' ? 'Odluka organa' : 'Body decision',
+    text: lang === 'sr' ? 'pretvara pravac u jasan zadatak' : 'turns direction into a clear task',
+  },
+  {
+    title: lang === 'sr' ? 'Operativno sprovođenje' : 'Operational implementation',
+    text: lang === 'sr' ? 'Izvršni odbor vodi realizaciju' : 'the Executive board leads delivery',
+  },
+  {
+    title: lang === 'sr' ? 'Lokalna koordinacija' : 'Local coordination',
+    text: lang === 'sr' ? 'odbori prilagođavaju rad terenu' : 'boards adapt work to the field',
+  },
+  {
+    title: lang === 'sr' ? 'Komunikacija sa građanima' : 'Citizen communication',
+    text: lang === 'sr' ? 'povratne informacije se vraćaju u sistem' : 'feedback returns into the system',
+  },
+];
+
+const organDetailsJson = JSON.stringify([...stateBodies, ...localBoardBodies]);
+const stateBodyMembers = organization.bodies.flatMap((body) =>
+  body.members
+    .filter((member) => member.person)
+    .map((member) => ({
+      name: member.person?.name ?? '',
+      role: member.role || member.person?.role || '',
+      bodyId: body.id,
+      image: member.person?.imageSrc ?? '',
+      responsibility: member.responsibility ?? '',
+      bioUrl: member.bioUrl ?? '',
+      email: member.email ?? '',
+      socials: member.socials?.length ? member.socials : (member.person?.links ?? []),
+    })),
+);
+const localBoardMembers = organization.localBoards.flatMap((board) =>
+  board.members
+    .filter((member) => member.person)
+    .map((member) => ({
+      name: member.person?.name ?? '',
+      role: member.role || member.person?.role || '',
+      bodyId: board.id,
+      image: member.person?.imageSrc ?? '',
+      responsibility: member.responsibility ?? '',
+      bioUrl: member.bioUrl ?? '',
+      email: member.email ?? '',
+      socials: member.socials?.length ? member.socials : (member.person?.links ?? []),
+    })),
+);
+const organizationMembers = [...stateBodyMembers, ...localBoardMembers];
+const organizationMembersJson = JSON.stringify(organizationMembers);
+---
+
+<section class="relative isolate overflow-hidden bg-[#061632] pb-20 pt-32 text-white sm:pt-36 lg:pt-40">
+  <img src="/images/homepage-hero-clean.png" alt="" class="absolute inset-0 -z-30 h-full w-full object-cover opacity-24" loading="eager" />
+  <div class="absolute inset-0 -z-20 bg-[linear-gradient(110deg,rgba(6,22,50,0.98)_0%,rgba(8,43,99,0.9)_48%,rgba(6,22,50,0.78)_100%)]"></div>
+  <div class="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#d6ad3b]/18 blur-3xl"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-t from-slate-50 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-[#f0cf72]">{t.heroKicker}</p>
+      <h1 class="mt-5 max-w-4xl text-4xl font-bold tracking-normal sm:text-5xl lg:text-6xl">{t.heroTitle}</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-blue-50/88">{t.heroLead}</p>
+    </div>
+  </div>
+</section>
+
+<nav class="relative z-20 mx-auto -mt-7 max-w-7xl px-4 sm:px-6 lg:px-8" aria-label={t.navLabel}>
+  <div class="grid gap-2 rounded-lg border border-slate-200 bg-white p-2 shadow-xl shadow-slate-300/50 sm:grid-cols-2 lg:grid-cols-5">
+    {
+      t.nav.map((item) => (
+        <a href={item.href} class="flex min-h-12 items-center justify-center rounded-md px-3 py-2 text-center text-xs font-bold uppercase text-[#082b63] transition hover:bg-[#eef4ff] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]">
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<section id="sistem" class="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.systemKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.systemTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.systemText}</p>
+    </div>
+
+    <div class="relative mt-12 grid gap-5 lg:grid-cols-5">
+      <div aria-hidden="true" class="absolute left-8 right-8 top-14 hidden h-px bg-[#d6ad3b]/50 lg:block"></div>
+      {
+        systemFlow.map((node, index) => (
+          <article class="group relative rounded-lg border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/70 hover:shadow-xl hover:shadow-slate-300/70">
+            {index > 0 && <span aria-hidden="true" class="absolute -left-5 top-14 hidden h-px w-5 bg-[#d6ad3b]/60 lg:block"></span>}
+            <div class="flex min-h-40 flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between gap-3">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#082b63] text-white shadow-lg shadow-slate-300/80 transition group-hover:bg-[#061632]">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+                      <path d={node.icon} stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <span class="rounded-full bg-[#fff8e3] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#8a6a13]">{node.tag}</span>
+                </div>
+                <h3 class="mt-5 text-xl font-bold text-[#061632]">{node.title}</h3>
+              </div>
+              <p class="mt-4 text-sm leading-6 text-slate-600">{node.short}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section id="drzavni-nivo" class="scroll-mt-24 bg-white py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.stateKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.stateTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.stateText}</p>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        stateBodies.map((body) => (
+          <article class="group rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/70 hover:shadow-xl hover:shadow-slate-300/70 focus-within:border-[#d6ad3b]/80 focus-within:shadow-xl focus-within:shadow-slate-300/70">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#b48924]">{body.label}</p>
+                <h3 class="mt-2 text-2xl font-bold text-[#061632]">{body.title}</h3>
+              </div>
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#eef4ff] text-[#082b63] transition group-hover:bg-[#082b63] group-hover:text-white">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+                  <path d={body.icon} stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </div>
+            <ul class="mt-6 space-y-3">
+              {
+                body.bullets.map((bullet) => (
+                  <li class="flex gap-3 text-sm leading-6 text-slate-700">
+                    <span aria-hidden="true" class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6ad3b]"></span>
+                    <span>{bullet}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <button
+                type="button"
+                class="inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-[#082b63]/20 bg-[#061632] px-4 text-xs font-bold uppercase text-white shadow-lg shadow-slate-200/80 transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-[#082b63] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+                data-organ-trigger={body.id}
+                aria-expanded="false"
+                aria-controls="organization-detail-panel"
+                aria-label={`${body.title}: ${t.detailsCta}`}
+              >
+                <span>{t.detailsCta}</span>
+                <span aria-hidden="true" class="flex h-6 w-6 items-center justify-center rounded-full bg-[#d6ad3b] text-base leading-none text-[#061632]">+</span>
+              </button>
+              <button
+                type="button"
+                class="inline-flex min-h-11 items-center justify-center rounded-md border border-[#d6ad3b]/70 bg-[#fff8e3] px-4 text-xs font-bold uppercase text-[#061632] shadow-lg shadow-slate-200/70 transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-[#d6ad3b] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+                data-members-trigger={body.id}
+                aria-expanded="false"
+                aria-controls="organization-members-dialog"
+                aria-label={`${body.title}: ${t.membersCta}`}
+              >
+                {t.membersCta}
+              </button>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<div id="organization-detail-modal" class="fixed inset-0 z-[80] hidden" aria-hidden="true">
+  <button type="button" class="absolute inset-0 bg-[#061632]/72 opacity-0 transition-opacity duration-300 lg:pointer-events-none" data-organ-overlay aria-label={t.closePanel}></button>
+  <aside
+    id="organization-detail-panel"
+    class="absolute inset-x-0 bottom-0 max-h-[92vh] translate-y-full overflow-y-auto rounded-t-2xl border border-white/15 bg-white shadow-2xl shadow-black/30 transition duration-300 lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:max-h-none lg:w-full lg:max-w-xl lg:translate-x-full lg:translate-y-0 lg:rounded-l-2xl lg:rounded-tr-none"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="organization-detail-title"
+    aria-label={t.panelLabel}
+    tabindex="-1"
+  >
+    <div class="relative isolate overflow-hidden bg-[#061632] px-5 py-6 text-white sm:px-7">
+      <div class="absolute right-8 top-8 -z-10 h-32 w-32 rounded-full bg-[#d6ad3b]/20 blur-3xl"></div>
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#f0cf72]" data-organ-label></p>
+          <h2 id="organization-detail-title" class="mt-3 text-3xl font-bold tracking-normal" data-organ-title></h2>
+        </div>
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/20 bg-white/10 text-white transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+          data-organ-close
+          aria-label={t.closePanel}
+        >
+          <span aria-hidden="true" class="text-2xl leading-none">&times;</span>
+        </button>
+      </div>
+      <p class="mt-5 text-sm leading-7 text-blue-50/88" data-organ-description></p>
+    </div>
+
+    <div class="space-y-7 px-5 py-6 sm:px-7">
+      <section aria-labelledby="organ-role-heading">
+        <h3 id="organ-role-heading" class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{t.roleLabel}</h3>
+        <p class="mt-2 text-sm leading-7 text-slate-700" data-organ-role></p>
+      </section>
+
+      <section aria-labelledby="organ-responsibilities-heading">
+        <h3 id="organ-responsibilities-heading" class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{t.dutiesLabel}</h3>
+        <ul class="mt-3 space-y-3" data-organ-responsibilities></ul>
+      </section>
+
+      <section aria-labelledby="organ-composition-heading">
+        <h3 id="organ-composition-heading" class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{t.compositionLabel}</h3>
+        <ul class="mt-3 space-y-3" data-organ-composition></ul>
+      </section>
+
+      <section aria-labelledby="organ-mandate-heading" data-organ-mandate-block>
+        <h3 id="organ-mandate-heading" class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{t.mandateLabel}</h3>
+        <p class="mt-2 text-sm leading-7 text-slate-700" data-organ-mandate></p>
+      </section>
+
+      <section aria-labelledby="organ-connection-heading">
+        <h3 id="organ-connection-heading" class="text-xs font-bold uppercase tracking-[0.18em] text-[#b48924]">{t.connectionLabel}</h3>
+        <p class="mt-2 text-sm leading-7 text-slate-700" data-organ-connection></p>
+      </section>
+
+      <button
+        type="button"
+        class="inline-flex min-h-11 items-center justify-center rounded-md bg-[#061632] px-5 text-xs font-bold uppercase text-white transition hover:-translate-y-0.5 hover:bg-[#082b63] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+        data-organ-close
+      >
+        {t.closePanel}
+      </button>
+    </div>
+  </aside>
+</div>
+
+<div id="organization-members-modal" class="fixed inset-0 z-[90] hidden" aria-hidden="true">
+  <button type="button" class="absolute inset-0 bg-[#061632]/76 opacity-0 backdrop-blur-sm transition-opacity duration-300" data-members-overlay aria-label={t.closePanel}></button>
+  <section
+    id="organization-members-dialog"
+    class="absolute inset-x-0 bottom-0 max-h-[92vh] translate-y-full overflow-y-auto rounded-t-2xl border border-white/15 bg-slate-50 shadow-2xl shadow-black/30 transition duration-300 sm:left-1/2 sm:top-1/2 sm:bottom-auto sm:max-h-[86vh] sm:w-[min(58rem,calc(100vw-2rem))] sm:-translate-x-1/2 sm:-translate-y-[46%] sm:scale-95 sm:rounded-2xl sm:opacity-0"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="organization-members-title"
+    data-biography-label={t.biographyCta}
+    tabindex="-1"
+  >
+    <div class="relative isolate overflow-hidden bg-[#061632] px-5 py-6 text-white sm:px-7">
+      <div class="absolute right-10 top-6 -z-10 h-36 w-36 rounded-full bg-[#d6ad3b]/22 blur-3xl"></div>
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-[#f0cf72]">{t.membersLabel}</p>
+          <h2 id="organization-members-title" class="mt-3 text-3xl font-bold tracking-normal" data-members-title></h2>
+          <p class="mt-3 text-sm leading-6 text-blue-50/86">{t.membersText}</p>
+        </div>
+        <button
+          type="button"
+          class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/20 bg-white/10 text-white transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+          data-members-close
+          aria-label={t.closePanel}
+        >
+          <span aria-hidden="true" class="text-2xl leading-none">&times;</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="px-5 py-5 sm:px-7 sm:py-6">
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" data-members-grid></div>
+      <p class="hidden rounded-xl border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-600 shadow-sm shadow-slate-200/80" data-members-empty data-default-empty={t.membersEmpty}>
+        {t.membersEmpty}
+      </p>
+    </div>
+  </section>
+</div>
+
+<script id="organization-organ-data" type="application/json" set:html={organDetailsJson}></script>
+<script id="organization-member-data" type="application/json" set:html={organizationMembersJson}></script>
+
+<section id="lokalna-mreza" class="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-start lg:px-8">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.localKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.localTitle}</h2>
+      <p class="mt-5 text-base leading-8 text-slate-700">{t.localText}</p>
+    </div>
+
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-xl shadow-slate-200/80 backdrop-blur-sm sm:p-6">
+      <div aria-hidden="true" class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-[#d6ad3b]/14 blur-3xl"></div>
+      <div aria-hidden="true" class="absolute -bottom-24 left-4 h-64 w-64 rounded-full bg-[#082b63]/10 blur-3xl"></div>
+
+      <div class="relative">
+      <h3 class="text-xl font-bold text-[#061632]">{t.localBoardsTitle}</h3>
+      <p class="mt-3 text-sm leading-7 text-slate-600">{t.localBoardsText}</p>
+
+      <div class="mt-5 grid gap-3 sm:grid-cols-2">
+        {
+          featuredLocalBoards.map((board) => (
+            <button
+              type="button"
+              class="group rounded-xl border border-slate-200 bg-slate-50 p-4 text-left transition hover:-translate-y-0.5 hover:border-[#d6ad3b]/70 hover:bg-white hover:shadow-lg hover:shadow-slate-200/80 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+              data-members-trigger={board.id}
+              aria-expanded="false"
+              aria-controls="organization-members-dialog"
+            >
+              <span class="flex items-start justify-between gap-3">
+                <span class="block text-base font-bold text-[#061632]">{board.name}</span>
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-[#d6ad3b] shadow-[0_0_14px_rgba(214,173,59,0.75)] transition group-hover:scale-125"></span>
+              </span>
+            </button>
+          ))
+        }
+
+        <button
+          type="button"
+          class="group flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-sm font-bold uppercase tracking-[0.12em] text-[#082b63] transition hover:-translate-y-0.5 hover:border-[#d6ad3b]/70 hover:bg-white hover:text-[#b48924] hover:shadow-lg hover:shadow-slate-200/80 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+          data-local-show-all
+          aria-expanded="false"
+        >
+          <span>{t.localShowAllCta}</span>
+          <span class="flex h-9 w-9 items-center justify-center rounded-full border border-[#082b63]/15 bg-white text-[#082b63] transition group-hover:border-[#d6ad3b] group-hover:text-[#b48924]">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 fill-none stroke-current stroke-[2]">
+              <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+
+        {
+          otherLocalBoards.map((board) => (
+            <button
+              type="button"
+              class="group hidden rounded-xl border border-slate-200 bg-slate-50 p-4 text-left transition hover:-translate-y-0.5 hover:border-[#d6ad3b]/70 hover:bg-white hover:shadow-lg hover:shadow-slate-200/80 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+              data-local-board-extra
+              data-members-trigger={board.id}
+              aria-expanded="false"
+              aria-controls="organization-members-dialog"
+            >
+              <span class="flex items-start justify-between gap-3">
+                <span class="block text-base font-bold text-[#061632]">{board.name}</span>
+                <span class="mt-1 h-2.5 w-2.5 rounded-full bg-[#d6ad3b] shadow-[0_0_14px_rgba(214,173,59,0.75)] transition group-hover:scale-125"></span>
+              </span>
+            </button>
+          ))
+        }
+
+        <button
+          type="button"
+          class="group hidden items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 text-left text-sm font-bold uppercase tracking-[0.12em] text-[#082b63] transition hover:-translate-y-0.5 hover:border-[#d6ad3b]/70 hover:bg-white hover:text-[#b48924] hover:shadow-lg hover:shadow-slate-200/80 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+          data-local-hide-all
+        >
+          <span>{t.localHideAllCta}</span>
+          <span class="flex h-9 w-9 items-center justify-center rounded-full border border-[#082b63]/15 bg-white text-[#082b63] transition group-hover:border-[#d6ad3b] group-hover:text-[#b48924]">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="h-4 w-4 fill-none stroke-current stroke-[2]">
+              <path d="m18 15-6-6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="strucna-tijela" class="scroll-mt-24 bg-white py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.expertKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.expertTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.expertText}</p>
+    </div>
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-3">
+      {
+        expertBodies.map((item) => (
+          <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/60 hover:shadow-xl hover:shadow-slate-300/70">
+            <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#fff8e3] text-[#b48924]">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+                <path d={item.icon} stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-[#061632]">{item.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section id="odluka-do-terena" class="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.processKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.processTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.processText}</p>
+    </div>
+
+    <div class="relative mt-10 grid gap-4 lg:grid-cols-5">
+      <div aria-hidden="true" class="absolute left-8 right-8 top-10 hidden h-px bg-[#082b63]/20 lg:block"></div>
+      {
+        processSteps.map((step, index) => (
+          <article class="relative rounded-lg border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/80">
+            <div class="flex h-10 w-10 items-center justify-center rounded-md bg-[#082b63] text-sm font-bold text-white">{index + 1}</div>
+            <h3 class="mt-5 text-base font-bold text-[#061632]">{step.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">{step.text}</p>
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+<CTASection lang={lang} />
+
+<script>
+  const initOrganizationPanel = () => {
+    const dataScript = document.getElementById('organization-organ-data');
+    const modal = document.getElementById('organization-detail-modal');
+    const panel = document.getElementById('organization-detail-panel');
+    const overlay = document.querySelector('[data-organ-overlay]');
+    const triggers = Array.from(document.querySelectorAll('[data-organ-trigger]'));
+    const closeButtons = Array.from(document.querySelectorAll('[data-organ-close]'));
+
+    if (!dataScript || !modal || !panel || !overlay || triggers.length === 0) {
+      return;
+    }
+
+    const organs = JSON.parse(dataScript.textContent || '[]');
+    const organById = new Map(organs.map((organ) => [organ.id, organ]));
+    const fields = {
+      label: panel.querySelector('[data-organ-label]'),
+      title: panel.querySelector('[data-organ-title]'),
+      description: panel.querySelector('[data-organ-description]'),
+      role: panel.querySelector('[data-organ-role]'),
+      responsibilities: panel.querySelector('[data-organ-responsibilities]'),
+      composition: panel.querySelector('[data-organ-composition]'),
+      mandate: panel.querySelector('[data-organ-mandate]'),
+      mandateBlock: panel.querySelector('[data-organ-mandate-block]'),
+      connection: panel.querySelector('[data-organ-connection]'),
+    };
+    const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    let activeTrigger = null;
+    let closeTimer = null;
+    let previousBodyOverflow = '';
+
+    const setText = (element, text) => {
+      if (element) {
+        element.textContent = text || '';
+      }
+    };
+
+    const renderList = (element, items) => {
+      if (!element) {
+        return;
+      }
+
+      element.innerHTML = '';
+      items.forEach((item) => {
+        const listItem = document.createElement('li');
+        listItem.className = 'flex gap-3 text-sm leading-6 text-slate-700';
+
+        const dot = document.createElement('span');
+        dot.className = 'mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6ad3b]';
+        dot.setAttribute('aria-hidden', 'true');
+
+        const text = document.createElement('span');
+        text.textContent = item;
+
+        listItem.append(dot, text);
+        element.append(listItem);
+      });
+    };
+
+    const updateTriggerStates = (activeId) => {
+      triggers.forEach((trigger) => {
+        const isActive = trigger.getAttribute('data-organ-trigger') === activeId;
+        trigger.setAttribute('aria-expanded', String(isActive));
+        trigger.classList.toggle('border-[#d6ad3b]', isActive);
+        trigger.classList.toggle('bg-[#082b63]', isActive);
+      });
+    };
+
+    const renderOrgan = (organ) => {
+      setText(fields.label, organ.label);
+      setText(fields.title, organ.title);
+      setText(fields.description, organ.description);
+      setText(fields.role, organ.role);
+      setText(fields.mandate, organ.mandate);
+      setText(fields.connection, organ.connection);
+      renderList(fields.responsibilities, organ.responsibilities || []);
+      renderList(fields.composition, organ.composition || []);
+
+      if (fields.mandateBlock) {
+        fields.mandateBlock.hidden = !organ.mandate;
+      }
+    };
+
+    const openPanel = (organId, trigger) => {
+      const organ = organById.get(organId);
+      if (!organ) {
+        return;
+      }
+
+      window.clearTimeout(closeTimer);
+      activeTrigger = trigger;
+      renderOrgan(organ);
+      updateTriggerStates(organId);
+      const wasClosed = modal.classList.contains('hidden');
+      if (wasClosed) {
+        previousBodyOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        modal.classList.remove('hidden');
+      }
+      modal.setAttribute('aria-hidden', 'false');
+
+      window.requestAnimationFrame(() => {
+        overlay.classList.add('opacity-100');
+        panel.classList.remove('translate-y-full', 'lg:translate-x-full');
+        panel.classList.add('translate-y-0', 'lg:translate-x-0');
+      });
+
+      const firstControl = panel.querySelector('[data-organ-close]');
+      (firstControl || panel).focus();
+    };
+
+    const closePanel = () => {
+      if (modal.classList.contains('hidden')) {
+        return;
+      }
+
+      overlay.classList.remove('opacity-100');
+      panel.classList.add('translate-y-full', 'lg:translate-x-full');
+      panel.classList.remove('translate-y-0', 'lg:translate-x-0');
+      modal.setAttribute('aria-hidden', 'true');
+      updateTriggerStates('');
+      document.body.style.overflow = previousBodyOverflow;
+
+      closeTimer = window.setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+
+      if (activeTrigger) {
+        activeTrigger.focus();
+      }
+      activeTrigger = null;
+    };
+
+    const trapFocus = (event) => {
+      if (modal.classList.contains('hidden') || event.key !== 'Tab') {
+        return;
+      }
+
+      const focusable = Array.from(panel.querySelectorAll(focusableSelector)).filter((element) => element.offsetParent !== null);
+      if (focusable.length === 0) {
+        event.preventDefault();
+        panel.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        openPanel(trigger.getAttribute('data-organ-trigger'), trigger);
+      });
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', closePanel);
+    });
+
+    overlay.addEventListener('click', closePanel);
+
+    document.addEventListener(
+      'click',
+      (event) => {
+        if (modal.classList.contains('hidden') || window.matchMedia('(max-width: 1023px)').matches) {
+          return;
+        }
+
+        const target = event.target;
+        if (!(target instanceof Element) || panel.contains(target) || target.closest('[data-organ-trigger]')) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        closePanel();
+      },
+      true,
+    );
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closePanel();
+      }
+      trapFocus(event);
+    });
+  };
+
+  const initLocalBoardExpansion = () => {
+    const showTrigger = document.querySelector('[data-local-show-all]');
+    const hideTrigger = document.querySelector('[data-local-hide-all]');
+    const extraBoards = Array.from(document.querySelectorAll('[data-local-board-extra]'));
+
+    if (!showTrigger || !hideTrigger || extraBoards.length === 0) {
+      return;
+    }
+
+    showTrigger.addEventListener('click', () => {
+      extraBoards.forEach((board) => {
+        board.classList.remove('hidden');
+      });
+      showTrigger.setAttribute('aria-expanded', 'true');
+      showTrigger.classList.add('hidden');
+      hideTrigger.classList.remove('hidden');
+      hideTrigger.classList.add('flex');
+    });
+
+    hideTrigger.addEventListener('click', () => {
+      extraBoards.forEach((board) => {
+        board.classList.add('hidden');
+      });
+      showTrigger.setAttribute('aria-expanded', 'false');
+      hideTrigger.classList.add('hidden');
+      hideTrigger.classList.remove('flex');
+      showTrigger.classList.remove('hidden');
+      showTrigger.focus();
+    });
+  };
+
+  const initOrganizationMembersModal = () => {
+    const organDataScript = document.getElementById('organization-organ-data');
+    const memberDataScript = document.getElementById('organization-member-data');
+    const modal = document.getElementById('organization-members-modal');
+    const dialog = document.getElementById('organization-members-dialog');
+    const overlay = document.querySelector('[data-members-overlay]');
+    const triggers = Array.from(document.querySelectorAll('[data-members-trigger]'));
+    const closeButtons = Array.from(document.querySelectorAll('[data-members-close]'));
+    const title = document.querySelector('[data-members-title]');
+    const grid = document.querySelector('[data-members-grid]');
+    const empty = document.querySelector('[data-members-empty]');
+
+    if (!organDataScript || !memberDataScript || !modal || !dialog || !overlay || !title || !grid || !empty) {
+      return;
+    }
+
+    const organs = JSON.parse(organDataScript.textContent || '[]');
+    const members = JSON.parse(memberDataScript.textContent || '[]');
+    const organById = new Map(organs.map((organ) => [organ.id, organ]));
+    const membersByBody = new Map();
+    const defaultEmptyText = empty.getAttribute('data-default-empty') || empty.textContent;
+    const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    let activeTrigger = null;
+    let closeTimer = null;
+    let previousBodyOverflow = '';
+
+    members.forEach((member) => {
+      if (!member.bodyId) {
+        return;
+      }
+
+      const bodyMembers = membersByBody.get(member.bodyId) || [];
+      bodyMembers.push(member);
+      membersByBody.set(member.bodyId, bodyMembers);
+    });
+
+    const getInitials = (name) =>
+      String(name || '')
+        .trim()
+        .split(/\s+/)
+        .slice(0, 2)
+        .map((part) => part.charAt(0))
+        .join('')
+        .toUpperCase();
+
+    const createSocialIcon = (label) => {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('class', 'h-4 w-4 fill-none stroke-current stroke-[1.8]');
+
+      const addPath = (d) => {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+        svg.append(path);
+      };
+
+      const addCircle = (cx, cy, r) => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', cx);
+        circle.setAttribute('cy', cy);
+        circle.setAttribute('r', r);
+        svg.append(circle);
+      };
+
+      const addRect = (x, y, width, height, rx = '0') => {
+        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rect.setAttribute('x', x);
+        rect.setAttribute('y', y);
+        rect.setAttribute('width', width);
+        rect.setAttribute('height', height);
+        rect.setAttribute('rx', rx);
+        svg.append(rect);
+      };
+
+      const key = String(label || '').toLowerCase();
+      if (key.includes('instagram')) {
+        addRect('3', '3', '18', '18', '5');
+        addCircle('12', '12', '4');
+        addCircle('17.5', '6.5', '0.7');
+      } else if (key.includes('linkedin')) {
+        addPath('M16 8a5 5 0 0 1 5 5v7h-4v-7a1.8 1.8 0 0 0-3.6 0v7h-4v-7a5 5 0 0 1 5-5Z');
+        addPath('M3 9h4v11H3Z');
+        addCircle('5', '5', '2');
+      } else if (key.includes('facebook')) {
+        addPath('M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z');
+      } else {
+        addPath('M10 13a5 5 0 0 0 7.1 0l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1');
+        addPath('M14 11a5 5 0 0 0-7.1 0l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1');
+      }
+
+      return svg;
+    };
+
+    const createMemberCard = (member) => {
+      const card = document.createElement('article');
+      card.className =
+        'rounded-xl border border-slate-200 bg-white p-4 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-0.5 hover:border-[#d6ad3b]/70 hover:shadow-lg hover:shadow-slate-300/70';
+
+      const row = document.createElement('div');
+      row.className = 'flex items-start gap-4';
+
+      const avatar = document.createElement('div');
+      avatar.className =
+        'relative flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-[#061632] text-lg font-bold text-[#f0cf72] ring-1 ring-[#d6ad3b]/40';
+
+      const initials = document.createElement('span');
+      initials.textContent = getInitials(member.name) || 'ES';
+      avatar.append(initials);
+
+      if (member.image) {
+        const image = document.createElement('img');
+        image.src = member.image;
+        image.alt = member.name || '';
+        image.loading = 'lazy';
+        image.className = 'absolute inset-0 h-full w-full object-cover';
+        image.addEventListener('error', () => {
+          image.remove();
+        });
+        avatar.append(image);
+      }
+
+      const content = document.createElement('div');
+      content.className = 'min-w-0 flex-1';
+
+      const name = document.createElement('h3');
+      name.className = 'truncate text-base font-bold leading-6 text-[#061632]';
+      name.textContent = member.name;
+
+      const role = document.createElement('p');
+      role.className = 'mt-1 truncate text-xs font-bold uppercase tracking-[0.12em] text-[#b48924]';
+      role.textContent = member.role;
+
+      content.append(name, role);
+
+      if (member.responsibility) {
+        const responsibility = document.createElement('p');
+        responsibility.className = 'mt-2 truncate text-sm leading-6 text-slate-600';
+        responsibility.textContent = member.responsibility;
+        content.append(responsibility);
+      }
+
+      if (member.bioUrl) {
+        const link = document.createElement('a');
+        link.href = member.bioUrl;
+        link.className =
+          'mt-3 inline-flex min-h-8 items-center justify-center rounded-md border border-[#082b63]/20 px-3 text-[0.7rem] font-bold uppercase text-[#082b63] transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-[#fff8e3] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2';
+        link.textContent = dialog.getAttribute('data-biography-label') || 'Biografija';
+        content.append(link);
+      }
+
+      if (member.socials?.length) {
+        const socials = document.createElement('div');
+        socials.className = 'mt-3 flex flex-wrap gap-2';
+
+        member.socials.forEach((social) => {
+          const socialLink = document.createElement('a');
+          socialLink.href = social.href;
+          socialLink.target = '_blank';
+          socialLink.rel = 'noreferrer';
+          socialLink.className =
+            'inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#082b63]/15 bg-slate-50 text-[#082b63] transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-[#fff8e3] hover:text-[#061632] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2';
+          socialLink.setAttribute('aria-label', `${member.name}: ${social.label}`);
+          socialLink.append(createSocialIcon(social.label));
+          socials.append(socialLink);
+        });
+
+        content.append(socials);
+      }
+
+      row.append(avatar, content);
+      card.append(row);
+
+      return card;
+    };
+
+    const renderMembers = (bodyId) => {
+      const bodyMembers = membersByBody.get(bodyId) || [];
+      grid.innerHTML = '';
+      empty.textContent = organById.get(bodyId)?.emptyText || defaultEmptyText;
+      grid.classList.toggle('hidden', bodyMembers.length === 0);
+      empty.classList.toggle('hidden', bodyMembers.length > 0);
+
+      bodyMembers.forEach((member) => {
+        grid.append(createMemberCard(member));
+      });
+    };
+
+    const updateTriggerStates = (activeId) => {
+      triggers.forEach((trigger) => {
+        const isActive = trigger.getAttribute('data-members-trigger') === activeId;
+        trigger.setAttribute('aria-expanded', String(isActive));
+      });
+    };
+
+    const openModal = (bodyId, trigger) => {
+      const organ = organById.get(bodyId);
+      if (!organ) {
+        return;
+      }
+
+      window.clearTimeout(closeTimer);
+      activeTrigger = trigger;
+      title.textContent = organ.title;
+      renderMembers(bodyId);
+      updateTriggerStates(bodyId);
+      previousBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+
+      window.requestAnimationFrame(() => {
+        overlay.classList.add('opacity-100');
+        dialog.classList.remove('translate-y-full', 'sm:-translate-y-[46%]', 'sm:scale-95', 'sm:opacity-0');
+        dialog.classList.add('translate-y-0', 'sm:-translate-y-1/2', 'sm:scale-100', 'sm:opacity-100');
+      });
+
+      const firstControl = dialog.querySelector('[data-members-close]');
+      (firstControl || dialog).focus();
+    };
+
+    const closeModal = () => {
+      if (modal.classList.contains('hidden')) {
+        return;
+      }
+
+      overlay.classList.remove('opacity-100');
+      dialog.classList.add('translate-y-full', 'sm:-translate-y-[46%]', 'sm:scale-95', 'sm:opacity-0');
+      dialog.classList.remove('translate-y-0', 'sm:-translate-y-1/2', 'sm:scale-100', 'sm:opacity-100');
+      modal.setAttribute('aria-hidden', 'true');
+      updateTriggerStates('');
+      document.body.style.overflow = previousBodyOverflow;
+
+      closeTimer = window.setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+
+      if (activeTrigger) {
+        activeTrigger.focus();
+      }
+      activeTrigger = null;
+    };
+
+    const trapFocus = (event) => {
+      if (modal.classList.contains('hidden') || event.key !== 'Tab') {
+        return;
+      }
+
+      const focusable = Array.from(dialog.querySelectorAll(focusableSelector)).filter((element) => element.offsetParent !== null);
+      if (focusable.length === 0) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        openModal(trigger.getAttribute('data-members-trigger'), trigger);
+      });
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', closeModal);
+    });
+
+    overlay.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+      trapFocus(event);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      initOrganizationPanel();
+      initLocalBoardExpansion();
+      initOrganizationMembersModal();
+    });
+  } else {
+    initOrganizationPanel();
+    initLocalBoardExpansion();
+    initOrganizationMembersModal();
+  }
+</script>

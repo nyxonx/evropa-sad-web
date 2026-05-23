@@ -4,53 +4,286 @@
       "sr": {
         "eyebrow": "ORGANIZACIJA",
         "title": "Ljudi i struktura pokreta",
-        "description": "Mock podaci za nacionalne organe, lokalne odbore i individualne profile. Stvarna imena i funkcije se mogu zamijeniti kada sadržaj bude potvrđen."
+        "description": "Pokret je organizovan na teritorijalnom principu, sa organima na državnom, opštinskom i mjesnom nivou, uz mogućnost tematskog organizovanja kroz forume, savjete, sekretarijate i stručne timove."
       },
       "en": {
         "eyebrow": "ORGANIZATION",
         "title": "People and movement structure",
-        "description": "Mock data for national bodies, local boards and individual profiles. Real names and roles can be replaced once the content is confirmed."
+        "description": "The Movement is organized on a territorial basis, with bodies at the national, municipal and local level, and thematic organization through forums, councils, secretariats and expert teams."
       }
     }
   },
   "people": [
     {
       "id": "milojko-spajic",
-      "imageSrc": null,
-      "links": [],
+      "imageSrc": "/images/people/milojko-spajic.jpg",
+      "links": [
+        {
+          "label": "Instagram",
+          "href": "https://www.instagram.com/milojko_spajic/"
+        },
+        {
+          "label": "LinkedIn",
+          "href": "https://www.linkedin.com/in/milojkospajic/"
+        },
+        {
+          "label": "Facebook",
+          "href": "https://www.facebook.com/profile.php?id=100068001975617"
+        }
+      ],
       "isPlaceholder": false,
       "translations": {
         "sr": {
           "name": "Milojko Spajić",
-          "role": "Predsjednik pokreta",
+          "role": "Predsjednik Pokreta",
           "location": "Podgorica",
-          "bio": "Predsjednik Pokreta Evropa sad i nosilac ekonomskih reformi koje su obilježile prvu fazu javnog predstavljanja sajta."
+          "bio": "Predsjednik predstavlja i zastupa Pokret, vodi tekuću politiku, rukovodi Predsjedništvom i koordinira saradnju svih organa Pokreta."
         },
         "en": {
           "name": "Milojko Spajić",
           "role": "President of the Movement",
           "location": "Podgorica",
-          "bio": "President of the Europe Now Movement and the public figure tied to the economic reforms highlighted in the first website phase."
+          "bio": "The President represents the Movement, leads current policy, chairs the Presidency and coordinates cooperation among all Movement bodies."
+        }
+      }
+    },
+    {
+      "id": "filip-ivanovic",
+      "imageSrc": "/images/people/filip-ivanovic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Dr. Filip Ivanović",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Dr. Filip Ivanović",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement's central policy."
         }
       }
     },
     {
       "id": "predstavnica-predsjednistva",
-      "imageSrc": null,
+      "imageSrc": "/images/people/andjela-jaksic-stojanovic.jpg",
       "links": [],
-      "isPlaceholder": true,
+      "isPlaceholder": false,
       "translations": {
         "sr": {
-          "name": "Predstavnica predsjedništva",
-          "role": "Članica predsjedništva",
+          "name": "Prof. dr Anđela Jakšić-Stojanović",
+          "role": "Član Predsjedništva",
           "location": "Crna Gora",
-          "bio": "Privremeni profil za provjeru kartica osoba dok se ne unesu potvrđeni podaci."
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
         },
         "en": {
-          "name": "Presidency representative",
+          "name": "Prof. Dr Anđela Jakšić-Stojanović",
           "role": "Presidency member",
           "location": "Montenegro",
-          "bio": "Temporary profile used to test person cards until confirmed data is entered."
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement's central policy."
+        }
+      }
+    },
+    {
+      "id": "vasilije-carapic",
+      "imageSrc": "/images/people/vasilije-carapic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Vasilije Čarapić",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Vasilije Čarapić",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement's central policy."
+        }
+      }
+    },
+    {
+      "id": "sasa-mujovic",
+      "imageSrc": "/images/people/sasa-mujovic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Prof. dr Saša Mujović",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Prof. Dr Saša Mujović",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement's central policy."
+        }
+      }
+    },
+    {
+      "id": "maja-vukicevic",
+      "imageSrc": null,
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Maja Vukićević",
+          "role": "Generalna sekretarka",
+          "location": "Crna Gora",
+          "bio": "Generalni sekretar stara se o organizacionom jačanju, infrastrukturnoj mreži i koordinaciji formiranja opštinskih i mjesnih odbora."
+        },
+        "en": {
+          "name": "Maja Vukićević",
+          "role": "Secretary General",
+          "location": "Montenegro",
+          "bio": "The Secretary General works on organizational strengthening, infrastructure networks and coordination of municipal and local boards."
+        }
+      }
+    },
+    {
+      "id": "boris-pejovic",
+      "imageSrc": "/images/people/boris-pejovic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Boris Pejović",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Boris Pejović",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "branko-krvavac",
+      "imageSrc": "/images/people/branko-krvavac.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Branko Krvavac",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Branko Krvavac",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "filip-radulovic",
+      "imageSrc": "/images/people/filip-radulovic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Filip Radulović",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Filip Radulović",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "maida-gorcevic",
+      "imageSrc": "/images/people/maida-gorcevic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Maida Gorčević",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Maida Gorčević",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "mirko-djukic",
+      "imageSrc": "/images/people/mirko-djukic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Mirko Đukić",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Mirko Đukić",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "tihomir-dragas",
+      "imageSrc": "/images/people/tihomir-dragas.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Tihomir Dragaš",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Tihomir Dragaš",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
+        }
+      }
+    },
+    {
+      "id": "vlade-bojovic",
+      "imageSrc": "/images/people/vlade-bojovic.jpg",
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Vlade Bojović",
+          "role": "Član Predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Član Predsjedništva učestvuje u razmatranju ključnih političkih pitanja, pripremi odluka i koordinaciji centralne politike Pokreta."
+        },
+        "en": {
+          "name": "Vlade Bojović",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "A Presidency member participates in reviewing key political questions, preparing decisions and coordinating the Movement central policy."
         }
       }
     },
@@ -62,49 +295,44 @@
       "translations": {
         "sr": {
           "name": "Predstavnik glavnog odbora",
-          "role": "Član glavnog odbora",
+          "role": "Član Glavnog odbora",
           "location": "Crna Gora",
-          "bio": "Privremeni profil za prikaz organizacione strukture i buduće integracije sa CRM-om."
+          "bio": "Glavni odbor okuplja rukovodstvo, članove Predsjedništva, predsjednika Izvršnog odbora, generalnog sekretara, predsjednike opštinskih odbora i poslanike Pokreta."
         },
         "en": {
           "name": "Main board representative",
           "role": "Main board member",
           "location": "Montenegro",
-          "bio": "Temporary profile for displaying organizational structure and future CRM integration."
+          "bio": "The Main board includes leadership, Presidency members, the Executive board president, Secretary General, municipal board presidents and MPs."
         }
       }
     }
   ],
   "bodies": [
     {
-      "id": "predsjednistvo",
+      "id": "skupstina",
       "order": 1,
-      "members": [
-        {
-          "personId": "milojko-spajic",
-          "order": 1,
-          "role": {
-            "sr": "Predsjednik",
-            "en": "President"
-          }
-        },
-        {
-          "personId": "predstavnica-predsjednistva",
-          "order": 2,
-          "role": {
-            "sr": "Članica predsjedništva",
-            "en": "Presidency member"
-          }
-        }
-      ],
+      "members": [],
       "translations": {
         "sr": {
-          "title": "Predsjedništvo",
-          "description": "Političko rukovodstvo pokreta i tim koji vodi strateške odluke."
+          "title": "Skupština",
+          "description": "Najviše izborno tijelo Pokreta. Redovna sjednica održava se jednom u četiri godine, a vanredna pod uslovima propisanim Statutom.",
+          "article": "Članovi 22-26",
+          "competences": [
+            "bira i razrješava predsjednika, zamjenika predsjednika i potpredsjednike Pokreta",
+            "bira i razrješava članove Nadzornog odbora i Statutarne komisije",
+            "razmatra i usvaja izvještaje o radu predsjednika, Glavnog odbora i Nadzornog odbora"
+          ]
         },
         "en": {
-          "title": "Presidency",
-          "description": "The movement's political leadership and the team responsible for strategic decisions."
+          "title": "Assembly",
+          "description": "The Movement's highest electoral body. A regular session is held every four years, while extraordinary sessions are held under the Statute.",
+          "article": "Articles 22-26",
+          "competences": [
+            "elects and dismisses the President, Deputy President and Vice Presidents",
+            "elects and dismisses members of the Supervisory board and Statutory commission",
+            "reviews and adopts work reports of the President, Main board and Supervisory board"
+          ]
         }
       }
     },
@@ -116,7 +344,7 @@
           "personId": "predstavnik-glavnog-odbora",
           "order": 1,
           "role": {
-            "sr": "Član glavnog odbora",
+            "sr": "Član Glavnog odbora",
             "en": "Main board member"
           }
         }
@@ -124,41 +352,174 @@
       "translations": {
         "sr": {
           "title": "Glavni odbor",
-          "description": "Šire predstavničko tijelo za programska i organizaciona pitanja."
+          "description": "Najviši organ upravljanja Pokretom koji donosi programske i političke odluke između dvije Skupštine.",
+          "article": "Članovi 27-30",
+          "competences": [
+            "utvrđuje i vodi politiku Pokreta u skladu sa Programom",
+            "bira članove Predsjedništva koji nijesu članovi po funkciji",
+            "odlučuje o učešću u organima vlasti, koalicijama i izbornim pitanjima"
+          ]
         },
         "en": {
           "title": "Main board",
-          "description": "A broader representative body for program and organizational matters."
+          "description": "The highest management body of the Movement, making program and political decisions between two Assembly sessions.",
+          "article": "Articles 27-30",
+          "competences": [
+            "sets and leads Movement policy in line with the Program",
+            "elects Presidency members who are not ex officio members",
+            "decides on participation in government bodies, coalitions and election matters"
+          ]
+        }
+      }
+    },
+    {
+      "id": "predsjednistvo",
+      "order": 3,
+      "members": [
+        {
+          "personId": "milojko-spajic",
+          "order": 1,
+          "role": {
+            "sr": "Predsjednik",
+            "en": "President"
+          }
+        },
+        {
+          "personId": "filip-ivanovic",
+          "order": 2,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "predstavnica-predsjednistva",
+          "order": 3,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "vasilije-carapic",
+          "order": 4,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "sasa-mujovic",
+          "order": 5,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "boris-pejovic",
+          "order": 6,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "branko-krvavac",
+          "order": 7,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "filip-radulovic",
+          "order": 8,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "maida-gorcevic",
+          "order": 9,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "mirko-djukic",
+          "order": 10,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "tihomir-dragas",
+          "order": 11,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        },
+        {
+          "personId": "vlade-bojovic",
+          "order": 12,
+          "role": {
+            "sr": "Član Predsjedništva",
+            "en": "Presidency member"
+          }
+        }
+      ],
+      "translations": {
+        "sr": {
+          "title": "Predsjedništvo",
+          "description": "Najviši politički organ Pokreta. Broj članova mora biti neparan i ne može biti veći od 15.",
+          "article": "Članovi 37-40",
+          "competences": [
+            "utvrđuje i vodi politiku Pokreta na osnovu odluka Skupštine i predsjednika",
+            "razmatra ključna unutrašnja i spoljnopolitička pitanja",
+            "predlaže kandidate, koalicije i odluke iz nadležnosti Predsjedništva"
+          ]
+        },
+        "en": {
+          "title": "Presidency",
+          "description": "The highest political body of the Movement. The number of members must be odd and may not exceed 15.",
+          "article": "Articles 37-40",
+          "competences": [
+            "sets and leads policy based on Assembly and President decisions",
+            "reviews key internal and foreign policy matters",
+            "proposes candidates, coalitions and decisions within its competence"
+          ]
         }
       }
     },
     {
       "id": "izvrsni-odbor",
-      "order": 3,
-      "members": [],
-      "translations": {
-        "sr": {
-          "title": "Izvršni odbor",
-          "description": "Operativno tijelo zaduženo za sprovođenje odluka i koordinaciju aktivnosti."
-        },
-        "en": {
-          "title": "Executive board",
-          "description": "Operational body responsible for implementing decisions and coordinating activities."
-        }
-      }
-    },
-    {
-      "id": "nadzorni-odbor",
       "order": 4,
       "members": [],
       "translations": {
         "sr": {
-          "title": "Nadzorni odbor",
-          "description": "Tijelo za nadzor rada i poštovanja internih procedura."
+          "title": "Izvršni odbor",
+          "description": "Izvršno-politički organ koji realizuje praktične aktivnosti Pokreta i odlučuje o pitanjima iz svoje nadležnosti.",
+          "article": "Članovi 42-43",
+          "competences": [
+            "sprovodi odluke Skupštine, predsjednika i Predsjedništva",
+            "stara se o infrastrukturi Pokreta i radu opštinskih odbora",
+            "utvrđuje finansijski plan i stara se o izbornim kampanjama"
+          ]
         },
         "en": {
-          "title": "Supervisory board",
-          "description": "Body responsible for oversight and internal procedure compliance."
+          "title": "Executive board",
+          "description": "The executive-political body that carries out practical activities and decides on matters within its competence.",
+          "article": "Articles 42-43",
+          "competences": [
+            "implements decisions of the Assembly, President and Presidency",
+            "works on Movement infrastructure and municipal board operations",
+            "sets the financial plan and manages election campaign operations"
+          ]
         }
       }
     },
@@ -169,61 +530,627 @@
       "translations": {
         "sr": {
           "title": "Statutarna komisija",
-          "description": "Komisija zadužena za statut, tumačenja i normativna pitanja."
+          "description": "Stručni organ Pokreta koji ima tri člana, bira ga Skupština, a odluke su obavezujuće i konačne.",
+          "article": "Članovi 44-45",
+          "competences": [
+            "tumači Statut i druga opšta akta Pokreta",
+            "utvrđuje usklađenost opštih akata sa Statutom",
+            "rješava sukob nadležnosti organa kada Statutom nije drugačije uređeno"
+          ]
         },
         "en": {
           "title": "Statutory commission",
-          "description": "Commission responsible for the statute, interpretations and normative questions."
+          "description": "An expert body of three members elected by the Assembly; its decisions are binding and final.",
+          "article": "Articles 44-45",
+          "competences": [
+            "interprets the Statute and other general acts",
+            "checks alignment of general acts with the Statute",
+            "resolves competence conflicts between bodies when not otherwise regulated"
+          ]
+        }
+      }
+    },
+    {
+      "id": "nadzorni-odbor",
+      "order": 6,
+      "members": [],
+      "translations": {
+        "sr": {
+          "title": "Nadzorni odbor",
+          "description": "Nadzorni organ od tri člana koji kontroliše finansijsko poslovanje i podnosi izvještaje Glavnom odboru i Skupštini.",
+          "article": "Članovi 46-47",
+          "competences": [
+            "kontroliše prihode i rashode Pokreta",
+            "kontroliše upravljanje imovinom Pokreta",
+            "podnosi godišnji izvještaj o kontroli finansijskog poslovanja"
+          ]
+        },
+        "en": {
+          "title": "Supervisory board",
+          "description": "A three-member oversight body that controls financial operations and reports to the Main board and Assembly.",
+          "article": "Articles 46-47",
+          "competences": [
+            "controls Movement revenues and expenses",
+            "controls management of Movement assets",
+            "submits an annual report on financial oversight"
+          ]
         }
       }
     }
   ],
   "localBoards": [
     {
+      "id": "odbor-podgorica",
       "slug": "podgorica",
       "municipality": "Podgorica",
       "region": "central",
       "contactEmail": null,
+      "president": null,
+      "active": true,
+      "featured": true,
+      "members": [],
       "translations": {
         "sr": {
-          "name": "Lokalni odbor Podgorica",
-          "coordinator": "Koordinator u pripremi"
+          "name": "Podgorica",
+          "title": "Opštinski odbor Podgorica",
+          "coordinator": "Povezuje centralne politike sa potrebama građana u Podgorici."
         },
         "en": {
-          "name": "Podgorica local board",
-          "coordinator": "Coordinator pending"
+          "name": "Podgorica",
+          "title": "Podgorica municipal board",
+          "coordinator": "Connects central policies with citizen needs in Podgorica."
         }
       }
     },
     {
+      "id": "odbor-niksic",
       "slug": "niksic",
       "municipality": "Nikšić",
       "region": "central",
       "contactEmail": null,
+      "president": null,
+      "active": true,
+      "featured": true,
+      "members": [],
       "translations": {
         "sr": {
-          "name": "Lokalni odbor Nikšić",
-          "coordinator": "Koordinator u pripremi"
+          "name": "Nikšić",
+          "title": "Opštinski odbor Nikšić",
+          "coordinator": "Organizuje rad Pokreta i lokalnu koordinaciju u Nikšiću."
         },
         "en": {
-          "name": "Nikšić local board",
-          "coordinator": "Coordinator pending"
+          "name": "Nikšić",
+          "title": "Nikšić municipal board",
+          "coordinator": "Organizes Movement work and local coordination in Nikšić."
         }
       }
     },
     {
+      "id": "odbor-pljevlja",
+      "slug": "pljevlja",
+      "municipality": "Pljevlja",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": true,
+      "featured": true,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Pljevlja",
+          "title": "Opštinski odbor Pljevlja",
+          "coordinator": "Koordinira lokalne aktivnosti i komunikaciju sa građanima Pljevalja."
+        },
+        "en": {
+          "name": "Pljevlja",
+          "title": "Pljevlja municipal board",
+          "coordinator": "Coordinates local activities and citizen communication in Pljevlja."
+        }
+      }
+    },
+    {
+      "id": "odbor-berane",
+      "slug": "berane",
+      "municipality": "Berane",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": true,
+      "featured": true,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Berane",
+          "title": "Opštinski odbor Berane",
+          "coordinator": "Povezuje lokalne inicijative i rad Pokreta u Beranama."
+        },
+        "en": {
+          "name": "Berane",
+          "title": "Berane municipal board",
+          "coordinator": "Connects local initiatives and Movement work in Berane."
+        }
+      }
+    },
+    {
+      "id": "odbor-bar",
       "slug": "bar",
       "municipality": "Bar",
       "region": "coast",
       "contactEmail": null,
+      "president": null,
+      "active": true,
+      "featured": true,
+      "members": [],
       "translations": {
         "sr": {
-          "name": "Lokalni odbor Bar",
-          "coordinator": "Koordinator u pripremi"
+          "name": "Bar",
+          "title": "Opštinski odbor Bar",
+          "coordinator": "Razvija lokalnu mrežu i komunikaciju sa građanima Bara."
         },
         "en": {
-          "name": "Bar local board",
-          "coordinator": "Coordinator pending"
+          "name": "Bar",
+          "title": "Bar municipal board",
+          "coordinator": "Develops the local network and citizen communication in Bar."
+        }
+      }
+    },
+    {
+      "id": "odbor-andrijevica",
+      "slug": "andrijevica",
+      "municipality": "Andrijevica",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Andrijevica",
+          "title": "Opštinski odbor Andrijevica",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Andrijevica",
+          "title": "Andrijevica municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-bijelo-polje",
+      "slug": "bijelo-polje",
+      "municipality": "Bijelo Polje",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Bijelo Polje",
+          "title": "Opštinski odbor Bijelo Polje",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Bijelo Polje",
+          "title": "Bijelo Polje municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-budva",
+      "slug": "budva",
+      "municipality": "Budva",
+      "region": "coast",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Budva",
+          "title": "Opštinski odbor Budva",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Budva",
+          "title": "Budva municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-cetinje",
+      "slug": "cetinje",
+      "municipality": "Cetinje",
+      "region": "central",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Cetinje",
+          "title": "Opštinski odbor Cetinje",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Cetinje",
+          "title": "Cetinje municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-danilovgrad",
+      "slug": "danilovgrad",
+      "municipality": "Danilovgrad",
+      "region": "central",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Danilovgrad",
+          "title": "Opštinski odbor Danilovgrad",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Danilovgrad",
+          "title": "Danilovgrad municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-gusinje",
+      "slug": "gusinje",
+      "municipality": "Gusinje",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Gusinje",
+          "title": "Opštinski odbor Gusinje",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Gusinje",
+          "title": "Gusinje municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-herceg-novi",
+      "slug": "herceg-novi",
+      "municipality": "Herceg Novi",
+      "region": "coast",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Herceg Novi",
+          "title": "Opštinski odbor Herceg Novi",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Herceg Novi",
+          "title": "Herceg Novi municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-kolasin",
+      "slug": "kolasin",
+      "municipality": "Kolašin",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Kolašin",
+          "title": "Opštinski odbor Kolašin",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Kolašin",
+          "title": "Kolašin municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-kotor",
+      "slug": "kotor",
+      "municipality": "Kotor",
+      "region": "coast",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Kotor",
+          "title": "Opštinski odbor Kotor",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Kotor",
+          "title": "Kotor municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-mojkovac",
+      "slug": "mojkovac",
+      "municipality": "Mojkovac",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Mojkovac",
+          "title": "Opštinski odbor Mojkovac",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Mojkovac",
+          "title": "Mojkovac municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-petnjica",
+      "slug": "petnjica",
+      "municipality": "Petnjica",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Petnjica",
+          "title": "Opštinski odbor Petnjica",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Petnjica",
+          "title": "Petnjica municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-plav",
+      "slug": "plav",
+      "municipality": "Plav",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Plav",
+          "title": "Opštinski odbor Plav",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Plav",
+          "title": "Plav municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-pluzine",
+      "slug": "pluzine",
+      "municipality": "Plužine",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Plužine",
+          "title": "Opštinski odbor Plužine",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Plužine",
+          "title": "Plužine municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-rozaje",
+      "slug": "rozaje",
+      "municipality": "Rožaje",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Rožaje",
+          "title": "Opštinski odbor Rožaje",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Rožaje",
+          "title": "Rožaje municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-savnik",
+      "slug": "savnik",
+      "municipality": "Šavnik",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Šavnik",
+          "title": "Opštinski odbor Šavnik",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Šavnik",
+          "title": "Šavnik municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-tivat",
+      "slug": "tivat",
+      "municipality": "Tivat",
+      "region": "coast",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Tivat",
+          "title": "Opštinski odbor Tivat",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Tivat",
+          "title": "Tivat municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-tuzi",
+      "slug": "tuzi",
+      "municipality": "Tuzi",
+      "region": "central",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Tuzi",
+          "title": "Opštinski odbor Tuzi",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Tuzi",
+          "title": "Tuzi municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-ulcinj",
+      "slug": "ulcinj",
+      "municipality": "Ulcinj",
+      "region": "coast",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Ulcinj",
+          "title": "Opštinski odbor Ulcinj",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Ulcinj",
+          "title": "Ulcinj municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-zabljak",
+      "slug": "zabljak",
+      "municipality": "Žabljak",
+      "region": "north",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Žabljak",
+          "title": "Opštinski odbor Žabljak",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Žabljak",
+          "title": "Žabljak municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
+        }
+      }
+    },
+    {
+      "id": "odbor-zeta",
+      "slug": "zeta",
+      "municipality": "Zeta",
+      "region": "central",
+      "contactEmail": null,
+      "president": null,
+      "active": false,
+      "featured": false,
+      "members": [],
+      "translations": {
+        "sr": {
+          "name": "Zeta",
+          "title": "Opštinski odbor Zeta",
+          "coordinator": "Lokalni odbor povezuje građane i organizacioni rad Pokreta."
+        },
+        "en": {
+          "name": "Zeta",
+          "title": "Zeta municipal board",
+          "coordinator": "The local board connects citizens with Movement organization work."
         }
       }
     }

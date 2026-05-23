@@ -1,0 +1,16 @@
+---
+import OrganizationPage from '../components/organization/OrganizationPage.astro';
+import { defaultLang } from '../i18n/config';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Organizacija"
+  description="Vizuelna mapa organizacije Pokreta Evropa sad: državni organi, lokalna mreža i stručna tijela."
+  image="/images/homepage-hero-clean.png"
+>
+  <OrganizationPage lang={lang} />
+</BaseLayout>

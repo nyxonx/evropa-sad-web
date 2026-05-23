@@ -101,19 +101,39 @@ interface RawOrganization {
       personId: string;
       order: number;
       role: Localized<string>;
+      responsibility?: Localized<string>;
+      bioUrl?: string;
+      email?: string;
+      socials?: Array<{ href: string; label: string }>;
     }>;
     translations: Localized<{
       title: string;
       description: string;
+      article: string;
+      competences: string[];
     }>;
   }>;
   localBoards: Array<{
+    id: string;
     slug: string;
     municipality: string;
     region: string;
     contactEmail: string | null;
+    president: string | null;
+    active: boolean;
+    featured: boolean;
+    members?: Array<{
+      personId: string;
+      order: number;
+      role: Localized<string>;
+      responsibility?: Localized<string>;
+      bioUrl?: string;
+      email?: string;
+      socials?: Array<{ href: string; label: string }>;
+    }>;
     translations: Localized<{
       name: string;
+      title: string;
       coordinator: string;
     }>;
   }>;
@@ -210,10 +230,26 @@ export function getOrganization(lang: Lang) {
         personId: member.personId,
         order: member.order,
         role: member.role[lang],
+        responsibility: member.responsibility?.[lang] ?? '',
+        bioUrl: member.bioUrl,
+        email: member.email,
+        socials: member.socials ?? [],
         person: peopleById.get(member.personId),
       })),
     }));
-  const localBoards = organization.localBoards.map((board) => localizeEntry(board, lang));
+  const localBoards = organization.localBoards.map((board) => ({
+    ...localizeEntry(board, lang),
+    members: [...(board.members ?? [])].sort((a, b) => a.order - b.order).map((member) => ({
+      personId: member.personId,
+      order: member.order,
+      role: member.role[lang],
+      responsibility: member.responsibility?.[lang] ?? '',
+      bioUrl: member.bioUrl,
+      email: member.email,
+      socials: member.socials ?? [],
+      person: peopleById.get(member.personId),
+    })),
+  }));
 
   return {
     summary: localizeEntry(organization.summary, lang),

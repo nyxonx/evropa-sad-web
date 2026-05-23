@@ -42,6 +42,8 @@ const copy = {
   },
 } as const;
 
+const implementedStaticPaths = new Set(['/organizacija']);
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null;
 }
@@ -93,7 +95,9 @@ export function getPlaceholderRoutes(lang: Lang): PlaceholderRoute[] {
   collectRoutes(translations[lang], routes);
   getContentRoutes(lang).forEach((route) => routes.set(route.path, route.title));
 
-  return Array.from(routes, ([path, title]) => ({ path, title })).sort((a, b) => a.path.localeCompare(b.path));
+  return Array.from(routes, ([path, title]) => ({ path, title }))
+    .filter((route) => !implementedStaticPaths.has(route.path))
+    .sort((a, b) => a.path.localeCompare(b.path));
 }
 
 export function getPlaceholderPage(lang: Lang, path: string): PlaceholderPage {
