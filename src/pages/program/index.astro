@@ -1,0 +1,16 @@
+---
+import ProgramPage from '../../components/program/ProgramPage.astro';
+import { defaultLang } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Program"
+  description="Program Pokreta Evropa sad: misija, vizija, vrijednosti i programska rješenja za Crnu Goru na prvom mjestu."
+  image="/images/homepage-hero-clean.png"
+>
+  <ProgramPage lang={lang} />
+</BaseLayout>

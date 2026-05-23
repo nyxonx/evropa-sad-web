@@ -1,0 +1,464 @@
+---
+import type { Lang } from '../../i18n/config';
+import { getProgram } from '../../data';
+import CTASection from '../sections/CTASection.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const program = getProgram(lang);
+
+const copy = {
+  sr: {
+    navLabel: 'Navigacija programa',
+    nav: [
+      { href: '#misija-vizija', label: 'Misija i vizija' },
+      { href: '#vrijednosti', label: 'Vrijednosti' },
+      { href: '#rjesenja', label: 'Naša rješenja' },
+    ],
+    missionKicker: 'MISIJA I VIZIJA',
+    missionTitle: 'Politički pravac sa jasnom svrhom',
+    valuesKicker: 'NAČELA I VRIJEDNOSTI',
+    valuesTitle: 'Vrijednosti koje usmjeravaju javno djelovanje',
+    valuesText:
+      'Programska načela daju politički okvir: sloboda, pravda, sekularnost, evropska budućnost, jednake šanse i bolji standard.',
+    solutionsKicker: 'NAŠA RJEŠENJA',
+    solutionsTitle: 'Programske oblasti za državu koja radi',
+    solutionsText:
+      'Svaka oblast je prikazana kroz cilj i nekoliko konkretnih pravaca djelovanja, bez pretrpavanja dugim dokumentarnim tekstom.',
+    detailsCta: 'Detalji',
+    closePanel: 'Zatvori',
+    panelLabel: 'Detalji programske oblasti',
+    areaLabel: 'Programska oblast',
+    goalLabel: 'Cilj',
+    directionsLabel: 'Ključni pravci',
+    descriptionLabel: 'Programski opis',
+  },
+  en: {
+    navLabel: 'Program navigation',
+    nav: [
+      { href: '#misija-vizija', label: 'Mission and vision' },
+      { href: '#vrijednosti', label: 'Values' },
+      { href: '#rjesenja', label: 'Our solutions' },
+    ],
+    missionKicker: 'MISSION AND VISION',
+    missionTitle: 'A political direction with a clear purpose',
+    valuesKicker: 'PRINCIPLES AND VALUES',
+    valuesTitle: 'Values guiding public action',
+    valuesText:
+      'Program principles provide the political framework: freedom, justice, secularity, European future, equal opportunities and better living standards.',
+    solutionsKicker: 'OUR SOLUTIONS',
+    solutionsTitle: 'Program areas for a state that works',
+    solutionsText:
+      'Each area is presented through a goal and a few concrete directions, without overloading the page with long document-style text.',
+    detailsCta: 'Details',
+    closePanel: 'Close',
+    panelLabel: 'Program area details',
+    areaLabel: 'Program area',
+    goalLabel: 'Goal',
+    directionsLabel: 'Key directions',
+    descriptionLabel: 'Program description',
+  },
+} as const;
+
+const t = copy[lang];
+const programDetailsJson = JSON.stringify(program.solutions);
+
+const iconPaths: Record<string, string> = {
+  balance: 'M12 3v18M5 7h14M6 7l-3 6h6L6 7Zm12 0l-3 6h6l-3-6ZM7 21h10',
+  city: 'M4 21V9l6-4v16M10 9l6-4v16M16 10h4v11M7 13h1M7 17h1M13 13h1M13 17h1',
+  community: 'M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm8 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.5 20a4.5 4.5 0 0 1 9 0m-1-3.5A4.5 4.5 0 0 1 20.5 20',
+  culture: 'M4 19c4-5 12-5 16 0M6 15V5h12v10M8 9h8M9 13h6',
+  default: 'M12 3l2.3 5 5.4.7-4 3.8 1 5.4L12 15.2 7.3 17.9l1-5.4-4-3.8 5.4-.7L12 3Z',
+  diversity: 'M12 21s-7-4.2-7-10a7 7 0 0 1 14 0c0 5.8-7 10-7 10ZM9 10h.01M15 10h.01M9 15c1.8 1.2 4.2 1.2 6 0',
+  education: 'M3 8l9-4 9 4-9 4-9-4Zm4 3v5c2.8 2 7.2 2 10 0v-5',
+  environment: 'M20 4c-8 0-14 5-14 12 0 2.8 2.2 5 5 5 7 0 11-8 9-17ZM4 20c3-5 7-8 12-10',
+  eu: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm0 3v2m0 8v2M6 12h2m8 0h2M7.8 7.8l1.4 1.4m5.6 5.6 1.4 1.4m0-8.4-1.4 1.4m-5.6 5.6-1.4 1.4',
+  finance: 'M4 19h16M6 17V9m6 8V5m6 12v-7M4 9l8-5 8 5',
+  flag: 'M5 21V4m0 0h12l-2 4 2 4H5',
+  growth: 'M4 18 9 13l3 3 8-9M15 7h5v5',
+  health: 'M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.2-8 11-8 11Zm-3-9h6m-3-3v6',
+  knowledge: 'M12 3l8 4-8 4-8-4 8-4Zm-6 7v5c3 2 9 2 12 0v-5M12 11v8',
+  liberty: 'M12 3v18M8 7h8M7 21h10M5 11c1.5 2 3.5 2 5 0m4 0c1.5 2 3.5 2 5 0',
+  media: 'M4 6h16v12H4V6Zm4 16h8M8 10h8M8 14h5',
+  opportunity: 'M12 3v18M5 12h14M7 7l10 10M17 7 7 17',
+  rights: 'M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6l-7-3Zm-3 9 2 2 4-5',
+  service: 'M4 7h16M6 7v12h12V7M9 11h6M9 15h4',
+  speech: 'M4 5h16v10H8l-4 4V5Zm5 4h6m-6 3h4',
+  tourism: 'M4 18c4-6 12-6 16 0M6 14l3-7 4 5 3-8 4 10',
+  vote: 'M5 11h14M7 11l2-6h6l2 6M6 11v8h12v-8M10 15h4',
+  youth: 'M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm8 2a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3 21a5 5 0 0 1 10 0m-1-2a5 5 0 0 1 9 2',
+};
+
+const getIconPath = (icon: string) => iconPaths[icon] ?? iconPaths.default;
+---
+
+<section class="relative isolate overflow-hidden bg-[#061632] pb-20 pt-32 text-white sm:pt-36 lg:pt-40">
+  <img src="/images/homepage-hero-clean.png" alt="" class="absolute inset-0 -z-30 h-full w-full object-cover opacity-24" loading="eager" />
+  <div class="absolute inset-0 -z-20 bg-[linear-gradient(110deg,rgba(6,22,50,0.98)_0%,rgba(8,43,99,0.9)_48%,rgba(6,22,50,0.78)_100%)]"></div>
+  <div class="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#d6ad3b]/18 blur-3xl"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-t from-slate-50 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <p class="text-xs font-bold uppercase tracking-[0.22em] text-[#f0cf72]">{program.summary.eyebrow}</p>
+    <h1 class="mt-5 max-w-5xl text-4xl font-bold tracking-normal sm:text-5xl lg:text-6xl">{program.summary.title}</h1>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-blue-50/88">{program.summary.description}</p>
+
+  </div>
+</section>
+
+<nav class="relative z-20 mx-auto -mt-7 max-w-7xl px-4 sm:px-6 lg:px-8" aria-label={t.navLabel}>
+  <div class="grid gap-2 rounded-lg border border-slate-200 bg-white p-2 shadow-xl shadow-slate-300/50 sm:grid-cols-3">
+    {
+      t.nav.map((item) => (
+        <a href={item.href} class="flex min-h-12 items-center justify-center rounded-md px-3 py-2 text-center text-xs font-bold uppercase text-[#082b63] transition hover:bg-[#eef4ff] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]">
+          {item.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
+
+<section id="misija-vizija" class="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.missionKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.missionTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{program.missionVision.foundation}</p>
+    </div>
+
+    <div class="mt-10 grid gap-5 lg:grid-cols-2">
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/60 hover:shadow-xl hover:shadow-slate-300/70">
+        <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#fff8e3] text-[#b48924]">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+            <path d={getIconPath('service')} stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h3 class="mt-5 text-2xl font-bold text-[#061632]">{program.missionVision.missionTitle}</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-700">{program.missionVision.mission}</p>
+      </article>
+
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/60 hover:shadow-xl hover:shadow-slate-300/70">
+        <div class="flex h-12 w-12 items-center justify-center rounded-md bg-[#eef4ff] text-[#082b63]">
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+            <path d={getIconPath('eu')} stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h3 class="mt-5 text-2xl font-bold text-[#061632]">{program.missionVision.visionTitle}</h3>
+        <p class="mt-4 text-sm leading-7 text-slate-700">{program.missionVision.vision}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="vrijednosti" class="scroll-mt-24 bg-white py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.valuesKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.valuesTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.valuesText}</p>
+    </div>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {
+        program.values.map((value) => (
+          <article class="group rounded-xl border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/70 hover:shadow-xl hover:shadow-slate-300/70">
+            <div class="flex h-11 w-11 items-center justify-center rounded-md bg-[#fff8e3] text-[#b48924] transition group-hover:bg-[#d6ad3b] group-hover:text-[#061632]">
+              <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-none stroke-current stroke-[1.8]">
+                <path d={getIconPath(value.icon)} stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3 class="mt-4 text-base font-bold leading-6 text-[#061632]">{value.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600">{value.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<section id="rjesenja" class="scroll-mt-24 bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.solutionsKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.solutionsTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.solutionsText}</p>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        program.solutions.map((solution, index) => (
+          <article class="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/70 hover:shadow-xl hover:shadow-slate-300/70">
+            <div aria-hidden="true" class="absolute -right-16 -top-20 h-44 w-44 rounded-full bg-[#d6ad3b]/10 blur-3xl transition group-hover:bg-[#d6ad3b]/18"></div>
+            <div class="relative flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#082b63] text-white shadow-lg shadow-slate-200/80 transition group-hover:bg-[#061632]">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+                  <path d={getIconPath(solution.icon)} stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <span class="rounded-full bg-[#fff8e3] px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#8a6a13]">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+            </div>
+            <h3 class="relative mt-5 text-xl font-bold leading-7 text-[#061632]">{solution.title}</h3>
+            <p class="relative mt-3 text-sm leading-7 text-slate-600">{solution.lead}</p>
+            <ul class="relative mt-5 space-y-3">
+              {
+                solution.points.map((point) => (
+                  <li class="flex gap-3 text-sm leading-6 text-slate-700">
+                    <span aria-hidden="true" class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6ad3b]"></span>
+                    <span>{point}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <button
+              type="button"
+              class="relative mt-6 inline-flex min-h-11 items-center justify-center gap-3 rounded-md border border-[#082b63]/20 bg-[#061632] px-4 text-xs font-bold uppercase text-white shadow-lg shadow-slate-200/80 transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:bg-[#082b63] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+              data-program-trigger={solution.slug}
+              aria-expanded="false"
+              aria-controls="program-detail-panel"
+              aria-label={`${solution.title}: ${t.detailsCta}`}
+            >
+              <span>{t.detailsCta}</span>
+              <span aria-hidden="true" class="flex h-6 w-6 items-center justify-center rounded-full bg-[#d6ad3b] text-base leading-none text-[#061632]">+</span>
+            </button>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<div id="program-detail-modal" class="fixed inset-0 z-[80] hidden" aria-hidden="true">
+  <button type="button" class="absolute inset-0 bg-[#061632]/72 opacity-0 transition-opacity duration-300 lg:pointer-events-none" data-program-overlay aria-label={t.closePanel}></button>
+  <aside
+    id="program-detail-panel"
+    class="absolute inset-x-0 bottom-0 max-h-[92vh] translate-y-full overflow-y-auto rounded-t-2xl border border-white/15 bg-white shadow-2xl shadow-black/30 transition duration-300 lg:inset-y-0 lg:left-auto lg:right-0 lg:h-full lg:max-h-none lg:w-full lg:max-w-2xl lg:translate-x-full lg:translate-y-0 lg:rounded-l-2xl lg:rounded-tr-none"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="program-detail-title"
+    aria-label={t.panelLabel}
+    tabindex="-1"
+  >
+    <div class="relative isolate overflow-hidden bg-[#061632] px-5 py-6 text-white sm:px-7">
+      <div aria-hidden="true" class="absolute -right-20 -top-20 -z-10 h-56 w-56 rounded-full bg-[#d6ad3b]/18 blur-3xl"></div>
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#f0cf72]" data-program-label>{t.areaLabel}</p>
+      <div class="mt-3 flex items-start justify-between gap-4">
+        <h2 id="program-detail-title" class="text-3xl font-bold tracking-normal" data-program-title></h2>
+        <button
+          type="button"
+          class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/18 bg-white/10 text-white transition hover:border-[#d6ad3b] hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2 focus:ring-offset-[#061632]"
+          data-program-close
+          aria-label={t.closePanel}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="h-5 w-5 fill-none stroke-current stroke-[2]">
+            <path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+      <p class="mt-4 text-sm leading-7 text-blue-50/90" data-program-lead></p>
+    </div>
+
+    <div class="space-y-6 px-5 py-6 sm:px-7">
+      <section aria-labelledby="program-goal-heading">
+        <h3 id="program-goal-heading" class="text-sm font-bold uppercase tracking-[0.16em] text-[#b48924]">{t.goalLabel}</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-700" data-program-goal></p>
+      </section>
+
+      <section aria-labelledby="program-directions-heading">
+        <h3 id="program-directions-heading" class="text-sm font-bold uppercase tracking-[0.16em] text-[#b48924]">{t.directionsLabel}</h3>
+        <ul class="mt-3 space-y-3" data-program-points></ul>
+      </section>
+
+      <section aria-labelledby="program-description-heading">
+        <h3 id="program-description-heading" class="text-sm font-bold uppercase tracking-[0.16em] text-[#b48924]">{t.descriptionLabel}</h3>
+        <div class="mt-3 space-y-4 text-sm leading-7 text-slate-700" data-program-description></div>
+      </section>
+    </div>
+  </aside>
+</div>
+
+<script id="program-detail-data" type="application/json" set:html={programDetailsJson}></script>
+
+<CTASection lang={lang} />
+
+<script>
+  const initProgramDetailPanel = () => {
+    const dataScript = document.getElementById('program-detail-data');
+    const modal = document.getElementById('program-detail-modal');
+    const panel = document.getElementById('program-detail-panel');
+    const overlay = document.querySelector('[data-program-overlay]');
+    const triggers = Array.from(document.querySelectorAll('[data-program-trigger]'));
+    const closeButtons = Array.from(document.querySelectorAll('[data-program-close]'));
+
+    if (!dataScript || !modal || !panel || !overlay || triggers.length === 0) {
+      return;
+    }
+
+    const areas = JSON.parse(dataScript.textContent || '[]');
+    const areaBySlug = new Map(areas.map((area) => [area.slug, area]));
+    const fields = {
+      title: panel.querySelector('[data-program-title]'),
+      lead: panel.querySelector('[data-program-lead]'),
+      goal: panel.querySelector('[data-program-goal]'),
+      points: panel.querySelector('[data-program-points]'),
+      description: panel.querySelector('[data-program-description]'),
+    };
+    const focusableSelector = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+    let activeTrigger = null;
+    let closeTimer = null;
+    let previousBodyOverflow = '';
+
+    const updateTriggerStates = (activeSlug) => {
+      triggers.forEach((trigger) => {
+        const isActive = trigger.getAttribute('data-program-trigger') === activeSlug;
+        trigger.setAttribute('aria-expanded', String(isActive));
+      });
+    };
+
+    const renderArea = (area) => {
+      fields.title.textContent = area.title;
+      fields.lead.textContent = area.lead;
+      fields.goal.textContent = area.lead;
+      fields.points.innerHTML = '';
+      fields.description.innerHTML = '';
+
+      area.points.forEach((point) => {
+        const item = document.createElement('li');
+        item.className = 'flex gap-3 text-sm leading-6 text-slate-700';
+        const dot = document.createElement('span');
+        dot.className = 'mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d6ad3b]';
+        dot.setAttribute('aria-hidden', 'true');
+        const text = document.createElement('span');
+        text.textContent = point;
+        item.append(dot, text);
+        fields.points.append(item);
+      });
+
+      const paragraphs = area.detailParagraphs?.length ? area.detailParagraphs : [area.lead];
+      paragraphs.forEach((paragraph) => {
+        const text = document.createElement('p');
+        text.textContent = paragraph;
+        fields.description.append(text);
+      });
+    };
+
+    const openPanel = (slug, trigger) => {
+      const area = areaBySlug.get(slug);
+      if (!area) {
+        return;
+      }
+
+      window.clearTimeout(closeTimer);
+      activeTrigger = trigger;
+      renderArea(area);
+      updateTriggerStates(slug);
+      previousBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+
+      window.requestAnimationFrame(() => {
+        overlay.classList.add('opacity-100');
+        panel.classList.remove('translate-y-full', 'lg:translate-x-full');
+        panel.classList.add('translate-y-0', 'lg:translate-x-0');
+      });
+
+      const firstControl = panel.querySelector('[data-program-close]');
+      (firstControl || panel).focus();
+    };
+
+    const closePanel = () => {
+      if (modal.classList.contains('hidden')) {
+        return;
+      }
+
+      overlay.classList.remove('opacity-100');
+      panel.classList.add('translate-y-full', 'lg:translate-x-full');
+      panel.classList.remove('translate-y-0', 'lg:translate-x-0');
+      modal.setAttribute('aria-hidden', 'true');
+      updateTriggerStates('');
+      document.body.style.overflow = previousBodyOverflow;
+
+      closeTimer = window.setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 250);
+
+      if (activeTrigger) {
+        activeTrigger.focus();
+      }
+      activeTrigger = null;
+    };
+
+    const trapFocus = (event) => {
+      if (modal.classList.contains('hidden') || event.key !== 'Tab') {
+        return;
+      }
+
+      const focusable = Array.from(panel.querySelectorAll(focusableSelector)).filter((element) => element.offsetParent !== null);
+      if (focusable.length === 0) {
+        event.preventDefault();
+        panel.focus();
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        openPanel(trigger.getAttribute('data-program-trigger'), trigger);
+      });
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener('click', closePanel);
+    });
+
+    overlay.addEventListener('click', closePanel);
+
+    document.addEventListener(
+      'click',
+      (event) => {
+        if (modal.classList.contains('hidden') || window.matchMedia('(max-width: 1023px)').matches) {
+          return;
+        }
+
+        const target = event.target;
+        if (!(target instanceof Element) || panel.contains(target) || target.closest('[data-program-trigger]')) {
+          return;
+        }
+
+        event.preventDefault();
+        event.stopPropagation();
+        closePanel();
+      },
+      true,
+    );
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closePanel();
+      }
+      trapFocus(event);
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initProgramDetailPanel);
+  } else {
+    initProgramDetailPanel();
+  }
+</script>

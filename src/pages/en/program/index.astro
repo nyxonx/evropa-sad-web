@@ -1,0 +1,16 @@
+---
+import ProgramPage from '../../../components/program/ProgramPage.astro';
+import type { Lang } from '../../../i18n/config';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Program"
+  description="Europe Now Movement program: mission, vision, values and program solutions for Montenegro first."
+  image="/images/homepage-hero-clean.png"
+>
+  <ProgramPage lang={lang} />
+</BaseLayout>

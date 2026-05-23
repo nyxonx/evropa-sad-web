@@ -42,7 +42,7 @@ const copy = {
   },
 } as const;
 
-const implementedStaticPaths = new Set(['/organizacija']);
+const implementedStaticPaths = new Set(['/organizacija', '/program']);
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null;

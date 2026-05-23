@@ -1,102 +1,777 @@
-[
-  {
-    "slug": "ekonomija-i-standard",
-    "order": 1,
-    "icon": "economy",
+{
+  "summary": {
     "translations": {
       "sr": {
-        "title": "Ekonomija i standard",
-        "lead": "Veće plate, održive javne finansije i razvoj koji se vidi u svakodnevnom životu.",
-        "points": [
-          "rast zarada kroz produktivnost i investicije",
-          "odgovorno upravljanje budžetom",
-          "podrška preduzetništvu i novim radnim mjestima"
-        ]
+        "eyebrow": "PROGRAM POKRETA",
+        "title": "Program za Crnu Goru na prvom mjestu",
+        "description": "Program Pokreta Evropa sad povezuje slobodu, odgovornost, znanje, pravdu i ekonomski razvoj u jasne javne politike za bolji život građana."
       },
       "en": {
-        "title": "Economy and living standards",
-        "lead": "Higher wages, sustainable public finances and development visible in everyday life.",
-        "points": [
-          "wage growth through productivity and investment",
-          "responsible budget management",
-          "support for entrepreneurship and new jobs"
-        ]
+        "eyebrow": "MOVEMENT PROGRAM",
+        "title": "A program for Montenegro first",
+        "description": "The Europe Now Movement program connects freedom, accountability, knowledge, justice and economic development into clear public policies for a better life."
       }
     }
   },
-  {
-    "slug": "evropska-integracija",
-    "order": 2,
-    "icon": "eu",
+  "missionVision": {
     "translations": {
       "sr": {
-        "title": "Evropska integracija",
-        "lead": "Punopravno članstvo u Evropskoj uniji kao strateški državni cilj.",
-        "points": [
-          "zatvaranje pregovaračkih poglavlja",
-          "jačanje vladavine prava",
-          "institucije koje rade po evropskim standardima"
-        ]
+        "foundationTitle": "Polazna osnova",
+        "foundation": "Pokret je utemeljen na načelima slobode, odgovornosti i dostojanstva, uz vjeru u znanje, pošten rad i demokratsko društvo ravnopravnih građana.",
+        "missionTitle": "Misija",
+        "mission": "Afirmišemo politiku kao zajedničko institucionalno djelovanje za opšte dobro, zasnovano na znanju, vrlini, poštenom radu, empatiji i odgovornom učešću građana u javnom životu.",
+        "visionTitle": "Vizija",
+        "vision": "Crna Gora treba da bude suverena, stabilna, bezbjedna i ekonomski jaka država, zasnovana na vladavini prava, kvalitetnom obrazovanju i zdravstvu, održivim finansijama i punopravnom članstvu u Evropskoj uniji."
       },
       "en": {
-        "title": "European integration",
-        "lead": "Full membership in the European Union as a strategic national goal.",
-        "points": [
-          "closing negotiation chapters",
-          "strengthening the rule of law",
-          "institutions operating by European standards"
-        ]
+        "foundationTitle": "Foundation",
+        "foundation": "The Movement is founded on freedom, accountability and dignity, with faith in knowledge, honest work and a democratic society of equal citizens.",
+        "missionTitle": "Mission",
+        "mission": "We affirm politics as joint institutional action for the common good, based on knowledge, virtue, honest work, empathy and responsible citizen participation in public life.",
+        "visionTitle": "Vision",
+        "vision": "Montenegro should be a sovereign, stable, secure and economically strong state, based on rule of law, quality education and healthcare, sustainable finances and full European Union membership."
       }
     }
   },
-  {
-    "slug": "mladi-i-obrazovanje",
-    "order": 3,
-    "icon": "education",
-    "translations": {
-      "sr": {
-        "title": "Mladi i obrazovanje",
-        "lead": "Obrazovni sistem koji daje znanje, vještine i razlog da mladi ostanu u Crnoj Gori.",
-        "points": [
-          "savremeni nastavni programi",
-          "povezivanje obrazovanja i tržišta rada",
-          "podrška talentima i studentskim inicijativama"
-        ]
-      },
-      "en": {
-        "title": "Youth and education",
-        "lead": "An education system that provides knowledge, skills and a reason for young people to stay in Montenegro.",
-        "points": [
-          "modern curricula",
-          "connecting education and the labor market",
-          "support for talent and student initiatives"
-        ]
+  "values": [
+    {
+      "id": "sloboda-odgovornost",
+      "icon": "liberty",
+      "translations": {
+        "sr": {
+          "title": "Sloboda i odgovornost",
+          "text": "Dostojanstvo i sloboda čovjeka su nepovredivi, a lične slobode idu uz odgovornost prema zajednici."
+        },
+        "en": {
+          "title": "Freedom and accountability",
+          "text": "Human dignity and freedom are inviolable, while individual freedoms go together with responsibility toward the community."
+        }
+      }
+    },
+    {
+      "id": "solidarnost",
+      "icon": "community",
+      "translations": {
+        "sr": {
+          "title": "Demokratsko i solidarno društvo",
+          "text": "Gradimo društvo jednakih prava, socijalne odgovornosti i poštovanja privatne svojine."
+        },
+        "en": {
+          "title": "Democratic and solidary society",
+          "text": "We build a society of equal rights, social responsibility and respect for private property."
+        }
+      }
+    },
+    {
+      "id": "nauka-kultura",
+      "icon": "knowledge",
+      "translations": {
+        "sr": {
+          "title": "Nauka i kultura",
+          "text": "Nauka, obrazovanje i kultura su ključne djelatnosti državnog i društvenog razvoja."
+        },
+        "en": {
+          "title": "Science and culture",
+          "text": "Science, education and culture are essential fields of state and social development."
+        }
+      }
+    },
+    {
+      "id": "sloboda-govora",
+      "icon": "speech",
+      "translations": {
+        "sr": {
+          "title": "Sloboda govora",
+          "text": "Podržavamo slobodu mišljenja, izražavanja i javnu razmjenu stavova bez cenzure i represije."
+        },
+        "en": {
+          "title": "Freedom of speech",
+          "text": "We support freedom of thought, expression and public exchange of views without censorship or repression."
+        }
+      }
+    },
+    {
+      "id": "drzavnost-identitet",
+      "icon": "flag",
+      "translations": {
+        "sr": {
+          "title": "Državnost i identitet",
+          "text": "Poštujemo državnost, slobodarske tradicije i kulturno-istorijski identitet Crne Gore."
+        },
+        "en": {
+          "title": "Statehood and identity",
+          "text": "We respect Montenegro's statehood, freedom traditions and cultural-historical identity."
+        }
+      }
+    },
+    {
+      "id": "razlicitosti",
+      "icon": "diversity",
+      "translations": {
+        "sr": {
+          "title": "Različitosti",
+          "text": "Uvažavamo kolektivne identitete i interkulturalni karakter Crne Gore."
+        },
+        "en": {
+          "title": "Diversity",
+          "text": "We respect collective identities and the intercultural character of Montenegro."
+        }
+      }
+    },
+    {
+      "id": "sekularnost",
+      "icon": "balance",
+      "translations": {
+        "sr": {
+          "title": "Sekularnost",
+          "text": "Zastupamo odvojenost države i vjerskih zajednica, uz slobodu vjere i slobodu od vjere."
+        },
+        "en": {
+          "title": "Secularity",
+          "text": "We support separation of state and religious communities, with freedom of and from religion."
+        }
+      }
+    },
+    {
+      "id": "evropska-buducnost",
+      "icon": "eu",
+      "translations": {
+        "sr": {
+          "title": "Evropska budućnost",
+          "text": "Crna Gora pripada evropskoj zajednici država i naroda, uz dobre odnose sa susjedima i multilateralizam."
+        },
+        "en": {
+          "title": "European future",
+          "text": "Montenegro belongs to the European community of states and peoples, with good neighborly relations and multilateralism."
+        }
+      }
+    },
+    {
+      "id": "jednake-sanse",
+      "icon": "opportunity",
+      "translations": {
+        "sr": {
+          "title": "Jednake šanse",
+          "text": "Zalaganje, kompetencije i profesionalni integritet moraju biti ključni za zapošljavanje i napredovanje."
+        },
+        "en": {
+          "title": "Equal opportunities",
+          "text": "Effort, competence and professional integrity must be decisive for employment and advancement."
+        }
+      }
+    },
+    {
+      "id": "standard",
+      "icon": "growth",
+      "translations": {
+        "sr": {
+          "title": "Standard i preduzetništvo",
+          "text": "Jačamo standard kroz ekonomiju znanja, inovacije, privatnu inicijativu i odgovornu socijalnu politiku."
+        },
+        "en": {
+          "title": "Living standards and entrepreneurship",
+          "text": "We strengthen living standards through a knowledge economy, innovation, private initiative and responsible social policy."
+        }
       }
     }
-  },
-  {
-    "slug": "zdravstvo-i-socijalna-sigurnost",
-    "order": 4,
-    "icon": "health",
-    "translations": {
-      "sr": {
-        "title": "Zdravstvo i socijalna sigurnost",
-        "lead": "Dostupnije usluge, sigurnije penzije i sistem koji štiti najugroženije.",
-        "points": [
-          "kraće liste čekanja",
-          "dostojanstvene penzije",
-          "bolja koordinacija socijalnih servisa"
-        ]
-      },
-      "en": {
-        "title": "Healthcare and social security",
-        "lead": "More accessible services, safer pensions and a system that protects the most vulnerable.",
-        "points": [
-          "shorter waiting lists",
-          "dignified pensions",
-          "better coordination of social services"
-        ]
+  ],
+  "solutions": [
+    {
+      "slug": "vise-slobode-vise-demokratije",
+      "order": 1,
+      "icon": "vote",
+      "translations": {
+        "sr": {
+          "title": "Više slobode, više demokratije",
+          "lead": "Građanin je nosilac suvereniteta, a institucije moraju raditi otvoreno i odgovorno.",
+          "points": ["jačanje demokratskih procedura", "transparentno odlučivanje", "aktivnije učešće građana"],
+          "detailParagraphs": [
+            "Polazeći od fundamentalnog, Ustavom Crne Gore potvrđenog principa da je građanin nosilac suvereniteta, zalažemo se za aktivnije sudjelovanje građana u procesu donošenja javnih odluka. Samo slobodan pojedinac je istovremeno odgovoran građanin. Građanin ne smije biti žrtva izopačenja predstavničke demokratije u puko obezbjeđivanje mandata otuđenim političarima.",
+            "Umjesto prostog periodičnog glasanja na izborima, Evropa sad ohrabruje kontinuirano učešće građana u javnom životu. Njihovi prioriteti i interesi zaslužuju da budu saopšteni i mimo izbora, a o svim značajnim društvenim i političkim pitanjima mora se voditi transparentna, inkluzivna i argumentovana debata.",
+            "Favorizovaćemo kreiranje ambijenta u kome će građani saopštavati svoje stavove i ideje putem digitalnih platformi, okruglih stolova, javnih rasprava i drugih adekvatnih instrumenata. Gradeći povjerenje između građana i donosilaca odluka, afirmišemo društvo koje prihvata različitost mišljenja i ohrabruje kulturu otvorenog dijaloga."
+          ]
+        },
+        "en": {
+          "title": "More freedom, more democracy",
+          "lead": "Citizens are the holders of sovereignty, and institutions must work openly and responsibly.",
+          "points": ["stronger democratic procedures", "transparent decision-making", "more active citizen participation"],
+          "detailParagraphs": [
+            "Starting from the constitutional principle that the citizen is the holder of sovereignty, we advocate more active citizen participation in public decision-making. A free individual is also a responsible citizen, and citizens must not be reduced to a periodic source of mandates for detached politicians.",
+            "Instead of voting only from election to election, Europe Now encourages continuous participation in public life. Citizen priorities and interests deserve to be heard beyond election cycles, while all important social and political questions should be discussed through transparent, inclusive and evidence-based debate.",
+            "We will support an environment in which citizens can express views and ideas through digital platforms, round tables, public consultations and other appropriate tools. By building trust between citizens and decision-makers, we affirm a society that accepts different opinions and encourages open dialogue."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "dio-evrope-otvoreni-ka-svijetu",
+      "order": 2,
+      "icon": "eu",
+      "translations": {
+        "sr": {
+          "title": "Dio Evrope, otvoreni ka svijetu",
+          "lead": "Evropska integracija i dobrosusjedski odnosi su strateški okvir razvoja Crne Gore.",
+          "points": ["punopravno članstvo u EU", "regionalna saradnja", "institucije po evropskim standardima"],
+          "detailParagraphs": [
+            "Geografski položaj, te kulturni i duhovni tokovi istorije odredili su Crnu Goru kao tačku susreta različitih civilizacija i čvorište preplitanja ideja i vrijednosti. Crna Gora mora biti snažno i istinski opredijeljena za što skorije punopravno članstvo u Evropskoj uniji, koja ne smije biti posmatrana kao konačni cilj, već kao prilika za pristupanje porodici naroda i država ujedinjenih u različitostima.",
+            "Vodeći se principima saradnje i međusobnog uvažavanja, Evropa sad se zalaže za jačanje dobrosusjedskih i regionalnih odnosa kroz aktivno unaprjeđivanje regionalne saradnje i jasno definisanu politiku zero problems with neighbours, uz uvažavanje nacionalnih interesa i brojnih ekonomskih, istorijskih i kulturnih veza sa regionom.",
+            "Uvažavajući činjenicu da je Crna Gora članica NATO, radićemo na učvršćivanju kredibilne uloge naše zemlje u Sjevernoatlantskom savezu.",
+            "Zalažemo se za snažno prisustvo Crne Gore u međunarodnim organizacijama i multilateralnim inicijativama. Vjerujemo da ulogu države u međunarodnim poslovima ne određuje njena veličina, već snaga ideja i diplomatskih vještina, pa ćemo raditi na aktivnijoj ulozi Crne Gore u Ujedinjenim nacijama, uz poseban akcenat na mir, bezbjednost i prosperitet.",
+            "Zalagaćemo se za profesionalizaciju diplomatskog kadra Crne Gore i osnaživanje kulturne, naučne i ekonomske diplomatije, uz iskorjenjivanje političkog i partijskog uticaja na njeno funkcionisanje."
+          ]
+        },
+        "en": {
+          "title": "Part of Europe, open to the world",
+          "lead": "European integration and good neighborly relations are Montenegro's strategic development framework.",
+          "points": ["full EU membership", "regional cooperation", "institutions by European standards"],
+          "detailParagraphs": [
+            "Montenegro's geography and historical, cultural and spiritual currents have made it a meeting point of civilizations and values. Montenegro must be firmly and genuinely committed to full European Union membership as soon as possible, not as an end point, but as an opportunity to join a community united in diversity.",
+            "Guided by cooperation and mutual respect, Europe Now supports stronger good-neighborly and regional relations through active regional cooperation and a clear zero-problems-with-neighbors policy, while respecting national interests and the economic, historical and cultural ties in the region.",
+            "As a NATO member, Montenegro should continue strengthening its credible role within the North Atlantic Alliance.",
+            "We support a stronger presence of Montenegro in international organizations and multilateral initiatives. A state's international role is not determined by its size, but by the strength of its ideas and diplomacy, so Montenegro should take a more active role in the United Nations, especially on peace, security and prosperity.",
+            "We will advocate professional diplomacy and stronger cultural, scientific and economic diplomacy, while removing political and party influence from its functioning."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "nauka-za-sve-sve-za-nauku",
+      "order": 3,
+      "icon": "knowledge",
+      "translations": {
+        "sr": {
+          "title": "Nauka za sve, sve za nauku",
+          "lead": "Razvoj znanja, istraživanja i tehnologije mora biti dostupan i društveno koristan.",
+          "points": ["podrška istraživanju", "inovacije u privredi", "veza nauke i javnih politika"],
+          "detailParagraphs": [
+            "U vremenu ubrzanog tehnološkog razvoja i trenutne razmjene informacija, nauka predstavlja ne samo osnovni faktor razvoja jednog društva, već i nezaobilaznu komponentu u procesu donošenja javnih odluka. Evropa sad se zato zalaže za jačanje naučne djelatnosti kroz principe autonomije i internacionalizacije, uz izdvajanje potrebnih sredstava.",
+            "Autonomija nauke podrazumijeva nezavisnost naučno-istraživačkog rada, oslobođenog ideoloških, političkih, ali i finansijskih pritisaka. Afirmisaćemo bolji društveni položaj naučnih istraživača, poboljšanje njihovog ekonomskog statusa i ulaganje u naučnoistraživačku infrastrukturu.",
+            "Zalagaćemo se da minimalni prag ulaganja u nauku, istraživanje i inovacije u bliskoj budućnosti dostigne preporuke Evropske unije. Pokrenućemo dijalog sa privredom i inicirati zakonska rješenja koja podstiču domaće preduzetnike da dio prihoda opredijele za naučne projekte, stipendije i usavršavanja.",
+            "Posebnu pažnju posvetićemo internacionalizaciji naučne zajednice i popularizaciji nauke u Crnoj Gori, kroz privlačenje inostranih istraživača, povezivanje sa naučnom dijasporom i razvoj međunarodno prepoznatih naučnoistraživačkih aktivnosti.",
+            "Afirmisaćemo međunarodne sporazume sa eminentnim naučnim centrima širom svijeta kako bi naši istraživači sticali iskustva koja mogu primijeniti po povratku u Crnu Goru."
+          ]
+        },
+        "en": {
+          "title": "Science for all, all for science",
+          "lead": "Knowledge, research and technology must be accessible and socially useful.",
+          "points": ["support for research", "innovation in the economy", "science linked to public policy"],
+          "detailParagraphs": [
+            "In an era of rapid technological development and instant information exchange, science is not only a key factor of social development, but also an essential component of public decision-making. Europe Now supports strengthening scientific activity through autonomy, internationalization and adequate funding.",
+            "Scientific autonomy means independent research free from ideological, political and financial pressure. We will affirm a better social position for researchers, improve their economic status and support investment in research infrastructure.",
+            "We will advocate that investment in science, research and innovation reaches European Union recommendations in the near future. We will also open dialogue with the economy and initiate legal solutions encouraging entrepreneurs to support scientific projects, scholarships and professional development.",
+            "Special attention will be paid to internationalizing Montenegro's scientific community and popularizing science, through attracting foreign researchers, connecting with the scientific diaspora and supporting internationally recognized research activities.",
+            "We will encourage international agreements with leading scientific centers so Montenegrin researchers can gain valuable experience and apply it after returning home."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "obrazovan-pojedinac",
+      "order": 4,
+      "icon": "education",
+      "translations": {
+        "sr": {
+          "title": "Obrazovan pojedinac je građanin svijeta",
+          "lead": "Kvalitetno obrazovanje je temelj ličnog razvoja i dugoročnog prosperiteta društva.",
+          "points": ["savremeni nastavni programi", "vještine za tržište rada", "podrška talentima"],
+          "detailParagraphs": [
+            "Pokret Evropa sad čvrsto vjeruje da je prosvijećeni pojedinac zalog trajnog prosperiteta cjelokupnog društva, a znanje fundamentalna komponenta prevazilaženja socio-ekonomskih nejednakosti. Zato ćemo posebnu pažnju posvetiti obrazovnom sistemu Crne Gore.",
+            "Zalagaćemo se za poboljšanje kvaliteta i povećanje dostupnosti predškolskih ustanova, kako u domenu infrastrukture tako i u domenu vaspitno-obrazovnog kadra, kako bismo roditeljima omogućili nesmetane uslove za rad, a djeci adekvatnu njegu, uravnoteženu vaspitanjem i empatijom.",
+            "U osnovnom i srednjoškolskom obrazovanju zastupaćemo promišljen i balansiran pristup organizacionim i nastavno-programskim reformama, uz analitičko sagledavanje aktuelnih propusta, potreba učenika i globalnih trendova.",
+            "Borićemo se protiv birokratizacije obrazovanja i sprovešćemo mjere koje afirmišu profesionalizaciju, autonomnost i transparentnost obrazovnih ustanova. Posebnu brigu posvetićemo usavršavanju nastavnog kadra i ekonomskom i socijalnom položaju prosvjetnih radnika.",
+            "Dodatno ćemo staviti akcenat na učenje engleskog jezika, zalagati se za uvođenje trećeg stranog jezika u osnovnim školama i za kvalitetniji pristup vannastavnim aktivnostima u okviru školskog kurikuluma.",
+            "Visoko obrazovanje prepoznajemo kao temelj formiranja budućih generacija odgovornih za razvoj Crne Gore. Zalagaćemo se za suštinsku autonomizaciju državnog univerziteta, intenzivniju internacionalizaciju, bolju primjenu Bolonjske deklaracije i usklađivanje studijskih programa sa potrebama savremenog čovjeka.",
+            "Naročitu pažnju posvetićemo unaprjeđenju nastavno-naučnog kadra, poboljšanju njihovog ekonomskog statusa, uključivanju mladih naučnika u nastavni proces i jasnim kvalitativnim kriterijumima za zapošljavanje."
+          ]
+        },
+        "en": {
+          "title": "An educated individual is a citizen of the world",
+          "lead": "Quality education is the foundation of personal development and long-term social prosperity.",
+          "points": ["modern curricula", "skills for the labor market", "support for talent"],
+          "detailParagraphs": [
+            "Europe Now strongly believes that an enlightened individual is the basis of lasting social prosperity, and that knowledge is fundamental to overcoming socio-economic inequalities. That is why Montenegro's education system deserves special attention.",
+            "We will advocate better quality and greater availability of preschool institutions, both in infrastructure and educational staff, so parents can work without barriers while children receive adequate care grounded in upbringing and empathy.",
+            "In primary and secondary education, we will support a thoughtful and balanced approach to organizational and curriculum reforms, based on analysis of current shortcomings, student needs and global trends.",
+            "We will fight the bureaucratization of education and implement measures that affirm professionalism, autonomy and transparency of educational institutions. We will also focus on teacher development and the economic and social status of education workers.",
+            "Additional emphasis will be placed on learning English, introducing a third foreign language in primary schools and improving extracurricular activities within the school curriculum.",
+            "Higher education has a fundamental role in forming future generations responsible for Montenegro's development. We will support genuine autonomy of the state university, stronger internationalization, better implementation of the Bologna Declaration and study programs aligned with the needs of modern life.",
+            "Special attention will be given to improving academic staff, their economic status, greater involvement of young scientists in teaching and clear quality criteria for employment."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "pametni-gradovi-razvijena-sela",
+      "order": 5,
+      "icon": "city",
+      "translations": {
+        "sr": {
+          "title": "Pametni gradovi, razvijena sela",
+          "lead": "Razvoj mora povezati moderne javne servise, infrastrukturu i kvalitet života u svakoj sredini.",
+          "points": ["digitalni lokalni servisi", "bolja povezanost", "ravnomjerniji regionalni razvoj"],
+          "detailParagraphs": [
+            "Evropa sad će raditi na razvoju pametnih gradova u kojima su tradicionalni servisi i usluge efikasniji uz korišćenje digitalnih tehnologija za poboljšanje kvaliteta života građana, funkcionisanje javnih službi i razvoj privrede. Pametni gradovi su ujedno i zeleni gradovi jer omogućavaju bolje korišćenje resursa i manju emisiju ugljen-dioksida.",
+            "Ovo podrazumijeva pametniju transportnu mrežu, javni prevoz i parking, efikasnije osvjetljenje kroz pametnu javnu rasvjetu, bolje vodosnabdijevanje i savremeniji sistem odlaganja i upravljanja otpadom.",
+            "Pametan grad znači i interaktivniju, odgovorniju i efikasniju gradsku administraciju, kao i bezbjednije javne prostore prilagođene osobama sa invaliditetom i starijem stanovništvu.",
+            "Razvijena sela, kao najbolja mjesta susreta čovjeka i prirode, od ključnog su značaja za poljoprivrednu, ekonomsku i socijalnu održivost zemlje. Zalagaćemo se za dinamičan poljoprivredni sektor sposoban da smanji zavisnost Crne Gore od uvoza hrane.",
+            "Rasprostranjena saobraćajna i digitalna infrastruktura, koja brzo povezuje sela sa gradovima, proizvođače hrane i nosioce seoskog turizma sa tržištem, temelj je ruralnog razvoja. Zato ćemo ulagati napore u obnovu postojeće i izgradnju nove putne i digitalne mreže.",
+            "Bolja infrastrukturna i ekonomska integracija ruralnih područja, uz sistem garantovanog otkupa poljoprivrednih proizvoda, otvara prostor revitalizaciji sela, ruralnom zapošljavanju, ostanku mladih na selu i povratku ljudi iz gradova.",
+            "Zalagaćemo se za veća ulaganja u ruralno zdravstvo i obrazovanje, u smislu njihove dostupnosti i kvaliteta, kao i za promociju crnogorskih sela kao poželjne destinacije za investiranje i razvoj turizma."
+          ]
+        },
+        "en": {
+          "title": "Smart cities, developed villages",
+          "lead": "Development must connect modern public services, infrastructure and quality of life in every community.",
+          "points": ["digital local services", "better connectivity", "more balanced regional development"],
+          "detailParagraphs": [
+            "Europe Now will work on developing smart cities where traditional services become more efficient through digital technologies that improve quality of life, public service delivery and economic development. Smart cities are also green cities because they enable better resource use and lower carbon emissions.",
+            "This includes smarter transport networks, public transport and parking, more efficient lighting through smart public lighting, better water supply and a more modern waste management system.",
+            "A smart city also means more interactive, accountable and efficient city administration, along with safer public spaces adapted to persons with disabilities and older citizens.",
+            "Developed villages, as places where people and nature meet, are essential for agricultural, economic and social sustainability. We will support a dynamic agricultural sector capable of reducing Montenegro's dependence on food imports.",
+            "Widespread road and digital infrastructure connecting villages with towns, food producers and rural tourism providers with markets, is the foundation of rural development. That is why we will work on renewing existing and building new road and digital networks.",
+            "Better infrastructural and economic integration of rural areas, along with guaranteed purchase systems for agricultural products, creates space for village revitalization, rural employment, keeping young people in villages and encouraging people to return from cities.",
+            "We will advocate greater investment in rural healthcare and education, in terms of access and quality, as well as promotion of Montenegrin villages as desirable destinations for investment and tourism development."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "kultura-kao-nacin-zivota",
+      "order": 6,
+      "icon": "culture",
+      "translations": {
+        "sr": {
+          "title": "Kultura kao način života",
+          "lead": "Kultura čuva identitet, povezuje zajednice i otvara prostor za stvaralaštvo.",
+          "points": ["podrška kulturnim institucijama", "interkulturalni dijalog", "dostupnost kulture građanima"],
+          "detailParagraphs": [
+            "Temeljna polazišta u programskom odnosu prema kulturi Evropa sad vidi u interkulturalnom karakteru Crne Gore, njenom civilizacijskom i vjerskom pluralizmu, pripadnosti mediteranskom kulturnom krugu i širem evropskom kulturnom prostoru.",
+            "Zalagaćemo se za novi i širi koncept shvatanja kulture: kulturu kao način života. To podrazumijeva integrativnu i participativnu dimenziju kulture i kulturnog stvaralaštva, kao i promovisanje običaja i karakteristika lokalnih zajednica.",
+            "Kultura mora biti tretirana kao jedan od uslova održivog razvoja, između ostalog i kao strateški cilj održivog turizma, u okviru kog kulturni turizam zasnovan na bogatoj kulturnoj baštini zauzima posebno mjesto.",
+            "Principi kulturne politike biće sloboda stvaralaštva i pravo na kulturu, ravnopravno očuvanje svih kulturnih identiteta, poštovanje kulturne različitosti, transparentan rad javnih institucija kulture, poštovanje autorskih prava, demokratizacija kulturne politike, promovisanje kulturnih industrija i afirmisanje autonomne kulturne scene.",
+            "Ciljevi kulturne politike obuhvataju savremen sistem zaštite, upravljanja i održivog korišćenja kulturne baštine i predjela, uključujući prezentaciju i turističku valorizaciju.",
+            "Radićemo na jačanju kapaciteta kulturnih institucija na svim nivoima, održivom sistemu finansiranja i podsticanju autonomije u radu.",
+            "Stvaraćemo moderniji i efikasniji sistem kreiranja i prezentovanja kulturne djelatnosti, unapređenja statusa umjetnika i stvaralaca, širenja i edukacije publike kroz ciljane projekte i umrežavanje sa projektima Evropske unije.",
+            "Posebnu pažnju posvetićemo neformalnim, alternativnim i savremenim kulturnim praksama, kulturi za mlade, kulturnim industrijama i osnaživanju kulturne djelatnosti marginalizovanih grupa."
+          ]
+        },
+        "en": {
+          "title": "Culture as a way of life",
+          "lead": "Culture preserves identity, connects communities and opens space for creativity.",
+          "points": ["support for cultural institutions", "intercultural dialogue", "access to culture for citizens"],
+          "detailParagraphs": [
+            "Europe Now sees the foundation of cultural policy in Montenegro's intercultural character, its civilizational and religious pluralism, and its belonging to the Mediterranean cultural circle and wider European cultural space.",
+            "We will advocate a broader understanding of culture: culture as a way of life. This includes the integrative and participatory dimension of culture and creativity, as well as promotion of local community customs and characteristics.",
+            "Culture must be treated as a condition of sustainable development, including as a strategic goal of sustainable tourism, where cultural tourism based on rich heritage has a special place.",
+            "The principles of cultural policy will include freedom of creativity and the right to culture, equal preservation of all cultural identities, respect for cultural diversity, transparent public cultural institutions, copyright protection, democratization of cultural policy, promotion of cultural industries and affirmation of an autonomous cultural scene.",
+            "Cultural policy goals include a modern system of protection, management and sustainable use of cultural heritage and landscapes, including presentation and tourism valorization.",
+            "We will work to strengthen the capacities of cultural institutions at all levels, establish sustainable financing and encourage institutional autonomy.",
+            "We will create a more modern and efficient system for cultural activity, improve the status of artists and creators, and expand and educate audiences through targeted projects and networking with European Union programs.",
+            "Special attention will be given to informal, alternative and contemporary cultural practices, youth culture, cultural industries and empowering cultural activity among marginalized groups."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "solidarno-drustvo",
+      "order": 7,
+      "icon": "community",
+      "translations": {
+        "sr": {
+          "title": "Solidarno društvo za dostojanstven život",
+          "lead": "Socijalna politika mora štititi dostojanstvo i omogućiti sigurnost onima kojima je podrška potrebna.",
+          "points": ["dostojanstvene penzije", "bolji socijalni servisi", "podrška porodicama"],
+          "detailParagraphs": [
+            "Evropa sad se zalaže za pravedan odnos države prema pojedincu i afirmiše ustavno određenje Crne Gore kao države socijalne pravde, promovišući društvo koje štiti najranjivije i pruža adekvatnu podršku onima kojima je potrebna.",
+            "Podržavaćemo i dalje unapređivati pozitivne mjere iz domena socijalne politike, kao što su dječiji dodatak, besplatni udžbenici, socijalni bonovi, finansijska naknada za novorođenčad i dodatna podrška za asistirane reproduktivne tehnologije.",
+            "Svjesni da je programom Evropa sad započeto unapređenje životnog standarda građana, zalagaćemo se za implementaciju njegovih prirodnih nastavaka. Težićemo da prosječna zarada u Crnoj Gori uskoro bude 1.000 eura, da u srednjem roku Crna Gora preskoči evropski prosjek zarada i dodatno poveća minimalnu zaradu.",
+            "Posebnu pažnju posvetićemo blagostanju penzionera, između ostalog kroz značajno povećanje minimalne penzije na 450 eura, dalje usklađivanje svih penzija sa realnim troškovima života i proširenje socijalne zaštite najstarije populacije.",
+            "Nastavljajući dobre i osmišljavajući nove programe, radićemo na smanjivanju jaza između bogatih i siromašnih i jačanju socijalne stabilnosti Crne Gore.",
+            "Sprovodićemo naprednije politike aktivnog zapošljavanja koje, uz snažan rast ekonomije, treba da dovedu do značajnog smanjenja nezaposlenosti, tako da svako ko želi da radi ima posao u Crnoj Gori.",
+            "Zalagaćemo se za unapređenje prava radnika, vodeći se principom da održivi ekonomski razvoj dolazi iz sinergije odlučivanja u okviru tripartitnog socijalnog dijaloga.",
+            "Radićemo na povećanju opsega hraniteljstva i alternativnog staranja, otvaranju servisa za smještaj i prihvatanje žrtava nasilja, prihvatilišta za beskućnike i dnevnih centara za starije.",
+            "Obezbijedićemo bolju pristupačnost svih nivoa zdravstvene zaštite, jačati integraciju RE populacije, ažurirati sistem socijalnog kartona i uspostaviti alimentacioni fond."
+          ]
+        },
+        "en": {
+          "title": "A solidary society for a dignified life",
+          "lead": "Social policy must protect dignity and provide security to those who need support.",
+          "points": ["dignified pensions", "better social services", "support for families"],
+          "detailParagraphs": [
+            "Europe Now supports a fair relationship between the state and the individual, affirming Montenegro as a state of social justice and promoting a society that protects the most vulnerable and provides adequate support to those who need it.",
+            "We will support and further improve positive social policy measures such as child allowance, free textbooks, social vouchers, newborn support and additional support for assisted reproductive technologies.",
+            "Aware that the Europe Now program started improving living standards, we will advocate its natural continuations. We will aim for the average wage in Montenegro to reach 1,000 euros, for Montenegro to surpass the European wage average in the medium term and for the minimum wage to grow further.",
+            "Special attention will be given to pensioners, including a significant increase of the minimum pension to 450 euros, further alignment of pensions with real living costs and broader social protection for the oldest citizens.",
+            "By continuing good programs and designing new ones, we will work to reduce the gap between rich and poor and strengthen Montenegro's social stability.",
+            "We will implement more advanced active employment policies which, together with strong economic growth, should significantly reduce unemployment so that everyone who wants to work can have a job in Montenegro.",
+            "We will advocate improved workers' rights, guided by the principle that sustainable economic development comes from tripartite social dialogue.",
+            "We will work on expanding foster care and alternative care, opening services for victims of violence, shelters for homeless people and day centers for older citizens.",
+            "We will ensure better access to all levels of healthcare, strengthen integration of the Roma and Egyptian population, update the social card system and establish an alimony fund."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "sva-prava-za-sve",
+      "order": 8,
+      "icon": "rights",
+      "translations": {
+        "sr": {
+          "title": "Sva prava za sve",
+          "lead": "Slobode i prava građana moraju biti zaštićeni dosljedno, jednako i bez selektivnosti.",
+          "points": ["jednakost pred zakonom", "zaštita manjinskih prava", "institucije dostupne građanima"],
+          "detailParagraphs": [
+            "Ključni prioriteti Evrope sad su potpuna i dosljedna zaštita sloboda i prava građana, stvaranje pravne sigurnosti i poštovanje zakonitosti i nepristrasnosti rada državnih organa.",
+            "U domenu ljudskih prava zalažemo se za dosljednu primjenu prava garantovanih Ustavom Crne Gore, kao i međunarodnim ugovorima i konvencijama, uz afirmaciju pojedinačnih i kolektivnih prava i sloboda.",
+            "Posebno ćemo raditi na iskorjenjivanju svakog vida diskriminacije po osnovu bilo kog ličnog svojstva ili stava.",
+            "Opredijeljeni smo za državu u kojoj svi žive slobodno i ravnopravno, kroz uvažavanje različitih identiteta, podsticanje njihovog njegovanja i manifestovanja i posebnu pažnju prema ranjivim grupama.",
+            "Vjerujemo da je načelo sekularizma najbolji model savremenog uređenja odnosa države i vjerskih zajednica, zasnovan na odvojenosti, međusobnom uvažavanju i adekvatnoj saradnji u oblastima od značaja za društvo.",
+            "Zalagaćemo se za poštovanje različitosti, očuvanje ljudskih prava i sloboda i izgradnju jače, bolje i građanske Crne Gore kao stabilne zajednice ujedinjene u svojim različitostima."
+          ]
+        },
+        "en": {
+          "title": "All rights for everyone",
+          "lead": "Citizen freedoms and rights must be protected consistently, equally and without selectivity.",
+          "points": ["equality before the law", "protection of minority rights", "institutions accessible to citizens"],
+          "detailParagraphs": [
+            "Key priorities of Europe Now are full and consistent protection of citizen freedoms and rights, legal certainty, legality and impartial work of state bodies.",
+            "In the field of human rights, we advocate consistent application of rights guaranteed by the Constitution of Montenegro and international treaties and conventions, affirming individual and collective rights and freedoms.",
+            "We will work to eradicate every form of discrimination based on any personal characteristic or opinion.",
+            "We are committed to a state in which everyone lives freely and equally, with respect for different identities, encouragement of their expression and special attention to vulnerable groups.",
+            "We believe that secularity is the best modern model for regulating relations between the state and religious communities, based on separation, mutual respect and appropriate cooperation in areas important to society.",
+            "We will advocate respect for diversity, protection of human rights and freedoms, and the building of a stronger civic Montenegro as a stable community united in its differences."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "odrziv-razvoj",
+      "order": 9,
+      "icon": "environment",
+      "translations": {
+        "sr": {
+          "title": "Razvoj mora biti održiv",
+          "lead": "Ekonomski razvoj mora čuvati prirodne resurse i budućnost narednih generacija.",
+          "points": ["zaštita prostora", "zelene politike", "odgovorno upravljanje resursima"],
+          "detailParagraphs": [
+            "Evropa sad se zalaže za dalju afirmaciju Crne Gore kao prve ustavno deklarisane ekološke države u svijetu, uz stvarnu primjenu ekoloških principa.",
+            "Takav odnos prema životnoj sredini danas je posebno važan zbog globalnih klimatskih promjena i urušavanja ekosistema.",
+            "Crna Gora je kroz istoriju opstajala zahvaljujući simbiozi ljudi sa prirodom, racionalnom korišćenju prirodnih resursa i svijesti da prirodni potencijali nijesu neiscrpni.",
+            "Zalažemo se za otklon od prakse nekritičke eksploatacije prirodnih resursa, poštovanje najviših ekoloških standarda i punu transparentnost svih aktivnosti koje utiču na životnu sredinu.",
+            "U zaštićenim područjima potrebno je zaustaviti divlju gradnju, poštovati prirodni ambijent i dosljednije čuvati rijeku Taru kao UNESCO baštinu.",
+            "Razvijaćemo adekvatno upravljanje otpadom i otpadnim vodama, sistem reciklaže i proizvodnje energije iz otpada po najvišim međunarodnim standardima.",
+            "Naša politika biće usmjerena na očuvanje biodiverziteta, zaštitu vodnih resursa, obogaćivanje šumskih potencijala i zaštitu prostora kao jednog od najvažnijih resursa Crne Gore.",
+            "O pitanjima životne sredine odluke treba donositi kroz javne rasprave i konsultacije sa građanima i stručnom javnošću, u duhu Orhuske konvencije.",
+            "Crnu Goru ćemo razvijati po principima održivog razvoja, vjerujući da treba živjeti u skladu sa prirodom, a ne protiv prirode."
+          ]
+        },
+        "en": {
+          "title": "Development must be sustainable",
+          "lead": "Economic development must protect natural resources and the future of coming generations.",
+          "points": ["spatial protection", "green policies", "responsible resource management"],
+          "detailParagraphs": [
+            "Europe Now advocates further affirmation of Montenegro as the first constitutionally declared ecological state in the world, with real implementation of ecological principles.",
+            "This approach to the environment is especially important today because of global climate change and ecosystem degradation.",
+            "Montenegro has historically endured through the symbiosis of people and nature, rational use of natural resources and awareness that natural potential is not inexhaustible.",
+            "We advocate a clear departure from the uncritical exploitation of natural resources, respect for the highest environmental standards and full transparency of all activities that affect the environment.",
+            "In protected areas it is necessary to stop illegal construction, respect the natural setting and protect the Tara River as UNESCO heritage more consistently.",
+            "We will develop proper waste and wastewater management, recycling and energy production from waste according to the highest international standards.",
+            "Our policy will focus on preserving biodiversity, protecting water resources, enriching forest potential and protecting space as one of Montenegro's most important resources.",
+            "Environmental decisions should be made through public debates and consultations with citizens and experts, in the spirit of the Aarhus Convention.",
+            "We will develop Montenegro according to the principles of sustainable development, believing that society should live with nature, not against it."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "pravda-i-jaka-drzava",
+      "order": 10,
+      "icon": "balance",
+      "translations": {
+        "sr": {
+          "title": "Na pravdi se gradi jaka država",
+          "lead": "Vladavina prava, nezavisne institucije i odgovornost nosilaca funkcija temelj su jake države.",
+          "points": ["nezavisno pravosuđe", "borba protiv korupcije", "odgovorne institucije"],
+          "detailParagraphs": [
+            "Da bi profunkcionisala kao država vladavine prava, Crna Gora mora da se izbori sa visokom korupcijom i organizovanim kriminalom. To je istorijski izazov i preduslov očuvanja ustavno-pravnog poretka.",
+            "Evropa sad će se zalagati za reforme koje uključuju oštriju kaznenu politiku za krivična djela organizovanog kriminala i korupcije, efikasniju zapljenu nezakonito stečene imovine i snažnije specijalizovane jedinice.",
+            "Podržavamo zakonski okvir koji obesmišljava korupciju na visokom nivou, jača međunarodnu saradnju u praćenju tokova novca i pomaže identifikaciju neprijavljene imovine funkcionera.",
+            "Izgradnja povjerenja u pravosudni sistem jedan je od prioriteta Pokreta. To zahtijeva jačanje nezavisnosti pravosudnih aktera i veću efikasnost rješavanja sporova.",
+            "Zalagaćemo se za transparentniji rad sudova, bolju saradnju sa civilnim sektorom, racionalniju raspodjelu predmeta i širu primjenu alternativnog rješavanja sporova.",
+            "Digitalizacija procesa i unapređenje informacionog sistema pravosuđa neophodni su za veću transparentnost, ujednačavanje sudske prakse, bolje upravljanje predmetima i racionalizaciju troškova.",
+            "Poseban cilj je razvoj arbitraže i medijacije, uključujući efikasnije izvršenje arbitražnih odluka i savremena tehnološka rješenja koja mogu povećati povjerenje privrede i investitora.",
+            "Nezavisnost i integritet sudija i tužilaca temeljni su preduslovi vladavine prava. Zato ćemo raditi na poboljšanju njihovog materijalnog položaja i finansijske nezavisnosti."
+          ]
+        },
+        "en": {
+          "title": "A strong state is built on justice",
+          "lead": "Rule of law, independent institutions and accountability of office holders are the foundation of a strong state.",
+          "points": ["independent judiciary", "fight against corruption", "accountable institutions"],
+          "detailParagraphs": [
+            "For Montenegro to function as a rule-of-law state, it must confront high-level corruption and organized crime. This is a historic challenge and a precondition for preserving the constitutional order.",
+            "Europe Now will advocate reforms including stricter penalties for organized crime and corruption, more effective seizure of illegally acquired assets and stronger specialized units.",
+            "We support a legal framework that makes high-level corruption pointless, strengthens international cooperation in tracking money flows and helps identify undeclared assets of public officials.",
+            "Building trust in the justice system is one of the Movement's priorities. It requires stronger independence of judicial actors and greater efficiency in resolving disputes.",
+            "We will advocate more transparent courts, better cooperation with civil society, more rational distribution of cases and wider use of alternative dispute resolution.",
+            "Digitalization of processes and improvement of the judicial information system are necessary for greater transparency, harmonized case law, better case management and cost rationalization.",
+            "A special goal is to develop arbitration and mediation, including more efficient enforcement of arbitral awards and modern technological solutions that can strengthen business and investor confidence.",
+            "The independence and integrity of judges and prosecutors are fundamental preconditions of the rule of law. We will therefore work to improve their material position and financial independence."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "drzava-u-sluzbi-gradjana",
+      "order": 11,
+      "icon": "service",
+      "translations": {
+        "sr": {
+          "title": "Država u službi građana i privrede",
+          "lead": "Javna uprava mora biti profesionalna, digitalna i orijentisana na rješavanje potreba građana i privrede.",
+          "points": ["digitalizacija servisa", "brže procedure", "depolitizovana administracija"],
+          "detailParagraphs": [
+            "Evropa sad će se zalagati za ubrzanu digitalnu transformaciju sistema javne uprave, kako bi se on adekvatnije stavio u službu građana i privrede.",
+            "Digitalna transformacija je imperativ koji omogućava da se usluge javne uprave pružaju mnogo efikasnije i bez nepotrebnog odlaska na šalter.",
+            "Sveobuhvatna digitalna transformacija podrazumijeva digitalizaciju javne uprave, školstva, zdravstva, socijalne zaštite i drugih sistema od značaja za građane.",
+            "Poseban fokus biće na digitalnoj identifikaciji, digitalnom potpisu, elektronskom podnošenju poreskih prijava, online medicinskim receptima, digitalnom katastru i drugim praktičnim uslugama.",
+            "Da bi digitalna rješenja zaživjela, potrebna je i edukacija građana, kao i popularizacija digitalnih usluga kod stanovništva i privrede."
+          ]
+        },
+        "en": {
+          "title": "The state serving citizens and business",
+          "lead": "Public administration must be professional, digital and oriented toward solving citizen and business needs.",
+          "points": ["digital services", "faster procedures", "depoliticized administration"],
+          "detailParagraphs": [
+            "Europe Now will advocate accelerated digital transformation of public administration so that it better serves citizens and businesses.",
+            "Digital transformation is an imperative that enables public services to be delivered much more efficiently and without unnecessary visits to counters.",
+            "Comprehensive digital transformation includes digitalization of public administration, education, healthcare, social protection and other systems important to citizens.",
+            "A special focus will be on digital identification, digital signatures, electronic tax filing, online medical prescriptions, a digital cadastre and other practical services.",
+            "For digital solutions to take root, citizens must also be educated and digital services must be promoted among both the population and businesses."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "crna-gora-dragulj-evrope",
+      "order": 12,
+      "icon": "tourism",
+      "translations": {
+        "sr": {
+          "title": "Crna Gora dragulj Evrope",
+          "lead": "Turizam treba razvijati kao kvalitetnu, održivu i bolje povezanu privrednu granu.",
+          "points": ["kvalitetna turistička ponuda", "cjelogodišnji turizam", "bolja infrastruktura"],
+          "detailParagraphs": [
+            "Turizam je trenutno dominantna privredna grana u Crnoj Gori i ključan je za ekonomsku stabilnost. Evropa sad će se zalagati da prirodne ljepote budu očuvane, a turistička ponuda raznovrsnija i privlačnija.",
+            "To podrazumijeva diversifikaciju turizma, proširenje ponude i veću vremensku i geografsku rasprostranjenost turističke aktivnosti.",
+            "Uklanjanje slabosti sezonskog turizma i jačanje konkurentnosti turističkog proizvoda biće prioriteti naših programskih ciljeva.",
+            "Radićemo na rješavanju problema koji usporavaju razvoj turizma i utiču na kvalitet ponude, posebno u oblastima saobraćajne dostupnosti, vodosnabdijevanja, elektro-mreže, separacije i odlaganja otpada.",
+            "Crna Gora mora postati globalno prepoznatljiva turistička destinacija, uz snažniju saradnju sa turističkom privredom i njenu aktivniju ulogu u promociji zemlje.",
+            "Posebnu pažnju posvetićemo smanjenju sive ekonomije u turizmu, pouzdanijim statističkim podacima, edukaciji kadra i podršci kredibilnim investitorima koji unapređuju turističke kapacitete i ponudu."
+          ]
+        },
+        "en": {
+          "title": "Montenegro, the jewel of Europe",
+          "lead": "Tourism should develop as a high-quality, sustainable and better connected economic sector.",
+          "points": ["quality tourism offer", "year-round tourism", "better infrastructure"],
+          "detailParagraphs": [
+            "Tourism is currently Montenegro's dominant economic sector and is crucial for economic stability. Europe Now will advocate preserving natural beauty while making the tourism offer more diverse and attractive.",
+            "This means diversifying tourism, expanding the offer and spreading tourism activity across more of the year and more parts of the country.",
+            "Removing the weaknesses of seasonal tourism and strengthening the competitiveness of the tourism product will be priorities of our program goals.",
+            "We will work to solve problems that slow tourism development and affect the quality of the offer, especially transport access, water supply, the power grid, waste separation and disposal.",
+            "Montenegro must become a globally recognizable tourism destination, with stronger cooperation with the tourism industry and its more active role in promoting the country.",
+            "We will pay special attention to reducing the grey economy in tourism, improving statistical reliability, educating tourism staff and supporting credible investors who improve tourism capacities and the offer."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "slobodni-mediji",
+      "order": 13,
+      "icon": "media",
+      "translations": {
+        "sr": {
+          "title": "Slobodni mediji - objektivno informisano društvo",
+          "lead": "Tačno, objektivno i blagovremeno informisanje je preduslov stabilnog demokratskog društva.",
+          "points": ["sloboda medija", "profesionalni standardi", "informisani građani"],
+          "detailParagraphs": [
+            "Tačno, objektivno i blagovremeno informisanje jedan je od ključnih faktora stabilne i prosperitetne demokratije, a sloboda medija njegov fundamentalni uslov.",
+            "Evropa sad se zalaže za dosljednu primjenu domaće i međunarodne regulative koja štiti slobodu štampe i pravo na informisanost.",
+            "Prepoznajemo izazove koji uključuju nezavidan ekonomski i pravni status novinara, nerazjašnjene napade na zaposlene i imovinu medijskih kuća, političke i druge pritiske, nedovoljnu regulaciju i polarizaciju medija.",
+            "Radićemo na daljoj profesionalizaciji Javnog servisa, uvođenju beneficiranog radnog staža za novinare, pooštravanju kazni za napade na novinare i jačanju djelotvorne samoregulacije.",
+            "Podržaćemo povećanje sredstava u državnom Fondu za medijski pluralizam i dugoročna rješenja koja konkretno tretiraju izazove medijske scene.",
+            "Podsticaćemo kontrolnu i korektivnu ulogu istraživačkog novinarstva, oslobođenog političkog i finansijskog pritiska.",
+            "Naš cilj je ambijent u kojem su mediji istinski nezavisni i slobodni, a istovremeno profesionalni i odgovorni."
+          ]
+        },
+        "en": {
+          "title": "Free media, an objectively informed society",
+          "lead": "Accurate, objective and timely information is a precondition for a stable democratic society.",
+          "points": ["media freedom", "professional standards", "informed citizens"],
+          "detailParagraphs": [
+            "Accurate, objective and timely information is one of the key factors of a stable and prosperous democracy, and media freedom is its fundamental condition.",
+            "Europe Now advocates consistent implementation of domestic and international rules that protect press freedom and the right to information.",
+            "We recognize challenges including the difficult economic and legal status of journalists, unresolved attacks on media staff and property, political and other pressure, insufficient regulation and media polarization.",
+            "We will work on further professionalization of the public broadcaster, introducing beneficial service periods for journalists, stricter penalties for attacks on journalists and stronger effective self-regulation.",
+            "We will support increased funding for the state Media Pluralism Fund and long-term solutions that address the challenges of the media scene in concrete ways.",
+            "We will encourage the watchdog and corrective role of investigative journalism, free from political and financial pressure.",
+            "Our goal is an environment in which media are truly independent and free, while remaining professional and responsible."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "zdrav-pojedinac",
+      "order": 14,
+      "icon": "health",
+      "translations": {
+        "sr": {
+          "title": "Zdravi pojedinac je zalog za budućnost",
+          "lead": "Zdravstvena zaštita mora biti kvalitetna, dostupna, besplatna i sveobuhvatna.",
+          "points": ["dostupniji pregledi", "kraće liste čekanja", "jačanje prevencije"],
+          "detailParagraphs": [
+            "Cilj naše zdravstvene politike je besplatna, kvalitetna, pristupačna i sveobuhvatna zdravstvena zaštita građana, uz očuvanje i unapređenje zdravlja cjelokupne populacije.",
+            "Građanin kao korisnik zdravstvenih usluga mora biti u središtu zdravstvenog sistema, jer svaki čovjek ima pravo na zdravlje.",
+            "Sistem zdravstvene zaštite treba efikasno organizovati na primarnom, sekundarnom i tercijarnom nivou, uz integrisanost i očuvanje njegove finansijske i institucionalne održivosti.",
+            "Poseban akcenat stavljamo na decentralizaciju sistema, modernizaciju postojećih i izgradnju novih zdravstvenih objekata u sjevernoj, centralnoj i južnoj regiji, kao i motivisanje medicinskog kadra za ostanak u zemlji.",
+            "Potrebno je revidirati i, gdje je moguće, proširiti osnovni skup zdravstvenih usluga koji mora biti jednako dostupan svim građanima, posebno osjetljivim grupama.",
+            "Poseban značaj pridajemo mjerama povećanja nataliteta, kvalitetnoj perinatalnoj i neonatalnoj njezi, podršci asistiranim reproduktivnim tehnologijama i programima podrške samohranim roditeljima i ugroženim porodicama.",
+            "Strategija borbe protiv bolesti sa velikim socijalno-ekonomskim posljedicama mora počivati na javno-zdravstvenim programima prevencije, ranog otkrivanja i psihološke podrške.",
+            "Prioritet dajemo promociji zdravih stilova života, većim mogućnostima za sport, boljoj životnoj sredini i osposobljavanju mladih za brigu o sopstvenom zdravlju.",
+            "Za kvalitetnije zdravstvene usluge zalažemo se za bolji finansijski i socijalni status zaposlenih, kontinuiranu edukaciju, usavršavanje u referentnim klinikama i posebnu podršku ljekarima na specijalizacijama."
+          ]
+        },
+        "en": {
+          "title": "A healthy individual is a pledge for the future",
+          "lead": "Healthcare must be high-quality, accessible, free and comprehensive.",
+          "points": ["more accessible examinations", "shorter waiting lists", "stronger prevention"],
+          "detailParagraphs": [
+            "The goal of our health policy is free, high-quality, accessible and comprehensive healthcare, with preservation and improvement of the health of the entire population.",
+            "The citizen as a user of health services must be at the center of the health system, because every person has the right to health.",
+            "Healthcare should be organized efficiently at the primary, secondary and tertiary levels, with strong integration and preservation of financial and institutional sustainability.",
+            "We place special emphasis on decentralization, modernization of existing facilities and construction of new healthcare facilities in the northern, central and southern regions, as well as motivating medical staff to remain in the country.",
+            "It is necessary to review and, where possible, expand the basic package of health services that must be equally available to all citizens, especially vulnerable groups.",
+            "We attach particular importance to measures that support birth rates, quality perinatal and neonatal care, assisted reproductive technologies and support programs for single parents and vulnerable families.",
+            "The strategy against diseases with major social and economic consequences must rest on public health programs for prevention, early detection and psychological support.",
+            "We prioritize promotion of healthy lifestyles, more opportunities for sport, a better environment and empowering young people to care for their own health.",
+            "For better healthcare services, we advocate improved financial and social status of employees, continuous education, training in reference clinics and special support for doctors in specialization."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "mladi",
+      "order": 15,
+      "icon": "youth",
+      "translations": {
+        "sr": {
+          "title": "Na mladima Crna Gora ostaje",
+          "lead": "Mladi moraju imati uslove za obrazovanje, rad, stvaralaštvo i ostanak u Crnoj Gori.",
+          "points": ["prilike za prvi posao", "studentske inicijative", "stambena i profesionalna perspektiva"],
+          "detailParagraphs": [
+            "Uvažavajući značaj mlađih generacija i kompleksnost izazova sa kojima se suočavaju, Evropa sad će raditi na unapređenju njihovog statusa i afirmisanju njihove uloge u razvoju države i zajednice.",
+            "Odlazak mladih jedan je od najvećih problema Crne Gore. Da bi ostajali u zemlji, mladima su potrebni uslovi za intelektualni i profesionalni razvoj tokom i nakon školovanja, kao i adekvatne prilike na tržištu rada.",
+            "Zalagaćemo se za povećanje studentskih kredita, osjetnije stipendiranje talentovanih učenika i studenata, dostupnije socijalne resurse i dodatnu podršku bržem osamostaljivanju mladih.",
+            "Afirmisaćemo garantovano stipendiranje studenata koji se upišu na prestižne svjetske univerzitete, kako bi znanje stečeno u svijetu pomoglo ubrzanom razvoju zemlje.",
+            "Posebno važnim smatramo društveno angažovanje mladih i razvoj platformi na kojima mogu razgovarati o pitanjima zajednice i komunicirati sa izabranim predstavnicima na lokalnom i državnom nivou.",
+            "U sinergiji sa drugim politikama omogućićemo mladima da kulturne, društvene i naučne potencijale ostvaruju u svojoj zemlji, uz uslove za profesionalni i lični uspjeh.",
+            "Zalagaćemo se za meritokratsko društvo u kojem mladi znanjem i radom grade put do uspjeha, kao i za bolju tranziciju iz obrazovanja na tržište rada.",
+            "Snažno podržavamo popularizaciju i demokratizaciju sporta, veća izdvajanja za dostupnu sportsku infrastrukturu i podršku talentovanim mladim sportistima."
+          ]
+        },
+        "en": {
+          "title": "Montenegro remains with its youth",
+          "lead": "Young people must have conditions for education, work, creativity and staying in Montenegro.",
+          "points": ["first-job opportunities", "student initiatives", "housing and career prospects"],
+          "detailParagraphs": [
+            "Recognizing the importance of younger generations and the complexity of the challenges they face, Europe Now will work to improve their status and affirm their role in developing the state and community.",
+            "Youth emigration is one of Montenegro's greatest problems. To remain in the country, young people need conditions for intellectual and professional development during and after education, as well as adequate labor market opportunities.",
+            "We will advocate higher student loans, stronger scholarships for talented pupils and students, more accessible social resources and additional support for faster independence of young people.",
+            "We will affirm guaranteed scholarships for students admitted to prestigious world universities, so that knowledge gained abroad can contribute to the country's accelerated development.",
+            "We consider youth civic engagement especially important, including platforms where young people can discuss community issues and communicate with elected representatives at local and national level.",
+            "In synergy with other policies, we will enable young people to realize their cultural, social and scientific potential in their own country, with conditions for professional and personal success.",
+            "We will advocate a meritocratic society in which young people build success through knowledge and work, as well as a better transition from education to the labor market.",
+            "We strongly support popularizing and democratizing sport, greater investment in accessible sports infrastructure and support for talented young athletes."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "javne-finansije",
+      "order": 16,
+      "icon": "finance",
+      "translations": {
+        "sr": {
+          "title": "Snažne javne finansije, snažna Crna Gora",
+          "lead": "Stabilne javne finansije su osnova većeg standarda, investicija i sigurnosti građana.",
+          "points": ["održiv budžet", "odgovorno zaduživanje", "veća fiskalna disciplina"],
+          "detailParagraphs": [
+            "Paralelno sa ekonomskim oporavkom i implementacijom programa Evropa sad započet je rad na stvaranju uslova za dugoročnu fiskalnu održivost i stabilnost javnih finansija.",
+            "Evropa sad se zalaže za nastavak reformi u poreskoj politici i upravljanju javnom potrošnjom, sa ciljem snažnih javnih finansija kao preduslova snažne Crne Gore.",
+            "U poreskoj politici akcenat će biti na sveobuhvatnoj reformi sistema, proširenju poreske baze, nastavku programa Evropa sad, reformi poreske i carinske administracije i borbi protiv sive ekonomije.",
+            "U upravljanju javnom potrošnjom fokus će biti na reformi penzionog i zdravstvenog sistema, unapređenju socijalnog kartona i optimizaciji javne uprave kroz funkcionalne analize.",
+            "Zalagaćemo se za dalje unapređenje programskog budžeta, racionalizaciju neproduktivne potrošnje i veće učešće kapitalnog budžeta u ukupnoj potrošnji.",
+            "Poseban akcenat biće na sistemu finansiranja lokalnih samouprava, decentralizaciji i upravljačkom osnaživanju opština.",
+            "Kod privrednih društava u većinskom vlasništvu države radićemo na regulatornom okviru koji podržava reformu državnih preduzeća i unapređenje korporativnog upravljanja.",
+            "U periodima kriza podržavamo mjere koje štite standard građana, uključujući smanjenje akciza na gorivo, smanjenje PDV-a na osnovne životne namirnice, privremeno ograničenje marži i unapređenje robnih rezervi."
+          ]
+        },
+        "en": {
+          "title": "Strong public finances, strong Montenegro",
+          "lead": "Stable public finances are the basis of higher living standards, investment and citizen security.",
+          "points": ["sustainable budget", "responsible borrowing", "stronger fiscal discipline"],
+          "detailParagraphs": [
+            "Alongside economic recovery and implementation of the Europe Now program, work began on creating conditions for long-term fiscal sustainability and stable public finances.",
+            "Europe Now advocates continuation of reforms in tax policy and public expenditure management, with strong public finances as a prerequisite for a strong Montenegro.",
+            "Tax policy will focus on comprehensive reform, expansion of the tax base, continuation of the Europe Now program, reform of tax and customs administration and the fight against the grey economy.",
+            "Public expenditure management will focus on reform of the pension and healthcare systems, improvement of the social card system and optimization of public administration through functional analyses.",
+            "We will advocate further improvement of program budgeting, rationalization of non-productive spending and a greater share of the capital budget in total expenditure.",
+            "Special emphasis will be placed on financing local governments, decentralization and strengthening municipal management.",
+            "For majority state-owned companies, we will work on a regulatory framework that supports reform of state enterprises and improved corporate governance.",
+            "In times of crisis, we support measures that protect living standards, including lower fuel excise duties, lower VAT on basic food products, temporary margin limits and improvement of commodity reserves."
+          ]
+        }
+      }
+    },
+    {
+      "slug": "razvijena-ekonomija",
+      "order": 17,
+      "icon": "growth",
+      "translations": {
+        "sr": {
+          "title": "Razvijena ekonomija za bogate građane",
+          "lead": "Privreda zasnovana na znanju, investicijama i preduzetništvu treba da donese veće plate i bolji život.",
+          "points": ["više investicija", "nova radna mjesta", "rast produktivnosti"],
+          "detailParagraphs": [
+            "Crna Gora je mala, otvorena i uvozno zavisna ekonomija, koju karakteriše slaba diversifikovanost privrede. Ekonomska diversifikacija zato je imperativ daljeg razvoja.",
+            "Fokus Evrope sad biće na razvoju ICT sektora, energetike, poljoprivrede, prerađivačke industrije i zanatstva, kao i daljoj diversifikaciji turizma.",
+            "Posebno ćemo raditi na pozicioniranju Crne Gore kao prepoznatljive destinacije za razvoj blockchain tehnologije, digitalne nomade i IT kompanije iz cijelog svijeta.",
+            "Zalagaćemo se za povećanje zelenih proizvodnih kapaciteta, bolju energetsku efikasnost i snažniju infrastrukturnu povezanost sa okruženjem.",
+            "Radićemo na afirmisanju Crne Gore kao najbolje investicione destinacije, uz poboljšanje konkurentnosti, promociju konkretnih investicionih projekata i modele javno-privatnog partnerstva.",
+            "Poseban fokus biće na preduzetništvu i inovacijama kao horizontalnom preduslovu ekonomskog razvoja zasnovanog na znanju.",
+            "Podržaćemo smanjenje poreskog opterećenja, bolji pristup kreditima za mala i srednja preduzeća, osnivanje kreditno-garantnog fonda, transformaciju Investiciono-razvojnog fonda u Razvojnu banku i jačanje Fonda za inovacije.",
+            "Političku integraciju sa Evropskom unijom mora pratiti snažnija ekonomska integracija kroz ubrzanu izgradnju saobraćajne infrastrukture i bolje meke platforme povezivanja.",
+            "Završetak autoputa Bar-Boljare, izgradnja Jadransko-jonskog autoputa i modernizacija aerodroma otvaraju prostor za razvoj sjevera, valorizaciju Luke Bar i bolju dostupnost Crne Gore.",
+            "Radićemo na boljem korišćenju pretpristupnih fondova Evropske unije za reformske poduhvate i infrastrukturne projekte, od javne uprave i vladavine prava do zaštite životne sredine i saobraćajne infrastrukture."
+          ]
+        },
+        "en": {
+          "title": "A developed economy for prosperous citizens",
+          "lead": "An economy based on knowledge, investment and entrepreneurship should bring higher wages and a better life.",
+          "points": ["more investment", "new jobs", "productivity growth"],
+          "detailParagraphs": [
+            "Montenegro is a small, open and import-dependent economy with weak diversification. Economic diversification is therefore an imperative for further development.",
+            "Europe Now will focus on development of the ICT sector, energy, agriculture, manufacturing and crafts, as well as further diversification of tourism.",
+            "We will especially work to position Montenegro as a recognizable destination for blockchain technology, digital nomads and IT companies from around the world.",
+            "We will advocate increased green production capacity, better energy efficiency and stronger infrastructure connections with the region.",
+            "We will work to affirm Montenegro as the best investment destination, improving competitiveness, promoting concrete investment projects and models of public-private partnership.",
+            "A special focus will be entrepreneurship and innovation as horizontal preconditions for knowledge-based economic development.",
+            "We will support lower tax burdens, better access to credit for small and medium-sized enterprises, establishment of a credit guarantee fund, transformation of the Investment and Development Fund into a Development Bank and strengthening of the Innovation Fund.",
+            "Political integration with the European Union must be accompanied by stronger economic integration through accelerated transport infrastructure and better soft connectivity platforms.",
+            "Completion of the Bar-Boljare highway, construction of the Adriatic-Ionian highway and modernization of airports will open space for northern development, valorization of the Port of Bar and better access to Montenegro.",
+            "We will work on better use of EU pre-accession funds for reforms and infrastructure projects, from public administration and the rule of law to environmental protection and transport infrastructure."
+          ]
+        }
       }
     }
-  }
-]
+  ]
+}

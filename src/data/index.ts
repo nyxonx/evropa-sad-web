@@ -50,7 +50,7 @@ interface RawResultItem {
   }>;
 }
 
-interface RawProgramSection {
+interface RawProgramItem {
   slug: string;
   order: number;
   icon: string;
@@ -58,7 +58,37 @@ interface RawProgramSection {
     title: string;
     lead: string;
     points: string[];
+    detailParagraphs?: string[];
   }>;
+}
+
+interface RawProgramData {
+  summary: {
+    translations: Localized<{
+      eyebrow: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  missionVision: {
+    translations: Localized<{
+      foundationTitle: string;
+      foundation: string;
+      missionTitle: string;
+      mission: string;
+      visionTitle: string;
+      vision: string;
+    }>;
+  };
+  values: Array<{
+    id: string;
+    icon: string;
+    translations: Localized<{
+      title: string;
+      text: string;
+    }>;
+  }>;
+  solutions: RawProgramItem[];
 }
 
 interface RawDocumentItem {
@@ -141,7 +171,7 @@ interface RawOrganization {
 
 const newsItems = newsData as RawNewsItem[];
 const resultItems = resultsData as RawResultItem[];
-const programSections = programData as RawProgramSection[];
+const program = programData as RawProgramData;
 const documentItems = documentsData as RawDocumentItem[];
 const organization = organizationData as RawOrganization;
 
@@ -207,7 +237,16 @@ export function getFeaturedResults(lang: Lang, limit = 4) {
 }
 
 export function getProgramSections(lang: Lang) {
-  return [...programSections].sort((a, b) => a.order - b.order).map((item) => localizeEntry(item, lang));
+  return [...program.solutions].sort((a, b) => a.order - b.order).map((item) => localizeEntry(item, lang));
+}
+
+export function getProgram(lang: Lang) {
+  return {
+    summary: localizeEntry(program.summary, lang),
+    missionVision: localizeEntry(program.missionVision, lang),
+    values: program.values.map((item) => localizeEntry(item, lang)),
+    solutions: getProgramSections(lang),
+  };
 }
 
 export function getDocuments(lang: Lang) {
