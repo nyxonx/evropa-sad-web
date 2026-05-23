@@ -1,0 +1,16 @@
+---
+import ContactPage from '../../components/contact/ContactPage.astro';
+import { defaultLang } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Kontakt"
+  description="Kontakt Pokreta Evropa sad: adresa, email, telefon, forma za poruke i zvanični kanali komunikacije."
+  image="/images/homepage-hero-clean.png"
+>
+  <ContactPage lang={lang} />
+</BaseLayout>

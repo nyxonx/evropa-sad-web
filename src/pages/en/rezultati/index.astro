@@ -1,0 +1,16 @@
+---
+import ResultsPage from '../../../components/results/ResultsPage.astro';
+import type { Lang } from '../../../i18n/config';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Results"
+  description="Europe Now Movement results: measures, figures, effects and concrete indicators of work for better living standards."
+  image="/images/homepage-hero-clean.png"
+>
+  <ResultsPage lang={lang} />
+</BaseLayout>

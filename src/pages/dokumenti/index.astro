@@ -1,0 +1,16 @@
+---
+import DocumentsPage from '../../components/documents/DocumentsPage.astro';
+import { defaultLang } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Dokumenti"
+  description="Dokumenti Pokreta Evropa sad: statut, program rada, finansijski plan i dokumenti organizacija u okviru Pokreta."
+  image="/images/homepage-hero-clean.png"
+>
+  <DocumentsPage lang={lang} />
+</BaseLayout>

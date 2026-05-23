@@ -1,0 +1,16 @@
+---
+import DocumentsPage from '../../../components/documents/DocumentsPage.astro';
+import type { Lang } from '../../../i18n/config';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Documents"
+  description="Europe Now Movement documents: statute, work program, financial plan and documents of organizations within the Movement."
+  image="/images/homepage-hero-clean.png"
+>
+  <DocumentsPage lang={lang} />
+</BaseLayout>

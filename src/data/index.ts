@@ -94,9 +94,12 @@ interface RawProgramData {
 interface RawDocumentItem {
   slug: string;
   type: string;
+  groups: string[];
   date: string;
   fileUrl: string | null;
+  fileSize: string;
   featured: boolean;
+  order: number;
   translations: Localized<{
     title: string;
     description: string;
@@ -251,10 +254,11 @@ export function getProgram(lang: Lang) {
 
 export function getDocuments(lang: Lang) {
   return [...documentItems]
-    .sort((a, b) => b.date.localeCompare(a.date))
+    .sort((a, b) => a.order - b.order)
     .map((item) => ({
       ...localizeEntry(item, lang),
       href: `/dokumenti/${item.slug}`,
+      year: item.date.slice(0, 4),
     }));
 }
 

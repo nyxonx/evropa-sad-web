@@ -1,0 +1,260 @@
+---
+import type { Lang } from '../../i18n/config';
+import { getDocuments } from '../../data';
+import CTASection from '../sections/CTASection.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const documents = getDocuments(lang);
+
+const copy = {
+  sr: {
+    heroKicker: 'DOKUMENTI',
+    heroTitle: 'Javni dokumenti, statuti i planovi na jednom mjestu',
+    heroLead:
+      'Pregled ključnih dokumenata Pokreta Evropa sad, organizacija u okviru Pokreta i javnih planova dostupnih za uvid i preuzimanje.',
+    filtersLabel: 'Filter dokumenata',
+    filters: {
+      all: 'Svi dokumenti',
+      statute: 'Statuti',
+      program: 'Programi',
+      finance: 'Finansije',
+      organization: 'Organizacije',
+    },
+    listKicker: 'BIBLIOTEKA',
+    listTitle: 'Zvanični dokumenti',
+    listText: 'Filtriraj dokumente po oblasti i otvori PDF bez napuštanja strukture sajta.',
+    openCta: 'Otvori PDF',
+    downloadCta: 'Preuzmi',
+    unavailable: 'Dokument će biti dopunjen nakon verifikacije.',
+    yearLabel: 'Godina',
+    sizeLabel: 'Veličina',
+    noDocuments: 'Nema dokumenata za izabrani filter.',
+  },
+  en: {
+    heroKicker: 'DOCUMENTS',
+    heroTitle: 'Public documents, statutes and plans in one place',
+    heroLead:
+      'A review of key Europe Now Movement documents, organizations within the Movement and public plans available for viewing and download.',
+    filtersLabel: 'Documents filter',
+    filters: {
+      all: 'All documents',
+      statute: 'Statutes',
+      program: 'Programs',
+      finance: 'Finance',
+      organization: 'Organizations',
+    },
+    listKicker: 'LIBRARY',
+    listTitle: 'Official documents',
+    listText: 'Filter documents by area and open the PDF without leaving the website structure.',
+    openCta: 'Open PDF',
+    downloadCta: 'Download',
+    unavailable: 'The document will be added after verification.',
+    yearLabel: 'Year',
+    sizeLabel: 'Size',
+    noDocuments: 'No documents for the selected filter.',
+  },
+} as const;
+
+const t = copy[lang];
+const filterOrder = ['statute', 'program', 'finance', 'organization'];
+const filters = [
+  { id: 'all', label: t.filters.all },
+  ...filterOrder
+    .filter((filter) => documents.some((document) => document.groups.includes(filter)))
+    .map((filter) => ({
+      id: filter,
+      label: t.filters[filter as keyof typeof t.filters],
+    })),
+];
+
+const typeClasses: Record<string, string> = {
+  statute: 'bg-[#fff8e3] text-[#8a6a13] ring-[#d6ad3b]/45',
+  program: 'bg-[#eef4ff] text-[#082b63] ring-[#b9c8e4]',
+  finance: 'bg-emerald-50 text-emerald-800 ring-emerald-200',
+  organization: 'bg-slate-100 text-slate-700 ring-slate-200',
+};
+
+const getTypeClass = (type: string) => typeClasses[type] ?? typeClasses.organization;
+const getTypeLabel = (groups: string[]) => {
+  const primary = groups.find((group) => group !== 'organization') ?? groups[0] ?? 'organization';
+
+  return t.filters[primary as keyof typeof t.filters] ?? primary;
+};
+---
+
+<section class="relative isolate overflow-hidden bg-[#061632] pb-20 pt-32 text-white sm:pt-36 lg:pt-40">
+  <img src="/images/homepage-hero-clean.png" alt="" class="absolute inset-0 -z-30 h-full w-full object-cover opacity-24" loading="eager" />
+  <div class="absolute inset-0 -z-20 bg-[linear-gradient(110deg,rgba(6,22,50,0.98)_0%,rgba(8,43,99,0.92)_48%,rgba(6,22,50,0.78)_100%)]"></div>
+  <div class="absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#d6ad3b]/18 blur-3xl"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-28 bg-gradient-to-t from-slate-50 to-transparent"></div>
+
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <p class="text-xs font-bold uppercase tracking-[0.22em] text-[#f0cf72]">{t.heroKicker}</p>
+    <h1 class="mt-5 max-w-5xl text-4xl font-bold tracking-normal sm:text-5xl lg:text-6xl">{t.heroTitle}</h1>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-blue-50/88">{t.heroLead}</p>
+  </div>
+</section>
+
+<nav class="relative z-20 mx-auto -mt-7 max-w-7xl px-4 sm:px-6 lg:px-8" aria-label={t.filtersLabel} data-documents-page>
+  <div class="grid gap-2 rounded-lg border border-slate-200 bg-white p-2 shadow-xl shadow-slate-300/50 sm:grid-cols-2 lg:grid-cols-5" role="group" aria-label={t.filtersLabel}>
+    {
+      filters.map((filter, index) => (
+        <button
+          type="button"
+          class:list={[
+            'flex min-h-12 items-center justify-center rounded-md px-3 py-2 text-center text-xs font-bold uppercase tracking-[0.12em] transition focus:outline-none focus:ring-2 focus:ring-[#d6ad3b]',
+            index === 0 ? 'bg-[#fff8e3] text-[#8a6a13] ring-1 ring-[#d6ad3b]/55' : 'text-[#082b63] hover:bg-[#eef4ff]',
+          ]}
+          data-document-filter={filter.id}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+        >
+          {filter.label}
+        </button>
+      ))
+    }
+  </div>
+</nav>
+
+<section class="bg-slate-50 py-16 sm:py-20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#b48924]">{t.listKicker}</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-normal text-[#061632] sm:text-4xl">{t.listTitle}</h2>
+      <p class="mt-4 text-base leading-8 text-slate-700">{t.listText}</p>
+    </div>
+
+    <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      {
+        documents.map((document) => (
+          <article
+            id={document.slug}
+            class="group flex min-h-full scroll-mt-28 flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm shadow-slate-200/80 transition duration-300 hover:-translate-y-1 hover:border-[#d6ad3b]/70 hover:shadow-xl hover:shadow-slate-300/70"
+            data-document-card
+            data-groups={document.groups.join(' ')}
+          >
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-[#061632] text-[#d6ad3b] shadow-lg shadow-slate-200/80">
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 fill-none stroke-current stroke-[1.8]">
+                  <path d="M7 3.75h6.5L18 8.25v12H7v-16.5Z" stroke-linejoin="round" />
+                  <path d="M13.25 3.75V8.5H18" stroke-linejoin="round" />
+                  <path d="M9.5 13h5M9.5 16h5M9.5 10h2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <span class:list={['rounded-full px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.14em] ring-1', getTypeClass(document.type)]}>
+                {getTypeLabel(document.groups)}
+              </span>
+            </div>
+
+            <div class="mt-5 flex flex-1 flex-col">
+              <p class="text-xs font-bold uppercase tracking-[0.15em] text-[#b48924]">{document.label}</p>
+              <h3 class="mt-3 text-xl font-bold leading-snug text-[#061632]">{document.title}</h3>
+              <p class="mt-3 text-sm leading-7 text-slate-600">{document.description}</p>
+
+              <dl class="mt-5 grid grid-cols-2 gap-3 text-sm">
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-slate-500">{t.yearLabel}</dt>
+                  <dd class="mt-1 font-bold text-[#061632]">{document.year}</dd>
+                </div>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 p-3">
+                  <dt class="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-slate-500">{t.sizeLabel}</dt>
+                  <dd class="mt-1 font-bold text-[#061632]">{document.fileSize}</dd>
+                </div>
+              </dl>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                {
+                  document.fileUrl ? (
+                    <>
+                      <a
+                        href={document.fileUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        class="inline-flex min-h-11 items-center justify-center gap-3 rounded-md bg-[#061632] px-4 text-xs font-bold uppercase text-white shadow-lg shadow-slate-200/80 transition hover:-translate-y-0.5 hover:bg-[#082b63] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+                        aria-label={`${document.title}: ${t.openCta}`}
+                      >
+                        {t.openCta}
+                        <span aria-hidden="true" class="text-base leading-none">↗</span>
+                      </a>
+                      <a
+                        href={document.fileUrl}
+                        download
+                        class="inline-flex min-h-11 items-center justify-center rounded-md border border-[#082b63]/20 bg-white px-4 text-xs font-bold uppercase text-[#082b63] transition hover:-translate-y-0.5 hover:border-[#d6ad3b] hover:text-[#b48924] focus:outline-none focus:ring-2 focus:ring-[#d6ad3b] focus:ring-offset-2"
+                        aria-label={`${document.title}: ${t.downloadCta}`}
+                      >
+                        {t.downloadCta}
+                      </a>
+                    </>
+                  ) : (
+                    <p class="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm leading-6 text-slate-600">{t.unavailable}</p>
+                  )
+                }
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="mt-8 hidden rounded-lg border border-slate-200 bg-white p-5 text-sm leading-6 text-slate-600 shadow-sm shadow-slate-200/80" data-documents-empty>
+      {t.noDocuments}
+    </p>
+  </div>
+</section>
+
+<CTASection lang={lang} />
+
+<script>
+  const initDocumentsPage = () => {
+    const root = document.querySelector('[data-documents-page]');
+    if (!root || root.dataset.documentsInitialized === 'true') {
+      return;
+    }
+
+    root.dataset.documentsInitialized = 'true';
+
+    const filterButtons = Array.from(document.querySelectorAll('[data-document-filter]'));
+    const cards = Array.from(document.querySelectorAll('[data-document-card]'));
+    const emptyState = document.querySelector('[data-documents-empty]');
+
+    const applyFilter = (filter) => {
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const groups = (card.getAttribute('data-groups') || '').split(' ');
+        const shouldShow = filter === 'all' || groups.includes(filter);
+        card.classList.toggle('hidden', !shouldShow);
+        if (shouldShow) {
+          visibleCount += 1;
+        }
+      });
+
+      if (emptyState) {
+        emptyState.classList.toggle('hidden', visibleCount > 0);
+      }
+
+      filterButtons.forEach((button) => {
+        const isActive = button.getAttribute('data-document-filter') === filter;
+        button.setAttribute('aria-pressed', String(isActive));
+        button.classList.toggle('bg-[#fff8e3]', isActive);
+        button.classList.toggle('text-[#8a6a13]', isActive);
+        button.classList.toggle('ring-1', isActive);
+        button.classList.toggle('ring-[#d6ad3b]/55', isActive);
+        button.classList.toggle('text-[#082b63]', !isActive);
+        button.classList.toggle('hover:bg-[#eef4ff]', !isActive);
+      });
+    };
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        applyFilter(button.getAttribute('data-document-filter') || 'all');
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', initDocumentsPage);
+  initDocumentsPage();
+</script>

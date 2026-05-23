@@ -1,0 +1,16 @@
+---
+import ContactPage from '../../../components/contact/ContactPage.astro';
+import type { Lang } from '../../../i18n/config';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="Contact"
+  description="Contact the Europe Now Movement: address, email, phone, message form and official communication channels."
+  image="/images/homepage-hero-clean.png"
+>
+  <ContactPage lang={lang} />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import NewsPage from '../../components/news/NewsPage.astro';
+import { defaultLang } from '../../i18n/config';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const lang = defaultLang;
+---
+
+<BaseLayout
+  lang={lang}
+  title="Vijesti"
+  description="Vijesti i aktivnosti Pokreta Evropa sad: aktuelnosti, terenski rad, javni nastupi i institucionalne teme."
+  image="/images/homepage-hero-clean.png"
+>
+  <NewsPage lang={lang} />
+</BaseLayout>

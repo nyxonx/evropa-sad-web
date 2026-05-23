@@ -1,58 +1,133 @@
 [
   {
-    "slug": "program-pokreta",
-    "type": "program",
-    "date": "2026-05-01",
-    "fileUrl": null,
-    "featured": true,
-    "translations": {
-      "sr": {
-        "title": "Program Pokreta Evropa sad",
-        "description": "Osnovni programski pravci i prioriteti javnog djelovanja.",
-        "label": "Program"
-      },
-      "en": {
-        "title": "Europe Now Movement program",
-        "description": "Core program directions and public policy priorities.",
-        "label": "Program"
-      }
-    }
-  },
-  {
     "slug": "statut",
     "type": "statute",
-    "date": "2026-05-01",
-    "fileUrl": null,
+    "groups": ["statute"],
+    "date": "2025-01-01",
+    "fileUrl": "/documents/statut-pokreta-evropa-sad-2025.pdf",
+    "fileSize": "116 KB",
     "featured": true,
+    "order": 1,
     "translations": {
       "sr": {
-        "title": "Statut Pokreta",
-        "description": "Organizaciona pravila, organi i procedure odlučivanja.",
+        "title": "Statut Pokreta Evropa sad",
+        "description": "Osnovna pravila organizacije, odlučivanja i rada organa Pokreta.",
         "label": "Statut"
       },
       "en": {
-        "title": "Movement statute",
-        "description": "Organizational rules, bodies and decision-making procedures.",
+        "title": "Europe Now Movement Statute",
+        "description": "Core rules for organization, decision-making and the work of Movement bodies.",
         "label": "Statute"
       }
     }
   },
   {
-    "slug": "saopstenja",
-    "type": "archive",
-    "date": "2026-05-01",
-    "fileUrl": null,
-    "featured": false,
+    "slug": "program-rada-2026",
+    "type": "program",
+    "groups": ["program"],
+    "date": "2026-01-01",
+    "fileUrl": "/documents/program-rada-2026.pdf",
+    "fileSize": "363 KB",
+    "featured": true,
+    "order": 2,
     "translations": {
       "sr": {
-        "title": "Arhiva saopštenja",
-        "description": "Centralno mjesto za zvanična saopštenja i javne reakcije.",
-        "label": "Saopštenja"
+        "title": "Program rada 2026",
+        "description": "Plan rada i prioriteti za programsko i organizaciono djelovanje u 2026. godini.",
+        "label": "Program rada"
       },
       "en": {
-        "title": "Statements archive",
-        "description": "A central place for official statements and public reactions.",
-        "label": "Statements"
+        "title": "Work Program 2026",
+        "description": "Work plan and priorities for program and organizational activity in 2026.",
+        "label": "Work program"
+      }
+    }
+  },
+  {
+    "slug": "finansijski-plan-2026",
+    "type": "finance",
+    "groups": ["finance"],
+    "date": "2026-01-01",
+    "fileUrl": "/documents/finansijski-plan-2026.pdf",
+    "fileSize": "161 KB",
+    "featured": true,
+    "order": 3,
+    "translations": {
+      "sr": {
+        "title": "Finansijski plan 2026",
+        "description": "Pregled planiranih finansijskih okvira i javnog poslovanja za 2026. godinu.",
+        "label": "Finansije"
+      },
+      "en": {
+        "title": "Financial Plan 2026",
+        "description": "Overview of planned financial frameworks and public operations for 2026.",
+        "label": "Finance"
+      }
+    }
+  },
+  {
+    "slug": "manifest-mladi-evrope",
+    "type": "organization",
+    "groups": ["organization", "program"],
+    "date": "2023-03-04",
+    "fileUrl": "/documents/manifest-mladi-evrope.pdf",
+    "fileSize": "865 KB",
+    "featured": false,
+    "order": 4,
+    "translations": {
+      "sr": {
+        "title": "Manifest Mladih Evrope",
+        "description": "Programska polazišta omladinske organizacije Mladi Evrope.",
+        "label": "Mladi Evrope"
+      },
+      "en": {
+        "title": "Youth of Europe Manifesto",
+        "description": "Program foundations of the Youth of Europe organization.",
+        "label": "Youth of Europe"
+      }
+    }
+  },
+  {
+    "slug": "statut-asocijacije-zena",
+    "type": "organization",
+    "groups": ["organization", "statute"],
+    "date": "2023-03-08",
+    "fileUrl": "/documents/statut-asocijacije-zena.pdf",
+    "fileSize": "956 KB",
+    "featured": false,
+    "order": 5,
+    "translations": {
+      "sr": {
+        "title": "Statut Asocijacije žena PES-a",
+        "description": "Pravila rada, organizacije i odlučivanja Asocijacije žena PES-a.",
+        "label": "Asocijacija žena"
+      },
+      "en": {
+        "title": "PES Women Association Statute",
+        "description": "Rules of work, organization and decision-making of the PES Women Association.",
+        "label": "Women association"
+      }
+    }
+  },
+  {
+    "slug": "program-asocijacije-zena",
+    "type": "organization",
+    "groups": ["organization", "program"],
+    "date": "2023-03-08",
+    "fileUrl": "/documents/program-asocijacije-zena.pdf",
+    "fileSize": "1.4 MB",
+    "featured": false,
+    "order": 6,
+    "translations": {
+      "sr": {
+        "title": "Program Asocijacije žena PES-a",
+        "description": "Programska načela i prioriteti Asocijacije žena PES-a.",
+        "label": "Asocijacija žena"
+      },
+      "en": {
+        "title": "PES Women Association Program",
+        "description": "Program principles and priorities of the PES Women Association.",
+        "label": "Women association"
       }
     }
   }

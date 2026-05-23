@@ -1,0 +1,16 @@
+---
+import NewsPage from '../../../components/news/NewsPage.astro';
+import type { Lang } from '../../../i18n/config';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang: Lang = 'en';
+---
+
+<BaseLayout
+  lang={lang}
+  title="News"
+  description="News and activities of the Europe Now Movement: updates, field work, public appearances and institutional topics."
+  image="/images/homepage-hero-clean.png"
+>
+  <NewsPage lang={lang} />
+</BaseLayout>

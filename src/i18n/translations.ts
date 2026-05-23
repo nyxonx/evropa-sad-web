@@ -25,10 +25,7 @@ export const translations = {
         { href: '/dokumenti', label: 'Dokumenti' },
         { href: '/kontakt', label: 'Kontakt' },
       ],
-      ctas: [
-        { href: '/kontakt', label: 'Pridruži se', variant: 'primary' },
-        { href: '/doprinesi', label: 'Doprinesi', variant: 'secondary' },
-      ],
+      ctas: [],
     },
     hero: {
       titleLine1: 'Crna Gora',
@@ -244,10 +241,7 @@ export const translations = {
         { href: '/dokumenti', label: 'Documents' },
         { href: '/kontakt', label: 'Contact' },
       ],
-      ctas: [
-        { href: '/kontakt', label: 'Join us', variant: 'primary' },
-        { href: '/doprinesi', label: 'Contribute', variant: 'secondary' },
-      ],
+      ctas: [],
     },
     hero: {
       titleLine1: 'Montenegro',
