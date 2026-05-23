@@ -1,0 +1,102 @@
+[
+  {
+    "slug": "ekonomija-i-standard",
+    "order": 1,
+    "icon": "economy",
+    "translations": {
+      "sr": {
+        "title": "Ekonomija i standard",
+        "lead": "Veće plate, održive javne finansije i razvoj koji se vidi u svakodnevnom životu.",
+        "points": [
+          "rast zarada kroz produktivnost i investicije",
+          "odgovorno upravljanje budžetom",
+          "podrška preduzetništvu i novim radnim mjestima"
+        ]
+      },
+      "en": {
+        "title": "Economy and living standards",
+        "lead": "Higher wages, sustainable public finances and development visible in everyday life.",
+        "points": [
+          "wage growth through productivity and investment",
+          "responsible budget management",
+          "support for entrepreneurship and new jobs"
+        ]
+      }
+    }
+  },
+  {
+    "slug": "evropska-integracija",
+    "order": 2,
+    "icon": "eu",
+    "translations": {
+      "sr": {
+        "title": "Evropska integracija",
+        "lead": "Punopravno članstvo u Evropskoj uniji kao strateški državni cilj.",
+        "points": [
+          "zatvaranje pregovaračkih poglavlja",
+          "jačanje vladavine prava",
+          "institucije koje rade po evropskim standardima"
+        ]
+      },
+      "en": {
+        "title": "European integration",
+        "lead": "Full membership in the European Union as a strategic national goal.",
+        "points": [
+          "closing negotiation chapters",
+          "strengthening the rule of law",
+          "institutions operating by European standards"
+        ]
+      }
+    }
+  },
+  {
+    "slug": "mladi-i-obrazovanje",
+    "order": 3,
+    "icon": "education",
+    "translations": {
+      "sr": {
+        "title": "Mladi i obrazovanje",
+        "lead": "Obrazovni sistem koji daje znanje, vještine i razlog da mladi ostanu u Crnoj Gori.",
+        "points": [
+          "savremeni nastavni programi",
+          "povezivanje obrazovanja i tržišta rada",
+          "podrška talentima i studentskim inicijativama"
+        ]
+      },
+      "en": {
+        "title": "Youth and education",
+        "lead": "An education system that provides knowledge, skills and a reason for young people to stay in Montenegro.",
+        "points": [
+          "modern curricula",
+          "connecting education and the labor market",
+          "support for talent and student initiatives"
+        ]
+      }
+    }
+  },
+  {
+    "slug": "zdravstvo-i-socijalna-sigurnost",
+    "order": 4,
+    "icon": "health",
+    "translations": {
+      "sr": {
+        "title": "Zdravstvo i socijalna sigurnost",
+        "lead": "Dostupnije usluge, sigurnije penzije i sistem koji štiti najugroženije.",
+        "points": [
+          "kraće liste čekanja",
+          "dostojanstvene penzije",
+          "bolja koordinacija socijalnih servisa"
+        ]
+      },
+      "en": {
+        "title": "Healthcare and social security",
+        "lead": "More accessible services, safer pensions and a system that protects the most vulnerable.",
+        "points": [
+          "shorter waiting lists",
+          "dignified pensions",
+          "better coordination of social services"
+        ]
+      }
+    }
+  }
+]

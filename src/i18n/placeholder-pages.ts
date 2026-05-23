@@ -1,4 +1,5 @@
 import type { Lang } from './config';
+import { getContentRoutes } from '../data';
 import { translations } from './translations';
 
 export interface PlaceholderRoute {
@@ -90,6 +91,7 @@ function collectRoutes(node: unknown, routes: Map<string, string>): void {
 export function getPlaceholderRoutes(lang: Lang): PlaceholderRoute[] {
   const routes = new Map<string, string>();
   collectRoutes(translations[lang], routes);
+  getContentRoutes(lang).forEach((route) => routes.set(route.path, route.title));
 
   return Array.from(routes, ([path, title]) => ({ path, title })).sort((a, b) => a.path.localeCompare(b.path));
 }

@@ -2,6 +2,7 @@
 import { type Lang } from '../../i18n/config';
 import { localizePath } from '../../i18n/routing';
 import { translations } from '../../i18n/translations';
+import { getFeaturedResults } from '../../data';
 import ResultCard from './ResultCard.astro';
 
 interface Props {
@@ -10,6 +11,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = translations[lang].results;
+const results = getFeaturedResults(lang);
 ---
 
 <section class="bg-slate-50 py-16 sm:py-20" aria-labelledby="results-preview-heading">
@@ -37,7 +39,7 @@ const t = translations[lang].results;
 
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {
-          t.cards.map((result) => (
+          results.map((result) => (
             <ResultCard
               title={result.title}
               description={result.description}

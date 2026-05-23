@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "vece-plate",
+    "category": "standard",
+    "tone": "people",
+    "imageSrc": "/images/results/vece-plate.png",
+    "featured": true,
+    "order": 1,
+    "metrics": [
+      {
+        "value": "1.000€",
+        "label": {
+          "sr": "prosječna zarada",
+          "en": "average wage"
+        }
+      },
+      {
+        "value": "700€",
+        "label": {
+          "sr": "ciljana minimalna zarada",
+          "en": "target minimum wage"
+        }
+      }
+    ],
+    "sources": [],
+    "translations": {
+      "sr": {
+        "title": "Veće plate",
+        "description": "1.000€ prosječna zarada i 700€ minimalna zarada.",
+        "imageLabel": "Standard",
+        "body": "Rast zarada je centralni dio ekonomskog programa, uz cilj da građani rezultate reformi osjete direktno u kućnom budžetu."
+      },
+      "en": {
+        "title": "Higher wages",
+        "description": "1,000€ average wage and 700€ minimum wage.",
+        "imageLabel": "Standard",
+        "body": "Wage growth is a central part of the economic program, with the goal that citizens feel reform results directly in household budgets."
+      }
+    }
+  },
+  {
+    "slug": "investicije",
+    "category": "development",
+    "tone": "road",
+    "imageSrc": "/images/results/vise-investicija.png",
+    "featured": true,
+    "order": 2,
+    "metrics": [
+      {
+        "value": "FDI",
+        "label": {
+          "sr": "strane direktne investicije",
+          "en": "foreign direct investment"
+        }
+      }
+    ],
+    "sources": [],
+    "translations": {
+      "sr": {
+        "title": "Više investicija",
+        "description": "Oboreni rekordi u stranim direktnim investicijama.",
+        "imageLabel": "Razvoj",
+        "body": "Investicije znače nova radna mjesta, bolju infrastrukturu i stabilniji razvoj svih regiona Crne Gore."
+      },
+      "en": {
+        "title": "More investment",
+        "description": "Record levels of foreign direct investment.",
+        "imageLabel": "Development",
+        "body": "Investment means new jobs, better infrastructure and more stable development across all regions of Montenegro."
+      }
+    }
+  },
+  {
+    "slug": "ekonomija",
+    "category": "economy",
+    "tone": "flag",
+    "imageSrc": "/images/results/jaca-ekonomija.png",
+    "featured": true,
+    "order": 3,
+    "metrics": [
+      {
+        "value": "BDP",
+        "label": {
+          "sr": "rast ekonomije",
+          "en": "economic growth"
+        }
+      }
+    ],
+    "sources": [],
+    "translations": {
+      "sr": {
+        "title": "Jača ekonomija",
+        "description": "Rast BDP-a i pad javnog duga na najniži nivo u istoriji.",
+        "imageLabel": "Ekonomija",
+        "body": "Stabilne finansije i rast privrede daju prostor za veća ulaganja u građane, institucije i razvojne projekte."
+      },
+      "en": {
+        "title": "Stronger economy",
+        "description": "GDP growth and public debt at its lowest level in history.",
+        "imageLabel": "Economy",
+        "body": "Stable finances and economic growth create room for greater investment in citizens, institutions and development projects."
+      }
+    }
+  },
+  {
+    "slug": "bolji-zivot",
+    "category": "quality-of-life",
+    "tone": "education",
+    "imageSrc": "/images/results/bolji-zivot.png",
+    "featured": true,
+    "order": 4,
+    "metrics": [
+      {
+        "value": "Mladi",
+        "label": {
+          "sr": "fokus na mogućnosti",
+          "en": "focus on opportunity"
+        }
+      }
+    ],
+    "sources": [],
+    "translations": {
+      "sr": {
+        "title": "Bolji život",
+        "description": "Više radnih mjesta i bolje mogućnosti za mlade.",
+        "imageLabel": "Budućnost",
+        "body": "Bolji život znači dostupnije usluge, kvalitetnije obrazovanje i perspektivu da mladi svoju budućnost grade u Crnoj Gori."
+      },
+      "en": {
+        "title": "Better life",
+        "description": "More jobs and better opportunities for young people.",
+        "imageLabel": "Future",
+        "body": "A better life means more accessible services, higher-quality education and a perspective for young people to build their future in Montenegro."
+      }
+    }
+  }
+]

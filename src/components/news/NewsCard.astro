@@ -3,6 +3,7 @@ interface Props {
   title: string;
   excerpt: string;
   href: string;
+  date: string;
   day: string;
   month: string;
   tone: 'eu' | 'team' | 'coast';
@@ -11,7 +12,7 @@ interface Props {
   visualLabel: string;
 }
 
-const { title, excerpt, href, day, month, tone, imageSrc, readMore, visualLabel } = Astro.props;
+const { title, excerpt, href, date, day, month, tone, imageSrc, readMore, visualLabel } = Astro.props;
 
 const visualClasses = {
   eu: 'bg-[radial-gradient(circle_at_68%_34%,rgba(214,173,59,0.72),transparent_15%),linear-gradient(135deg,#082b63_0%,#0b3f91_48%,#061632_100%)]',
@@ -41,7 +42,7 @@ const visualClasses = {
         {visualLabel}
       </div>
 
-      <time datetime={`2026-05-${day}`} class="absolute left-4 top-4 flex h-14 w-14 flex-col items-center justify-center rounded-md border border-[#d6ad3b]/70 bg-[#082b63] text-white shadow-lg shadow-black/20">
+      <time datetime={date} class="absolute left-4 top-4 flex h-14 w-14 flex-col items-center justify-center rounded-md border border-[#d6ad3b]/70 bg-[#082b63] text-white shadow-lg shadow-black/20">
         <span class="text-xl font-bold leading-none">{day}</span>
         <span class="mt-1 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-[#d6ad3b]">{month}</span>
       </time>

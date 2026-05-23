@@ -1,0 +1,231 @@
+{
+  "summary": {
+    "translations": {
+      "sr": {
+        "eyebrow": "ORGANIZACIJA",
+        "title": "Ljudi i struktura pokreta",
+        "description": "Mock podaci za nacionalne organe, lokalne odbore i individualne profile. Stvarna imena i funkcije se mogu zamijeniti kada sadržaj bude potvrđen."
+      },
+      "en": {
+        "eyebrow": "ORGANIZATION",
+        "title": "People and movement structure",
+        "description": "Mock data for national bodies, local boards and individual profiles. Real names and roles can be replaced once the content is confirmed."
+      }
+    }
+  },
+  "people": [
+    {
+      "id": "milojko-spajic",
+      "imageSrc": null,
+      "links": [],
+      "isPlaceholder": false,
+      "translations": {
+        "sr": {
+          "name": "Milojko Spajić",
+          "role": "Predsjednik pokreta",
+          "location": "Podgorica",
+          "bio": "Predsjednik Pokreta Evropa sad i nosilac ekonomskih reformi koje su obilježile prvu fazu javnog predstavljanja sajta."
+        },
+        "en": {
+          "name": "Milojko Spajić",
+          "role": "President of the Movement",
+          "location": "Podgorica",
+          "bio": "President of the Europe Now Movement and the public figure tied to the economic reforms highlighted in the first website phase."
+        }
+      }
+    },
+    {
+      "id": "predstavnica-predsjednistva",
+      "imageSrc": null,
+      "links": [],
+      "isPlaceholder": true,
+      "translations": {
+        "sr": {
+          "name": "Predstavnica predsjedništva",
+          "role": "Članica predsjedništva",
+          "location": "Crna Gora",
+          "bio": "Privremeni profil za provjeru kartica osoba dok se ne unesu potvrđeni podaci."
+        },
+        "en": {
+          "name": "Presidency representative",
+          "role": "Presidency member",
+          "location": "Montenegro",
+          "bio": "Temporary profile used to test person cards until confirmed data is entered."
+        }
+      }
+    },
+    {
+      "id": "predstavnik-glavnog-odbora",
+      "imageSrc": null,
+      "links": [],
+      "isPlaceholder": true,
+      "translations": {
+        "sr": {
+          "name": "Predstavnik glavnog odbora",
+          "role": "Član glavnog odbora",
+          "location": "Crna Gora",
+          "bio": "Privremeni profil za prikaz organizacione strukture i buduće integracije sa CRM-om."
+        },
+        "en": {
+          "name": "Main board representative",
+          "role": "Main board member",
+          "location": "Montenegro",
+          "bio": "Temporary profile for displaying organizational structure and future CRM integration."
+        }
+      }
+    }
+  ],
+  "bodies": [
+    {
+      "id": "predsjednistvo",
+      "order": 1,
+      "members": [
+        {
+          "personId": "milojko-spajic",
+          "order": 1,
+          "role": {
+            "sr": "Predsjednik",
+            "en": "President"
+          }
+        },
+        {
+          "personId": "predstavnica-predsjednistva",
+          "order": 2,
+          "role": {
+            "sr": "Članica predsjedništva",
+            "en": "Presidency member"
+          }
+        }
+      ],
+      "translations": {
+        "sr": {
+          "title": "Predsjedništvo",
+          "description": "Političko rukovodstvo pokreta i tim koji vodi strateške odluke."
+        },
+        "en": {
+          "title": "Presidency",
+          "description": "The movement's political leadership and the team responsible for strategic decisions."
+        }
+      }
+    },
+    {
+      "id": "glavni-odbor",
+      "order": 2,
+      "members": [
+        {
+          "personId": "predstavnik-glavnog-odbora",
+          "order": 1,
+          "role": {
+            "sr": "Član glavnog odbora",
+            "en": "Main board member"
+          }
+        }
+      ],
+      "translations": {
+        "sr": {
+          "title": "Glavni odbor",
+          "description": "Šire predstavničko tijelo za programska i organizaciona pitanja."
+        },
+        "en": {
+          "title": "Main board",
+          "description": "A broader representative body for program and organizational matters."
+        }
+      }
+    },
+    {
+      "id": "izvrsni-odbor",
+      "order": 3,
+      "members": [],
+      "translations": {
+        "sr": {
+          "title": "Izvršni odbor",
+          "description": "Operativno tijelo zaduženo za sprovođenje odluka i koordinaciju aktivnosti."
+        },
+        "en": {
+          "title": "Executive board",
+          "description": "Operational body responsible for implementing decisions and coordinating activities."
+        }
+      }
+    },
+    {
+      "id": "nadzorni-odbor",
+      "order": 4,
+      "members": [],
+      "translations": {
+        "sr": {
+          "title": "Nadzorni odbor",
+          "description": "Tijelo za nadzor rada i poštovanja internih procedura."
+        },
+        "en": {
+          "title": "Supervisory board",
+          "description": "Body responsible for oversight and internal procedure compliance."
+        }
+      }
+    },
+    {
+      "id": "statutarna-komisija",
+      "order": 5,
+      "members": [],
+      "translations": {
+        "sr": {
+          "title": "Statutarna komisija",
+          "description": "Komisija zadužena za statut, tumačenja i normativna pitanja."
+        },
+        "en": {
+          "title": "Statutory commission",
+          "description": "Commission responsible for the statute, interpretations and normative questions."
+        }
+      }
+    }
+  ],
+  "localBoards": [
+    {
+      "slug": "podgorica",
+      "municipality": "Podgorica",
+      "region": "central",
+      "contactEmail": null,
+      "translations": {
+        "sr": {
+          "name": "Lokalni odbor Podgorica",
+          "coordinator": "Koordinator u pripremi"
+        },
+        "en": {
+          "name": "Podgorica local board",
+          "coordinator": "Coordinator pending"
+        }
+      }
+    },
+    {
+      "slug": "niksic",
+      "municipality": "Nikšić",
+      "region": "central",
+      "contactEmail": null,
+      "translations": {
+        "sr": {
+          "name": "Lokalni odbor Nikšić",
+          "coordinator": "Koordinator u pripremi"
+        },
+        "en": {
+          "name": "Nikšić local board",
+          "coordinator": "Coordinator pending"
+        }
+      }
+    },
+    {
+      "slug": "bar",
+      "municipality": "Bar",
+      "region": "coast",
+      "contactEmail": null,
+      "translations": {
+        "sr": {
+          "name": "Lokalni odbor Bar",
+          "coordinator": "Koordinator u pripremi"
+        },
+        "en": {
+          "name": "Bar local board",
+          "coordinator": "Coordinator pending"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "slug": "program-pokreta",
+    "type": "program",
+    "date": "2026-05-01",
+    "fileUrl": null,
+    "featured": true,
+    "translations": {
+      "sr": {
+        "title": "Program Pokreta Evropa sad",
+        "description": "Osnovni programski pravci i prioriteti javnog djelovanja.",
+        "label": "Program"
+      },
+      "en": {
+        "title": "Europe Now Movement program",
+        "description": "Core program directions and public policy priorities.",
+        "label": "Program"
+      }
+    }
+  },
+  {
+    "slug": "statut",
+    "type": "statute",
+    "date": "2026-05-01",
+    "fileUrl": null,
+    "featured": true,
+    "translations": {
+      "sr": {
+        "title": "Statut Pokreta",
+        "description": "Organizaciona pravila, organi i procedure odlučivanja.",
+        "label": "Statut"
+      },
+      "en": {
+        "title": "Movement statute",
+        "description": "Organizational rules, bodies and decision-making procedures.",
+        "label": "Statute"
+      }
+    }
+  },
+  {
+    "slug": "saopstenja",
+    "type": "archive",
+    "date": "2026-05-01",
+    "fileUrl": null,
+    "featured": false,
+    "translations": {
+      "sr": {
+        "title": "Arhiva saopštenja",
+        "description": "Centralno mjesto za zvanična saopštenja i javne reakcije.",
+        "label": "Saopštenja"
+      },
+      "en": {
+        "title": "Statements archive",
+        "description": "A central place for official statements and public reactions.",
+        "label": "Statements"
+      }
+    }
+  }
+]

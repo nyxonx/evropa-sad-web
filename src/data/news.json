@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "ekonomski-forum",
+    "date": "2026-05-15",
+    "category": "economy",
+    "tone": "eu",
+    "imageSrc": "/images/news/milojko-spajic-ekonomski-forum.jpg",
+    "featured": true,
+    "translations": {
+      "sr": {
+        "title": "Milojko Spajić na Ekonomskom forumu: Crna Gora je spremna za budućnost",
+        "excerpt": "Predsjednik pokreta Evropa sad govorio je o ekonomskim reformama i evropskom putu Crne Gore.",
+        "categoryLabel": "Evropski forum",
+        "body": [
+          "Crna Gora ima priliku da kroz stabilne javne finansije, veće plate i evropske reforme ubrza svoj razvojni put.",
+          "Fokus pokreta ostaje na rezultatima koji direktno popravljaju standard građana."
+        ]
+      },
+      "en": {
+        "title": "Milojko Spajić at the Economic Forum: Montenegro is ready for the future",
+        "excerpt": "The president of Europe Now spoke about economic reforms and Montenegro's European path.",
+        "categoryLabel": "European forum",
+        "body": [
+          "Montenegro has an opportunity to accelerate development through stable public finances, higher wages and European reforms.",
+          "The movement remains focused on results that directly improve citizens' living standards."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "novi-clanovi-niksic",
+    "date": "2026-05-10",
+    "category": "organization",
+    "tone": "team",
+    "imageSrc": "/images/news/novi-clanovi-niksic.jpg",
+    "featured": true,
+    "translations": {
+      "sr": {
+        "title": "Novi članovi iz Nikšića pristupili pokretu Evropa sad!",
+        "excerpt": "Naša mreža svakim danom postaje jača. Hvala vam na povjerenju!",
+        "categoryLabel": "Organizacija",
+        "body": [
+          "Lokalna mreža pokreta nastavlja da se širi kroz direktan razgovor sa građanima i rad na terenu.",
+          "Nikšić ostaje važan centar za organizaciono jačanje i programsku debatu."
+        ]
+      },
+      "en": {
+        "title": "New members from Nikšić joined the Europe Now Movement!",
+        "excerpt": "Our network is growing stronger every day. Thank you for your trust!",
+        "categoryLabel": "Organization",
+        "body": [
+          "The movement's local network continues to grow through direct conversations with citizens and field work.",
+          "Nikšić remains an important center for organizational growth and program discussion."
+        ]
+      }
+    }
+  },
+  {
+    "slug": "rekordna-turisticka-sezona",
+    "date": "2026-05-05",
+    "category": "tourism",
+    "tone": "coast",
+    "imageSrc": "/images/news/rekordna-turisticka-sezona.jpeg",
+    "featured": true,
+    "translations": {
+      "sr": {
+        "title": "Rekordna turistička sezona na pomolu",
+        "excerpt": "Crna Gora bilježi rast broja turista i prihoda od turizma.",
+        "categoryLabel": "Crna Gora",
+        "body": [
+          "Turizam ostaje jedna od ključnih razvojnih grana Crne Gore i važan izvor novih radnih mjesta.",
+          "Cilj je duža sezona, bolja infrastruktura i snažnija promocija zemlje na evropskim tržištima."
+        ]
+      },
+      "en": {
+        "title": "A record tourism season is ahead",
+        "excerpt": "Montenegro is recording growth in tourist arrivals and tourism revenue.",
+        "categoryLabel": "Montenegro",
+        "body": [
+          "Tourism remains one of Montenegro's key development sectors and an important source of new jobs.",
+          "The goal is a longer season, better infrastructure and stronger promotion on European markets."
+        ]
+      }
+    }
+  }
+]
